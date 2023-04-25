@@ -8,18 +8,23 @@ import { MaterialModule } from 'shared/material.module'
 import { RouterModule } from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LoginComponent } from './components/login/login.component';
+import { RegisterComponent } from './components/register/register.component';
+import { RegisterInformationComponent } from './components/register-information/register-information.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent
+    LoginComponent,
+    RegisterComponent,
+    RegisterInformationComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     MaterialModule,
     RouterModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

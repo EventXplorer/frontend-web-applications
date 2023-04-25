@@ -1,20 +1,27 @@
-<div class="login-form">
-    <h2 id="title-login">Welcome, Let's Get Started!</h2>
-    <form >
-        <div class="form-group" >
-            <label for="username" style="color:#9F7CA0; font-weight: normal; display: block;" >Email addres / username</label>
-            <input type="text" id="username" name="username" >
-            </div>
-            <div class="form-group ">
-            <label for="password" style="color:#9F7CA0; font-weight: normal; display: block;">Contraseña</label>
-            <input type="password" id="password" name="password">
+<div class="screen">
+  <div class="login-form">
+    <img src="../../../../assets/img/icon.png" alt="logo" style="height: 60px; margin: 30px 43%;">
+    <span id="title-login" style="text-align: center; margin: 20px 0;">Welcome, Let's Get Started!</span>
+    <form style=" margin: auto 70px;">
+        <label for="username" style="color:#9F7CA0; font-weight: normal; display: block; margin-top:45px ; font-weight: 500; font-size: 18px;" >Email addres / username</label>
+        <div class="form-group" style="margin: 10px 0;">
+            <mat-form-field appearance="outline" style="width: 100%;">
+            <input matInput type="text" placeholder="username" name="username">
+            <mat-icon matPrefix>account_circle</mat-icon>
+            </mat-form-field>
+        </div>    
+        <label for="password" style="color:#9F7CA0; font-weight: normal; display: block; font-weight: 500; font-size: 18px;" >Password</label>
+        <div class="form-group" style="margin: 10px 0;">
+          <mat-form-field appearance="outline" style="width: 100%;">
+            <input type="password" matInput placeholder="password" #passwordInputLogin>
+            <mat-icon matPrefix>lock</mat-icon>
+            <mat-icon matSuffix (click)="togglePasswordVisibility(passwordInputLogin)">{{passwordFieldType === 'password' ? 'visibility' : 'visibility_off'}}</mat-icon>
+          </mat-form-field>
         </div>
-    
-      <a mat-raised-button style="background: linear-gradient(90deg, #5C396E 3.89%, #AB529C 94.23%); color: white;">
-        LOGIN
-      </a>
-      <a style="font-family: 'Poppins'; align-items: center; text-decoration-line: underline; color: #79627C; text-align: center;" >Forgot your password?</a>
+      <a id="btn-login" class="btn-global" style="color: white;" mat-raised-button>LOGIN</a>
+      <a style="font-family: 'Poppins'; align-items: center; text-decoration-line: underline; color: #79627C; text-align: center; margin-bottom:20px;" >Forgot your password?</a>
       <span style="font-family: 'Poppins'; align-items: center;  color: #79627C; text-align: center;">No account yet? <a style="font-family: 'Poppins'; align-items: center; text-decoration-line: underline; color: #79627C; text-align: center;" >Create acount</a></span>
       
     </form>
+</div>
 </div>

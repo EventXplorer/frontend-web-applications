@@ -1,11 +1,11 @@
-import { Component } from '@angular/core';
+import { Component,ViewChild  } from '@angular/core';
 
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  selector: 'app-register',
+  templateUrl: './register.component.html',
+  styleUrls: ['./register.component.css']
 })
-export class LoginComponent {
+export class RegisterComponent {
   passwordFieldType = 'password';
 
   togglePasswordVisibility(input: any): void {
@@ -13,3 +13,4 @@ export class LoginComponent {
     this.passwordFieldType = this.passwordFieldType === 'password' ? 'text' : 'password';
   }
 }
+
