@@ -12,6 +12,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatTableModule } from '@angular/material/table';
 
+
 @NgModule({
     imports: [
         BrowserAnimationsModule,

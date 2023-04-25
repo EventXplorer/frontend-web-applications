@@ -1,11 +1,11 @@
-import { Component,ViewChild  } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-register',
-  templateUrl: './register.component.html',
-  styleUrls: ['./register.component.css']
+  selector: 'app-new-password',
+  templateUrl: './new-password.component.html',
+  styleUrls: ['./new-password.component.css']
 })
-export class RegisterComponent {
+export class NewPasswordComponent {
   passwordFieldType: string = 'password';
   passwordFieldType2: string = 'password';
 
@@ -19,4 +19,3 @@ export class RegisterComponent {
     this.passwordFieldType2 = this.passwordFieldType2 === 'password' ? 'text' : 'password';
   }
 }
-

@@ -10,6 +10,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { RegisterInformationComponent } from './components/register-information/register-information.component';
+import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
+import { NewPasswordComponent } from './components/new-password/new-password.component';
 
 
 @NgModule({
@@ -17,7 +19,9 @@ import { RegisterInformationComponent } from './components/register-information/
     AppComponent,
     LoginComponent,
     RegisterComponent,
-    RegisterInformationComponent
+    RegisterInformationComponent,
+    ForgotPasswordComponent,
+    NewPasswordComponent
   ],
   imports: [
     BrowserModule,
