@@ -12,6 +12,8 @@ import { RegisterComponent } from './components/register/register.component';
 import { RegisterInformationComponent } from './components/register-information/register-information.component';
 import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
 import { NewPasswordComponent } from './components/new-password/new-password.component';
+import { NavbarLoginComponent } from './components/navbar-login/navbar-login.component';
+import { FooterLoginComponent } from './components/footer-login/footer-login.component';
 
 
 @NgModule({
@@ -21,7 +23,9 @@ import { NewPasswordComponent } from './components/new-password/new-password.com
     RegisterComponent,
     RegisterInformationComponent,
     ForgotPasswordComponent,
-    NewPasswordComponent
+    NewPasswordComponent,
+    NavbarLoginComponent,
+    FooterLoginComponent,
   ],
   imports: [
     BrowserModule,

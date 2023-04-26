@@ -12,6 +12,9 @@ import { MatCardModule } from '@angular/material/card';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatTableModule } from '@angular/material/table';
 
+import { MatMenuModule } from '@angular/material/menu';
+
+
 
 @NgModule({
     imports: [
@@ -24,7 +27,8 @@ import { MatTableModule } from '@angular/material/table';
         MatFormFieldModule,
         MatCardModule,
         MatSidenavModule,
-        MatTableModule
+        MatTableModule,
+        MatMenuModule
     ],
     exports: [
         BrowserAnimationsModule,
@@ -36,7 +40,8 @@ import { MatTableModule } from '@angular/material/table';
         MatFormFieldModule,
         MatCardModule,
         MatSidenavModule,
-        MatTableModule
+        MatTableModule,
+        MatMenuModule
     ]
     
   })

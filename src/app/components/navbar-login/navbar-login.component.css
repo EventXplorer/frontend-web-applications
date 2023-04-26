@@ -1,0 +1,10 @@
+#navbar-login{
+    background: linear-gradient(90deg, #5C396E 3.89%, #AB529C 94.23%);
+}
+.example-spacer {
+    flex: 1 1 auto;
+  }
+
+  .link-style:hover {
+    color: red !important;
+  }

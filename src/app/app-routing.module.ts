@@ -8,7 +8,7 @@ import { ForgotPasswordComponent } from './components/forgot-password/forgot-pas
 import { NewPasswordComponent } from './components/new-password/new-password.component';
 
 const routes: Routes = [
-  {path: '', pathMatch: 'full', redirectTo: 'home'},
+  {path: '', pathMatch: 'full', redirectTo: 'login'},
   {path: '**', pathMatch: 'full', redirectTo: 'home'},
   {path: 'login', component:LoginComponent},
   {path: 'register', component:RegisterComponent},
