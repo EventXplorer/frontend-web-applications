@@ -14,7 +14,14 @@ import { MatTableModule } from '@angular/material/table';
 
 import { MatMenuModule } from '@angular/material/menu';
 
+import { ReactiveFormsModule } from '@angular/forms';
 
+import { AngularFireModule } from '@angular/fire/compat';
+import { AngularFireAuthModule } from '@angular/fire/compat/auth';
+
+import { HttpClientModule } from '@angular/common/http';
+
+import { environment } from 'src/environments/environment';
 
 @NgModule({
     imports: [
@@ -28,7 +35,11 @@ import { MatMenuModule } from '@angular/material/menu';
         MatCardModule,
         MatSidenavModule,
         MatTableModule,
-        MatMenuModule
+        MatMenuModule,
+        ReactiveFormsModule,
+        AngularFireModule.initializeApp(environment.firebase),
+        AngularFireAuthModule,
+        HttpClientModule,
     ],
     exports: [
         BrowserAnimationsModule,
@@ -41,7 +52,11 @@ import { MatMenuModule } from '@angular/material/menu';
         MatCardModule,
         MatSidenavModule,
         MatTableModule,
-        MatMenuModule
+        MatMenuModule,
+        ReactiveFormsModule,
+        AngularFireModule,
+        AngularFireAuthModule,
+        HttpClientModule
     ]
     
   })

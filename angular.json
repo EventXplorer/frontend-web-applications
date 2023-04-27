@@ -93,6 +93,16 @@
             ],
             "scripts": []
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {
+            "prerender": false,
+            "ssr": false,
+            "browserTarget": "frontend-web-applications:build:production",
+            "firebaseProject": "eventxplorer-firebase-auth",
+            "firebaseHostingSite": "eventxplorer-firebase-auth"
+          }
         }
       }
     }
