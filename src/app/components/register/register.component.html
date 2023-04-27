@@ -6,7 +6,7 @@
             <label for="username" style="color:#9F7CA0; font-weight: normal; display: block; margin-top:45px ; font-weight: 500; font-size: 18px;" >Email addres</label>
             <div class="form-group" style="margin: 10px 0;">
                 <mat-form-field appearance="outline" style="width: 100%;">
-                <input matInput type="text" placeholder="email" formControlName="email">
+                <input matInput type="text" placeholder="email" formControlName="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}" required>
                 <mat-icon matPrefix>mail</mat-icon>
                 </mat-form-field>
             </div>       
@@ -14,7 +14,7 @@
           <label for="password" style="color:#9F7CA0; font-weight: normal; display: block; font-weight: 500; font-size: 18px;" >Password</label>
           <div class="form-group" style="margin: 10px 0;">
             <mat-form-field appearance="outline" style="width: 100%;">
-              <input type="password" matInput placeholder="password" #passwordInput formControlName="password">
+              <input type="password" matInput placeholder="password" #passwordInput formControlName="password" pattern=".{8,}" required>
               <mat-icon matPrefix>lock</mat-icon>
               <mat-icon matSuffix (click)="togglePasswordVisibility(passwordInput)">{{passwordFieldType === 'password' ? 'visibility' : 'visibility_off'}}</mat-icon>
             </mat-form-field>

@@ -23,11 +23,12 @@ export class LoginComponent implements OnInit{
   }
 
   ngOnInit(): void{
-
+ 
   }
 
   onSubmit(){
       this.userService.login(this.formLogin.value)
+
       .then(response=>{
         console.log(response);
         this.router.navigate(['/home'])
