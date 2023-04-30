@@ -1,0 +1,32 @@
+footer{
+   
+   
+    position:absolute;
+    bottom: 0;
+    background: linear-gradient(to right, rgb(92, 57, 110), rgb(171, 82, 156));
+    height: 86px;
+    width: 100%;
+
+}
+
+.information{
+    display: flex;
+    color:white;
+    margin-top:35px;
+}
+
+.about{
+    font-size: 18px;
+    width: 400px;
+    height: 24px;
+    display: flex;
+    margin-left: 100px;
+}
+.contact{
+    margin-left: 15px;
+   
+}
+.app-name{
+    font-size: 14px;
+    margin-left: 587px;
+}

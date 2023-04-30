@@ -1,0 +1,74 @@
+.profile{
+    display: flex;
+}
+
+.profile-info{
+    
+    margin-left: 218px;
+    margin-top: 118px;
+    font-family: 'Poppins', sans-serif;
+    font-style: normal;
+    
+    
+}
+.name-user{
+    position: absolute;
+    width: 351px;
+    height: 24px;
+    left: center;
+    top: 462px;
+
+    font-style:normal;
+
+    font-size: 20px;
+    line-height: 24px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+.description{
+    font-weight: 500;
+    font-size: 17px;
+    line-height: 24px;
+    position: absolute;
+    width: 348px;
+    height: 96px;
+    left: 144px;
+    top: 500px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+img{
+    width: 200px;
+    height: 200px;
+    display: block;
+    border-radius: 359px;
+    border:none;
+}
+
+.tab-group{
+    width: 722px;
+    height: 35px;
+    margin-top: 118px;
+    margin-left: 300px;
+    display: flex;
+    
+}
+
+button{
+    background: linear-gradient(to right, rgb(92, 57, 110), rgb(171, 82, 156));
+    color:white;
+    width: 348px;
+    height: 41px;
+    
+}
+
+.button-row{  
+    
+    position: absolute;
+    left: 144px;
+    top: 634px;
+
+
+}
