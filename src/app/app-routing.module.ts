@@ -8,11 +8,13 @@ import { ForgotPasswordComponent } from './components/forgot-password/forgot-pas
 import { NewPasswordComponent } from './components/new-password/new-password.component';
 import { canActivate, redirectUnauthorizedTo }  from '@angular/fire/auth-guard';
 import { HomeMainComponent } from './components/home-main/home-main.component';
+import { MyMessagesComponent } from './components/my-messages/my-messages.component';
 
 const routes: Routes = [
   {path: '', pathMatch: 'full', redirectTo: 'home'},
   // {path: '**', pathMatch: 'full', redirectTo: 'home'},
   {path: 'login', component:LoginComponent},
+  {path: 'mymessages', component:MyMessagesComponent},
   {path: 'register', component:RegisterComponent},
   {path: 'register/information', component:RegisterInformationComponent},
   {path: 'forgotpassword', component:ForgotPasswordComponent},
