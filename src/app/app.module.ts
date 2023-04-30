@@ -3,36 +3,36 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-
-import { MaterialModule } from 'shared/material.module'
-import { RouterModule } from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { LoginComponent } from './components/login/login.component';
-import { RegisterComponent } from './components/register/register.component';
-import { RegisterInformationComponent } from './components/register-information/register-information.component';
-import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
-import { NewPasswordComponent } from './components/new-password/new-password.component';
-import { NavbarLoginComponent } from './components/navbar-login/navbar-login.component';
-import { FooterLoginComponent } from './components/footer-login/footer-login.component';
-
+import { ProfileComponent } from './profile/profile.component';
+import { HeaderComponent } from './header/header.component';
+import { FooterComponent } from './footer/footer.component';
+import { HomeComponent } from './home/home.component';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatTabsModule} from '@angular/material/tabs';
+import {MatButtonModule} from '@angular/material/button';
+import {MatIconModule} from '@angular/material/icon';
+import {MatInputModule} from '@angular/material/input';
+import {MatFormFieldModule} from '@angular/material/form-field';
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent,
-    RegisterComponent,
-    RegisterInformationComponent,
-    ForgotPasswordComponent,
-    NewPasswordComponent,
-    NavbarLoginComponent,
-    FooterLoginComponent,
+    ProfileComponent,
+    HeaderComponent,
+    FooterComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    MaterialModule,
-    RouterModule,
     BrowserAnimationsModule,
+    MatToolbarModule,
+    MatTabsModule,
+    MatButtonModule,
+    MatIconModule,
+    MatInputModule,
+    MatFormFieldModule
   ],
   providers: [],
   bootstrap: [AppComponent]

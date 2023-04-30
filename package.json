@@ -1,5 +1,5 @@
 {
-  "name": "frontend-web-applications",
+  "name": "parcial-trabajo",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
@@ -10,7 +10,6 @@
   },
   "private": true,
   "dependencies": {
-    "@angular-material-extensions/password-strength": "^12.1.0",
     "@angular/animations": "^15.2.0",
     "@angular/cdk": "^15.2.8",
     "@angular/common": "^15.2.0",
@@ -26,8 +25,8 @@
     "zone.js": "~0.12.0"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "^15.2.6",
-    "@angular/cli": "~15.2.6",
+    "@angular-devkit/build-angular": "^15.2.4",
+    "@angular/cli": "~15.2.4",
     "@angular/compiler-cli": "^15.2.0",
     "@types/jasmine": "~4.3.0",
     "jasmine-core": "~4.5.0",

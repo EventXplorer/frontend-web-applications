@@ -1,0 +1,49 @@
+<app-header></app-header>
+
+<div  id="img_home" class="home_account" >
+    <div class="card-1 p-4 shadow-0 border-round w-100 lg:w-20 Home inline-block">
+      <img class="UserPhoto home-img" alt="UserPhoto" :src="">
+      <aside class="text5">Hi, Oscar!</aside>
+
+      <!--Popular Events-->
+        <div class="popular_events p-4 shadow-0 border-round w-auto lg:w-40 Home ">
+            <aside class="text3 font-medium line-height-3 ">Popular Stores</aside>
+            <!--
+            <div class="box3 p-4 shadow-0 border-round w-auto lg:w-20" v-for="store in popular_stores.slice(0,2)" :key="store.id" >
+                <a :href="store.link" target="_blank"><img class="Event-popular home-img" alt="Event-popular" :src="">
+                </a>
+            </div>
+
+            <div class="box4 p-4 shadow-0 border-round w-auto lg:w-20" v-for="store in popular_stores.slice(2,5)" :key="store.id" >
+                <a :href="store.link" target="_blank"><img class="Event-popular1 home-img" alt="Event-popular1" :src="">
+                </a>
+            </div>-->
+
+        </div>
+
+    </div>
+
+    <div class="card-2 p-4 shadow-0 border-round w-100 lg:w-20 Home inline-block">
+        <div style="text-align: center;">
+            <a href="#" ><aside class="text2 font-medium line-height-3">My account</aside></a>
+        </div>
+        <button mat-flat-button color="accent">Published Event <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="home"></mat-icon>
+        </button>
+            <div class="box_blank p-4 shadow-0 border-round w-auto lg:w-20 Home"> </div>
+                <div class="recent_events p-4 shadow-0 border-round w-auto lg:w-20 Home">
+                    <aside class="text3 font-medium line-height-3">Recent Events</aside>
+                    <div class="Boxes" v-for="product in recent_event.slice(0,2)" :key="event.id">
+                        <div class="box1 p-4 shadow-1 border-round w-full lg:w-20">
+                            <!--<img id="Event" alt="Event" :src="product.productImage">
+                            
+                            <aside class="Subtitle1">prueba1</aside>
+                            <aside class="time1">prueba2</aside>
+                            <img class="Event1 home-img" alt="Event1" :src="product.productStore">
+                            -->
+                        </div>
+                    </div>
+            </div>
+    </div>
+</div>
+
+<app-footer></app-footer>
