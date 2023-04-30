@@ -18,11 +18,11 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
+// import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 
 import { HttpClientModule } from '@angular/common/http';
 
 import { environment } from 'src/environments/environment';
-
 
 @NgModule({
     imports: [

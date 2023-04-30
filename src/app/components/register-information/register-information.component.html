@@ -5,13 +5,13 @@
         <img src="../../../../assets/img/icon.png" alt="logo" style="height: 60px; margin: 30px 50%;">
         <span id="title-register-information" style="text-align: center; margin: 40px 40px;">Fill In Your Information!</span>
     
-      <form style="margin: auto 70px;">
+      <form (submit)="submitUser()"  style="margin: auto 70px;">
         <div class="form-group-row">
           <div class="form-group-col">
             <label for="username" style="color:#9F7CA0; font-weight: normal; display: block; font-weight: 500; font-size: 18px;" >Fullname</label>
             <div class="form-group" style="margin: 10px 0;">
                 <mat-form-field appearance="outline" style="width: 400px;">
-                <input matInput type="text" placeholder="fullname" name="fullname">
+                <input matInput type="text" placeholder="fullname" name="fullname" [(ngModel)]="datos.fullname">
                 </mat-form-field>
             </div>   
           </div>
@@ -19,7 +19,7 @@
             <label for="date" style="color:#9F7CA0; font-weight: normal; display: block; font-weight: 500; font-size: 18px;" >Date Of Birth</label>
             <div class="form-group" style="margin: 10px 0;">
                 <mat-form-field appearance="outline" style="width: 400px;">
-                <input matInput type="date" placeholder="dd/mm/yyyy" name="date">
+                <input matInput type="date" placeholder="dd/mm/yyyy" name="date" [(ngModel)]="datos.date">
                 </mat-form-field>
             </div>   
           </div>
@@ -29,7 +29,7 @@
                 <label for="country" style="color:#9F7CA0; font-weight: normal; display: block; font-weight: 500; font-size: 18px;" >Country</label>
                 <div class="form-group" style="margin: 10px 0;">
                     <mat-form-field appearance="outline" style="width: 400px;">
-                    <input matInput type="text" placeholder="country" name="country">
+                    <input matInput type="text" placeholder="country" name="country"  [(ngModel)]="datos.country">
                     </mat-form-field>
                 </div>      
             </div>
@@ -37,7 +37,7 @@
                 <label for="phone" style="color:#9F7CA0; font-weight: normal; display: block; font-weight: 500; font-size: 18px;" >Phone Of Number</label>
                 <div class="form-group" style="margin: 10px 0;">
                     <mat-form-field appearance="outline" style="width: 400px;">
-                    <input matInput type="number" placeholder="+51 999999999" name="phone">
+                    <input matInput type="number" placeholder="+51 999999999" name="phone" [(ngModel)]="datos.phone">
                     </mat-form-field>
                 </div>  
             </div>
@@ -48,7 +48,7 @@
                 <label for="typeIdentify" style="color:#9F7CA0; font-weight: normal; display: block; font-weight: 500; font-size: 18px;" >Identify Card</label>
                 <div class="form-group" style="margin: 10px 0;">
                     <mat-form-field appearance="outline" style="width: 150px;">
-                    <input matInput type="text" placeholder="select type" name="typeIdentify">
+                    <input matInput type="text" placeholder="select type" name="typeIdentify"  [(ngModel)]="datos.typeIdentify">
                     </mat-form-field>
                 </div>  
             </div>
@@ -56,7 +56,7 @@
                 <label for="typeIdentify" style="color:#9F7CA0; font-weight: normal; display: block; font-weight: 500; font-size: 18px;" >Number Of Idetify Card</label>
                 <div class="form-group" style="margin: 10px 0;">
                     <mat-form-field appearance="outline" style="width: 200px;">
-                    <input matInput type="text" placeholder="49453765" name="numid">
+                    <input matInput type="text" placeholder="49453765" name="numid" [(ngModel)]="datos.numid">
                     </mat-form-field>
                 </div>   
             </div>
@@ -66,7 +66,7 @@
         </div>
       </form>
 
-      <a id="btn-register-information" class="btn-global " style="color: white; width: 400px;" mat-raised-button>CONTINUE</a>
+      <a id="btn-register-information" class="btn-global " style="color: white; width: 400px;" mat-raised-button (click)="submitUser()">CONTINUE</a>
    
     </div>
     <div class="image-container" style="display: flex; flex-direction: column;">
