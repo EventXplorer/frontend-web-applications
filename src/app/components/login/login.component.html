@@ -1,0 +1,27 @@
+<div class="screen">
+  <div class="login-form">
+    <img src="../../../../assets/img/icon.png" alt="logo" style="height: 60px; margin: 30px 43%;">
+    <span id="title-login" style="text-align: center; margin: 20px 0;">Welcome, Let's Get Started!</span>
+    <form style=" margin: auto 70px;">
+        <label for="username" style="color:#9F7CA0; font-weight: normal; display: block; margin-top:45px ; font-weight: 500; font-size: 18px;" >Email addres / username</label>
+        <div class="form-group" style="margin: 10px 0;">
+            <mat-form-field appearance="outline" style="width: 100%;">
+            <input matInput type="text" placeholder="username" name="username">
+            <mat-icon matPrefix>account_circle</mat-icon>
+            </mat-form-field>
+        </div>    
+        <label for="password" style="color:#9F7CA0; font-weight: normal; display: block; font-weight: 500; font-size: 18px;" >Password</label>
+        <div class="form-group" style="margin: 10px 0;">
+          <mat-form-field appearance="outline" style="width: 100%;">
+            <input type="password" matInput placeholder="password" #passwordInputLogin>
+            <mat-icon matPrefix>lock</mat-icon>
+            <mat-icon matSuffix (click)="togglePasswordVisibility(passwordInputLogin)">{{passwordFieldType === 'password' ? 'visibility' : 'visibility_off'}}</mat-icon>
+          </mat-form-field>
+        </div>
+      <a id="btn-login" class="btn-global" style="color: white;" mat-raised-button>LOGIN</a>
+      <a routerLink="/forgotpassword" style="font-family: 'Poppins'; align-items: center; text-decoration-line: underline; color: #79627C; text-align: center; margin-bottom:20px;  cursor: pointer;" >Forgot your password?</a>
+      <span style="font-family: 'Poppins'; align-items: center;  color: #79627C; text-align: center;">No account yet? <a style="font-family: 'Poppins'; align-items: center; text-decoration-line: underline; color: #79627C; text-align: center;  cursor: pointer;" routerLink="/register">Create acount</a></span>
+      
+    </form>
+</div>
+</div>
