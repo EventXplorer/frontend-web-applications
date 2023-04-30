@@ -1,3 +1,5 @@
+<app-navbar-login></app-navbar-login>
+
 <div class="screen">
     <div class="register-form">   
      <img src="../../../../assets/img/icon.png" alt="logo" style="height: 60px; margin: 30px 43%;">
@@ -20,17 +22,9 @@
             </mat-form-field>
           </div>
           
-
-          <!-- <label for="password-confirm" style="color:#9F7CA0; font-weight: normal; display: block; font-weight: 500; font-size: 18px;" >Confirm Password</label>
-          <div class="form-group" style="margin: 10px 0;">
-            <mat-form-field appearance="outline" style="width: 100%;">
-              <input type="password" matInput placeholder="confirm password" #passwordInput2>
-              <mat-icon matSuffix (click)="togglePasswordVisibility2(passwordInput2)">{{passwordFieldType2 === 'password' ? 'visibility' : 'visibility_off'}}</mat-icon>
-              <mat-icon matPrefix>lock</mat-icon>
-            </mat-form-field>
-          </div> -->
         <a id="btn-register" class="btn-global" style="color: white;" mat-raised-button (click)="onSubmit()">CONTINUE</a>
       </form>
   </div>
   </div>
   
+  <app-footer-login></app-footer-login>

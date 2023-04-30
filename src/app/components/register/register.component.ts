@@ -13,7 +13,6 @@ import Swal from 'sweetalert2';
 })
 export class RegisterComponent implements OnInit{
   passwordFieldType: string = 'password';
-  passwordFieldType2: string = 'password';
 
   formReg: FormGroup;
 
@@ -32,7 +31,7 @@ export class RegisterComponent implements OnInit{
     this.userService.register(this.formReg.value)
     .then(response=>{
       console.log(response);
-      this.router.navigate(['/register/information']);
+      this.router.navigate(['/home']);
       this.httpDataService.guardarUsuarioEnAPI().subscribe(
         response => {
           console.log(response);
@@ -77,9 +76,6 @@ export class RegisterComponent implements OnInit{
     this.passwordFieldType = this.passwordFieldType === 'password' ? 'text' : 'password';
   }
 
-  togglePasswordVisibility2(input: any): void {
-    input.type = input.type === 'password' ? 'text' : 'password';
-    this.passwordFieldType2 = this.passwordFieldType2 === 'password' ? 'text' : 'password';
-  }
+ 
 }
 
