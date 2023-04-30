@@ -3,36 +3,51 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+
+import { MaterialModule } from 'shared/material.module'
+import { RouterModule } from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { ProfileComponent } from './profile/profile.component';
-import { HeaderComponent } from './header/header.component';
-import { FooterComponent } from './footer/footer.component';
-import { HomeComponent } from './home/home.component';
-import {MatToolbarModule} from '@angular/material/toolbar';
-import {MatTabsModule} from '@angular/material/tabs';
-import {MatButtonModule} from '@angular/material/button';
-import {MatIconModule} from '@angular/material/icon';
-import {MatInputModule} from '@angular/material/input';
-import {MatFormFieldModule} from '@angular/material/form-field';
+import { LoginComponent } from './components/login/login.component';
+import { RegisterComponent } from './components/register/register.component';
+import { RegisterInformationComponent } from './components/register-information/register-information.component';
+import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
+import { NewPasswordComponent } from './components/new-password/new-password.component';
+import { NavbarLoginComponent } from './components/navbar-login/navbar-login.component';
+import { FooterLoginComponent } from './components/footer-login/footer-login.component';
+import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
+import { environment } from '../environments/environment';
+import { provideAuth,getAuth } from '@angular/fire/auth';
+
+import { HttpClientModule } from '@angular/common/http';
+import { FooterComponent } from './components/footer/footer.component';
+import { HeaderComponent } from './components/header/header.component';
+import { HomeMainComponent } from './components/home-main/home-main.component';
+
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    ProfileComponent,
-    HeaderComponent,
+    LoginComponent,
+    RegisterComponent,
+    RegisterInformationComponent,
+    ForgotPasswordComponent,
+    NewPasswordComponent,
+    NavbarLoginComponent,
+    FooterLoginComponent,
     FooterComponent,
-    HomeComponent
+    HeaderComponent,
+    HomeMainComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    MaterialModule,
+    RouterModule,
     BrowserAnimationsModule,
-    MatToolbarModule,
-    MatTabsModule,
-    MatButtonModule,
-    MatIconModule,
-    MatInputModule,
-    MatFormFieldModule
+    HttpClientModule,
+    provideFirebaseApp(() => initializeApp(environment.firebase)),
+    provideAuth(() => getAuth())
   ],
   providers: [],
   bootstrap: [AppComponent]

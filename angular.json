@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "ParcialTrabajo": {
+    "frontend-web-applications": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/parcial-trabajo",
+            "outputPath": "dist/frontend-web-applications",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": [
@@ -61,10 +61,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "ParcialTrabajo:build:production"
+              "browserTarget": "frontend-web-applications:build:production"
             },
             "development": {
-              "browserTarget": "ParcialTrabajo:build:development"
+              "browserTarget": "frontend-web-applications:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -72,7 +72,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "ParcialTrabajo:build"
+            "browserTarget": "frontend-web-applications:build"
           }
         },
         "test": {
@@ -93,8 +93,21 @@
             ],
             "scripts": []
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {
+            "prerender": false,
+            "ssr": false,
+            "browserTarget": "frontend-web-applications:build:production",
+            "firebaseProject": "eventxplorer-firebase-auth",
+            "firebaseHostingSite": "eventxplorer-firebase-auth"
+          }
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "bfa392a4-e744-4c3f-b80b-1dfe82f2b277"
   }
 }

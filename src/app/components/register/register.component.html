@@ -2,11 +2,11 @@
     <div class="register-form">   
      <img src="../../../../assets/img/icon.png" alt="logo" style="height: 60px; margin: 30px 43%;">
       <span id="title-register" style="margin-bottom: 30px;">Create A New Accout!</span>
-      <form style=" margin: auto 70px;">
+      <form (submit)="onSubmit()" [formGroup]="formReg" style=" margin: auto 70px;">
             <label for="username" style="color:#9F7CA0; font-weight: normal; display: block; margin-top:45px ; font-weight: 500; font-size: 18px;" >Email addres</label>
             <div class="form-group" style="margin: 10px 0;">
                 <mat-form-field appearance="outline" style="width: 100%;">
-                <input matInput type="text" placeholder="email" name="email">
+                <input matInput type="text" placeholder="email" formControlName="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}" required>
                 <mat-icon matPrefix>mail</mat-icon>
                 </mat-form-field>
             </div>       
@@ -14,22 +14,22 @@
           <label for="password" style="color:#9F7CA0; font-weight: normal; display: block; font-weight: 500; font-size: 18px;" >Password</label>
           <div class="form-group" style="margin: 10px 0;">
             <mat-form-field appearance="outline" style="width: 100%;">
-              <input type="password" matInput placeholder="password" #passwordInput>
+              <input type="password" matInput placeholder="password" #passwordInput formControlName="password" pattern=".{8,}" required>
               <mat-icon matPrefix>lock</mat-icon>
               <mat-icon matSuffix (click)="togglePasswordVisibility(passwordInput)">{{passwordFieldType === 'password' ? 'visibility' : 'visibility_off'}}</mat-icon>
             </mat-form-field>
           </div>
           
 
-          <label for="password-confirm" style="color:#9F7CA0; font-weight: normal; display: block; font-weight: 500; font-size: 18px;" >Confirm Password</label>
+          <!-- <label for="password-confirm" style="color:#9F7CA0; font-weight: normal; display: block; font-weight: 500; font-size: 18px;" >Confirm Password</label>
           <div class="form-group" style="margin: 10px 0;">
             <mat-form-field appearance="outline" style="width: 100%;">
               <input type="password" matInput placeholder="confirm password" #passwordInput2>
               <mat-icon matSuffix (click)="togglePasswordVisibility2(passwordInput2)">{{passwordFieldType2 === 'password' ? 'visibility' : 'visibility_off'}}</mat-icon>
               <mat-icon matPrefix>lock</mat-icon>
             </mat-form-field>
-          </div>
-        <a id="btn-register" class="btn-global" style="color: white;" mat-raised-button>CONTINUE</a>
+          </div> -->
+        <a id="btn-register" class="btn-global" style="color: white;" mat-raised-button (click)="onSubmit()">CONTINUE</a>
       </form>
   </div>
   </div>
