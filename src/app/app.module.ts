@@ -22,6 +22,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { FooterComponent } from './components/footer/footer.component';
 import { HeaderComponent } from './components/header/header.component';
 import { HomeMainComponent } from './components/home-main/home-main.component';
+import { MyMessagesComponent } from './components/my-messages/my-messages.component';
 
 
 
@@ -37,7 +38,8 @@ import { HomeMainComponent } from './components/home-main/home-main.component';
     FooterLoginComponent,
     FooterComponent,
     HeaderComponent,
-    HomeMainComponent
+    HomeMainComponent,
+    MyMessagesComponent
   ],
   imports: [
     BrowserModule,

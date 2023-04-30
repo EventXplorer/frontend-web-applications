@@ -11,6 +11,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatCardModule } from '@angular/material/card';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatTableModule } from '@angular/material/table';
+import {MatTabsModule} from '@angular/material/tabs';
 
 import { MatMenuModule } from '@angular/material/menu';
 
@@ -23,6 +24,8 @@ import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { HttpClientModule } from '@angular/common/http';
 
 import { environment } from 'src/environments/environment';
+
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 @NgModule({
     imports: [
@@ -41,7 +44,9 @@ import { environment } from 'src/environments/environment';
         AngularFireModule.initializeApp(environment.firebase),
         AngularFireAuthModule,
         HttpClientModule,
-        FormsModule
+        FormsModule,
+        MatTabsModule,
+        FlexLayoutModule
     ],
     exports: [
         BrowserAnimationsModule,
@@ -59,7 +64,9 @@ import { environment } from 'src/environments/environment';
         AngularFireModule,
         AngularFireAuthModule,
         HttpClientModule,
-        FormsModule
+        FormsModule,
+        MatTabsModule,
+        FlexLayoutModule
     ]
     
   })
