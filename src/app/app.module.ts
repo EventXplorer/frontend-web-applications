@@ -14,6 +14,8 @@ import { ForgotPasswordComponent } from './components/forgot-password/forgot-pas
 import { NewPasswordComponent } from './components/new-password/new-password.component';
 import { NavbarLoginComponent } from './components/navbar-login/navbar-login.component';
 import { FooterLoginComponent } from './components/footer-login/footer-login.component';
+import { ResumeComponent } from './components/resume/resume.component';
+import { PublishedEventComponent } from './components/published-event/published-event.component';
 
 
 @NgModule({
@@ -26,6 +28,8 @@ import { FooterLoginComponent } from './components/footer-login/footer-login.com
     NewPasswordComponent,
     NavbarLoginComponent,
     FooterLoginComponent,
+    ResumeComponent,
+    PublishedEventComponent,
   ],
   imports: [
     BrowserModule,
