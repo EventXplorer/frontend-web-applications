@@ -1,7 +1,8 @@
 .home_account{
-    margin-top:120px;
-    margin-bottom:50px;
-    margin-left: 248px;
+
+    margin:0 auto;
+    justify-content: center;
+    align-items: center;
     width:1000px;
   }
 
@@ -9,12 +10,13 @@ button{
     background: linear-gradient(to right, rgb(92, 57, 110), rgb(171, 82, 156));
     color:white;
     width: 230px;
-    margin-left: -70px;
+    margin-left: -10px;
     height: 41px;
     margin-top: -40px;
 }
 .popular_events{
     margin-top:120px;
+    justify-self: center;
     width:800px;
   
 }
@@ -48,6 +50,7 @@ button{
 }
 .text2 {
     margin-top:40px;
+    margin-left: 100px;
     font-weight: bold;
     text-decoration: underline black;
     font-size:15px;
@@ -98,3 +101,52 @@ button{
     width: 150px;
     box-shadow: 0px 0px 0px #999;
   }
+  .box1{
+    width: 130px;
+    height: 150px;
+    margin-top:75px;
+  
+  }
+  .box3{
+    float:left;
+    margin-top:50px;
+    width: 20px;
+    height: 140px;
+    box-shadow: 0px 0px 0px #999;
+  
+  
+  }
+  .box4{
+    float:right;
+    margin-bottom:380px;
+    margin-top:-330px;
+    margin-left:100px;
+    width: 20px;
+    height: 140px;
+    box-shadow: 0px 0px 0px #999;
+  }
+  
+  .card-1{
+    margin-top:10px;
+    width: 430px;
+    height:120px;
+  }
+  .card-2{
+    margin-top:10px;
+    float: right;
+    width: 500px;
+    height:400px;
+  }
+  .Event-popular1{
+    height: 100px;
+    float:left;
+  }
+  .Event-popular{
+    height: 100px;
+    float:left;
+  }
+  
+  .home_account{
+    margin-top:20px;
+  }
+
