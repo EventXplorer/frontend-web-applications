@@ -1,27 +1,130 @@
 <app-header></app-header>
-<div fxLayout="row">
-    <div fxFlex="30%">
-      <mat-card class="perfil">
-        <img mat-card-image src="https://cdn-images.livecareer.es/pages/foto_cv_lc_es_7.jpg">
-        <mat-card-title>Lili Ramos</mat-card-title>
-        <mat-card-content>
-          <p>Hi, I’m Lili and I live in Lima, Peru. 
-          I would like to bring great events from Lima and have people from cities of the country</p> 
-        </mat-card-content>
-      </mat-card>
+
+    <div class="perfil">
+        <mat-card>
+            <img mat-card-image src="https://cdn-images.livecareer.es/pages/foto_cv_lc_es_7.jpg">
+            <mat-card-title>Lili Ramos</mat-card-title>
+            <mat-card-content>
+                <p>Hi, I’m Lili and I live in Lima, Peru. I would like to bring great events from Lima and have people from cities of the country</p> 
+            </mat-card-content>
+        </mat-card>
     </div>
-    <div fxFlex="70%">
-      <mat-tab-group>
-        <mat-tab label="Informacion Personal">
-          Content 1 
-        </mat-tab>
-        <mat-tab label="Comentarios">
-          Content 2
-        </mat-tab>
-        <mat-tab label="Reclamos">
-          Content 3
-        </mat-tab>
-      </mat-tab-group> 
+
+    <div class="tab-options">
+        <mat-tab-group>
+
+            <div class="Information">
+              <mat-tab label="Informacion Personal">
+                <div class="info-data">
+                <div><strong>Nombre completo:</strong></div>
+                <mat-card>
+                    <mat-card-content>
+                    <p>Lili Ramos</p> 
+                 </mat-card-content>
+                </mat-card>
+                
+                <div><strong>Edad:</strong> </div>
+                <mat-card>
+                  <mat-card-content>
+                  <p>25 años</p> 
+               </mat-card-content>
+              </mat-card>
+
+                <div><strong>E-mail:</strong> </div>
+                <mat-card>
+                  <mat-card-content>
+                  <p>liliramos@gmail.com</p> 
+               </mat-card-content>
+              </mat-card>
+                
+
+                <div><strong>Ciudad:</strong></div> 
+                <mat-card>
+                  <mat-card-content>
+                  <p>Lima</p> 
+               </mat-card-content>
+              </mat-card>
+            </div>
+            </mat-tab>
+            </div>>
+            
+            <div class="Coments">
+             <mat-tab label="Comentarios">
+
+              <div class="coments-data">
+
+                <mat-card class="coment-card">
+                  <div class="coment-image">
+                    <img mat-card-image src="https://img.freepik.com/foto-gratis/mujer-hermosa-joven-mirando-camara-chica-moda-verano-casual-camiseta-blanca-pantalones-cortos-hembra-positiva-muestra-emociones-faciales-modelo-divertido-aislado-amarillo_158538-15796.jpg?w=360">
+                  </div>
+                    <div class="coment-info">
+                    <mat-card-title class="coment-title">
+                      Lila Ramos
+                    </mat-card-title>
+                     <mat-card-content class="coment-content">
+                      <p>Buen Servicio</p>
+                    </mat-card-content>
+                    </div>
+                </mat-card>
+                <mat-card class="coment-card">
+                  <div class="coment-image">
+                    <img mat-card-image src="https://img.freepik.com/foto-gratis/mujer-hermosa-joven-mirando-camara-chica-moda-verano-casual-camiseta-blanca-pantalones-cortos-hembra-positiva-muestra-emociones-faciales-modelo-divertido-aislado-amarillo_158538-15796.jpg?w=360">
+                  </div>
+                    <div class="coment-content">
+                    <mat-card-title class="coment-title">
+                     Karen Ruiz
+                    </mat-card-title>
+                     <mat-card-content class="coment-content">
+                      <p>Excelente</p>
+                    </mat-card-content>
+                    </div>
+                </mat-card>
+
+              </div>
+
+            </mat-tab>
+            </div>
+
+
+            <div>
+              <mat-tab label="Reclamos">
+               
+                <div class="reclamos-data">
+
+                  <mat-card class="recla-card">
+                    <div class="recla-image">
+                      <img mat-card-image src="https://img.freepik.com/fotos-premium/retrato-mujer-frente-hermoso-rostro-camiseta-ligera_163305-48353.jpg">
+                    </div>
+                      <div class="recla-info">
+                      <mat-card-title class="recla-title">
+                        Lila Ramos
+                      </mat-card-title>
+                       <mat-card-content class="recla-content">
+                        <p>Pesimo</p>
+                      </mat-card-content>
+                      </div>
+                  </mat-card>
+                  <mat-card class="recla-card">
+                    <div class="recla-image">
+                      <img mat-card-image src="https://img.freepik.com/fotos-premium/retrato-mujer-frente-hermoso-rostro-camiseta-ligera_163305-48353.jpg">
+                    </div>
+                      <div class="recla-content">
+                      <mat-card-title class="recla-title">
+                       Karen Ruiz
+                      </mat-card-title>
+                       <mat-card-content class="recla-content">
+                        <p>Mucho demora</p>
+                      </mat-card-content>
+                      </div>
+                  </mat-card>
+  
+                </div>
+
+
+              </mat-tab>
+            </div>
+        </mat-tab-group> 
     </div>
-</div>
+
+    
 <app-footer></app-footer>
