@@ -11,7 +11,6 @@ import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { RegisterInformationComponent } from './components/register-information/register-information.component';
 import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
-import { NewPasswordComponent } from './components/new-password/new-password.component';
 import { NavbarLoginComponent } from './components/navbar-login/navbar-login.component';
 import { FooterLoginComponent } from './components/footer-login/footer-login.component';
 import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
@@ -33,7 +32,6 @@ import { MyMessagesComponent } from './components/my-messages/my-messages.compon
     RegisterComponent,
     RegisterInformationComponent,
     ForgotPasswordComponent,
-    NewPasswordComponent,
     NavbarLoginComponent,
     FooterLoginComponent,
     FooterComponent,
