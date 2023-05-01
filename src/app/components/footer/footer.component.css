@@ -1,4 +1,6 @@
 footer{
+   
+   
     position:absolute;
     bottom: 0;
     background: linear-gradient(to right, rgb(92, 57, 110), rgb(171, 82, 156));
@@ -6,7 +8,13 @@ footer{
     width: 100%;
 
 }
-
+.example-spacer {
+    flex: 1 1 auto;
+    
+  }
+.app-name{
+    margin-right: 180px;
+}
 .information{
     display: flex;
     color:white;
@@ -22,9 +30,5 @@ footer{
 }
 .contact{
     margin-left: 15px;
-
-}
-.app-name{
-    font-size: 14px;
-    margin-left: 587px;
+   
 }
