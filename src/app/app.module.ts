@@ -24,6 +24,9 @@ import { HeaderComponent } from './components/header/header.component';
 import { HomeMainComponent } from './components/home-main/home-main.component';
 import { MyMessagesComponent } from './components/my-messages/my-messages.component';
 
+import { ResumeComponent } from './components/resume/resume.component';
+import { PublishedEventComponent } from './components/published-event/published-event.component';
+
 
 
 @NgModule({
@@ -39,7 +42,10 @@ import { MyMessagesComponent } from './components/my-messages/my-messages.compon
     FooterComponent,
     HeaderComponent,
     HomeMainComponent,
-    MyMessagesComponent
+    MyMessagesComponent,
+
+    ResumeComponent,
+    PublishedEventComponent
   ],
   imports: [
     BrowserModule,
