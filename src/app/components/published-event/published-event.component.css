@@ -1,0 +1,258 @@
+
+  .example-spacer {
+      flex: 1 1 auto;
+    }
+    .mat-toolbar.mat-primary {
+      background:linear-gradient(90deg, #5C396E 3.89%, #AB529C 74.08%);
+      color: #fff;
+    }
+    .mat-toolbar-center {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    
+      
+    }
+    
+    /* la barra de transiciones*/
+    mat-tab-group{
+    padding: 20px;
+    }
+ 
+    
+  
+    
+    
+    
+   
+    
+    .social-icons {
+      display: flex;
+      justify-content: left;
+    
+    }
+    
+    .social-icons a {
+      margin-left: 40px;
+      
+    }
+    
+    
+    .social-icons img {
+
+      width: 40px;
+      height: 40px;
+      padding: 15px;
+    }
+     
+    .social-icons2 img {
+
+      width: 60px;
+      height: 60px;
+      padding-right: 190px;
+    }
+    
+    
+    
+    .tittleEvents  {
+      position: relative;
+      padding-left:  35px;
+      margin:10px;
+    
+    }
+    .tittleEvents img{
+      width: 60px;
+      height: 60px;
+      margin-left: 100px;
+      justify-content: center;
+      align-items: center;
+    }
+    .paginasEvents h2{
+      text-align: center;
+      justify-content: center;
+   
+    }
+    
+    
+  .mat-toolbar-row{
+      background:linear-gradient(90deg, #5C396E 3.89%, #AB529C 74.08%);
+    }
+    .mat-toolbar{
+      background:linear-gradient(90deg, #5C396E 3.89%, #AB529C 74.08%);
+      justify-content: center;
+    }
+
+  #card-event-available-box1{
+    display: flex;
+    box-shadow: 9px 5px 33px rgba(72, 72, 72, 0.09);
+    width: 330px;
+    padding: 10px;
+    border-radius: 10px;
+  }
+
+  #info-user{
+    padding: 22px;
+
+  }
+  #photo-user{
+    border-radius: 50%;
+  }
+
+  #card-event-available-box2{
+    display: flex;
+    box-shadow: 9px 5px 33px rgba(72, 72, 72, 0.09);
+    width: 330px;
+    padding: 10px;
+    border-radius: 10px;
+  justify-content: center;
+  align-items: center;
+
+  }
+
+  #photo-event{
+    border-radius: 20%;
+    height: 127px;
+    width: 113px;
+
+  }
+
+  #event-info-card{
+  padding: 22px;
+  }
+
+  #details-event-place {
+    padding: 3px;
+    font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 24px;
+  display:flex;
+  }
+
+  #details-event-time{
+    padding: 3px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 24px;
+    display:flex;
+  }
+
+  #details-event-date{
+    padding: 3px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 24px;
+    display:flex;
+  }
+
+
+  #hashtag-event{
+    background: linear-gradient(90deg, #5C396E 3.89%, #AB529C 74.08%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  /*text-fill-color: transparent;*/
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 300;
+  font-size: 20px;
+
+  }
+/*cards de la primera seccion */
+  #card-event-available{
+
+      margin: 0 auto;
+    
+     
+      border-radius: 5px;
+      background-color: #fff;
+      height: 430px;
+  }
+
+  /*cards de la segunda seccion */
+  #card-event-available2{
+    margin-left:55px;
+    border-radius: 5px;
+    background-color: #fff;
+    height: 430px;
+}
+  #icons-person1{
+    display: flex;
+    box-shadow: 9px 5px 33px rgba(72, 72, 72, 0.09);
+    width: 340px;
+    padding: 5px;
+    border-radius: 10px;
+  
+  }
+
+
+  #cards-available{
+    height: 450px;
+    width: 1350px;
+    padding-top: 30px;
+    box-shadow: 9px 5px 33px rgba(72, 72, 72, 0.09);
+    border-radius: 33px;
+    margin: 40px;
+  
+  }
+  #cards-available2{
+    height: 50px;
+    width: 1200px;
+    padding-top: 30px;
+    box-shadow: 9px 5px 33px rgba(72, 72, 72, 0.09);
+    border-radius: 33px;
+    margin: 30px;
+    margin-left: 150px;
+  
+  }
+  #name-event{
+    margin: 0;
+    font-size: 17px;
+  }
+
+  #navcompo{
+    color: white;
+  }
+#options-nav{
+  padding: 30px;
+}
+
+
+
+#footer{
+  position:relative;
+  bottom: 0;
+  background: linear-gradient(to right, rgb(92, 57, 110), rgb(171, 82, 156));
+  height: 86px;
+  width: 100%;
+
+}
+
+#information{
+  display: flex;
+  color:white;
+  margin-top:35px;
+}
+
+#about{
+  font-size: 18px;
+  width: 400px;
+  height: 24px;
+  display: flex;
+  margin-left: 100px;
+  margin-top: 20px;
+}
+#contact{
+  margin-left: 15px;
+
+}
+#app-name{
+  font-size: 14px;
+  margin-left: 587px;
+  margin-top: 20px;
+}
