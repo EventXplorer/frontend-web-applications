@@ -22,9 +22,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { HeaderComponent } from './components/header/header.component';
 import { HomeMainComponent } from './components/home-main/home-main.component';
 import { MyMessagesComponent } from './components/my-messages/my-messages.component';
-
-import { ResumeComponent } from './components/resume/resume.component';
-import { PublishedEventComponent } from './components/published-event/published-event.component';
+import { SupportComponent } from './components/support/support.component';
 
 
 
@@ -41,9 +39,8 @@ import { PublishedEventComponent } from './components/published-event/published-
     HeaderComponent,
     HomeMainComponent,
     MyMessagesComponent,
+    SupportComponent
 
-    ResumeComponent,
-    PublishedEventComponent
   ],
   imports: [
     BrowserModule,

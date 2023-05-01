@@ -114,5 +114,11 @@
     margin-right: 20%;
     margin-top: 20px;
   }
-  
+
+  /****************************************/
+  .mail, .telephone {
+  clear: both; /* para que los mat form se sitúen debajo del mat card de support */
+  float: right;
+  display: block; /* para que los mat form se vean uno debajo del otro */
+}
   
