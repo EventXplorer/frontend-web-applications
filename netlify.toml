@@ -1,6 +1,9 @@
 [build]
-  command = "ng build --configuration=production && npm run json-server"
+  command = "ng build --configuration=production && json-server --watch $DB_PATH"
   publish = "dist/eventxplorer"
+
+[build.environment]
+DB_PATH = "./db.json"
 
 [dev]
   command = "ng serve --open"
