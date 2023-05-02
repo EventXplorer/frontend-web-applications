@@ -1,6 +1,6 @@
 [build]
   command = "ng build --configuration=production && npm run json-server"
-  publish = "dist/EventXplorer"
+  publish = "dist/eventxplorer"
 
 [dev]
   command = "ng serve --open"

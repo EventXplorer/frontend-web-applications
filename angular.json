@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "frontend-web-applications": {
+    "eventxplorer": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/frontend-web-applications",
+            "outputPath": "dist/eventxplorer",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": [
