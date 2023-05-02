@@ -5,6 +5,10 @@
     align-items: center;
     width:1000px;
   }
+#view-home{
+  padding:60px;
+  margin-left: 7%;
+}
 
 button{
     background: linear-gradient(to right, rgb(92, 57, 110), rgb(171, 82, 156));

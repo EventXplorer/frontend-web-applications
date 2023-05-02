@@ -6,6 +6,10 @@
     margin-left: 10%; /* para dejar un espacio a la izquierda */
     margin-top: 50px;
 }
+#view-messages{
+  padding: 60px;
+  margin-left: 8%;
+}
 .perfil mat-card img {
     border-radius: 50%;
     display: block;

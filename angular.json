@@ -61,10 +61,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "frontend-web-applications:build:production"
+              "browserTarget": "eventxplorer:build:production"
             },
             "development": {
-              "browserTarget": "frontend-web-applications:build:development"
+              "browserTarget": "eventxplorer:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -72,7 +72,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "frontend-web-applications:build"
+            "browserTarget": "eventxplorer:build"
           }
         },
         "test": {
@@ -99,7 +99,7 @@
           "options": {
             "prerender": false,
             "ssr": false,
-            "browserTarget": "frontend-web-applications:build:production",
+            "browserTarget": "eventxplorer:build:production",
             "firebaseProject": "eventxplorer-firebase-auth",
             "firebaseHostingSite": "eventxplorer-firebase-auth"
           }
