@@ -9,6 +9,8 @@ import { canActivate, redirectUnauthorizedTo }  from '@angular/fire/auth-guard';
 import { HomeMainComponent } from './components/home-main/home-main.component';
 import { MyMessagesComponent } from './components/my-messages/my-messages.component';
 import { SupportComponent } from './components/support/support.component';
+import { PublishedEventComponent } from './components/published-event/published-event.component';
+import { ResumeComponent } from './components/resume/resume.component';
 
 const routes: Routes = [
   {path: '', pathMatch: 'full', redirectTo: 'home'},
@@ -19,7 +21,10 @@ const routes: Routes = [
   {path: 'register', component:RegisterComponent},
   {path: 'register/information', component:RegisterInformationComponent},
   {path: 'forgotpassword', component:ForgotPasswordComponent},
-  {path: 'home', component:HomeMainComponent,...canActivate(()=>redirectUnauthorizedTo(['/login']))}
+  {path: 'home', component:HomeMainComponent,...canActivate(()=>redirectUnauthorizedTo(['/login']))},
+
+  {path: 'publishedevent', component:PublishedEventComponent},
+  {path: 'resume', component:ResumeComponent}
 ];
 
 @NgModule({
