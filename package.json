@@ -8,7 +8,9 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "copy-db": "cp db.json dist/eventxplorer/",
-    "build-prod": "webpack --mode production"
+    "build-prod": "webpack --mode production",
+    "deploy": "firebase deploy",
+    "predeploy": "json-server --watch db.json"
   },
   "private": true,
   "dependencies": {
