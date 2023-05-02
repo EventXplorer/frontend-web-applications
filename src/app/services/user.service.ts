@@ -10,7 +10,6 @@ export class UserService {
 
   constructor(private auth: Auth) { }
 
-
   resetPassword({ email }: any){
     return  sendPasswordResetEmail(this.auth, email);
   }
@@ -26,9 +25,5 @@ export class UserService {
   logout(){
     return signOut(this.auth);
   }
-
   
-
-
-
 }

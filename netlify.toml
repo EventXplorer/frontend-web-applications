@@ -1,5 +1,5 @@
 [build]
-  command = "ng build --configuration=production && json-server --watch $DB_PATH"
+  command = "ng build --configuration=production && json-server --watch ./db.json"
   publish = "dist/eventxplorer"
 
 [build.environment]
