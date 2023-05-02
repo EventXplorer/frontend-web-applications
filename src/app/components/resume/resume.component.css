@@ -252,6 +252,7 @@
   width: 330px;
 
   border-radius: 10px;
+  margin:10px 0;
 }
 
 #info-user{
@@ -358,7 +359,7 @@ font-size: 20px;
   box-shadow: 9px 5px 33px rgba(72, 72, 72, 0.09);
   border-radius: 33px;
   margin: auto;
-  float: right;
+  
 }
 #name-event{
   margin: 0;

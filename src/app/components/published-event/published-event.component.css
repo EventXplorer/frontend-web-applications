@@ -12,33 +12,23 @@
   
   .social-icons img {
 
-    width: 40px;
-    height: 40px;
-    padding: 15px;
+    width: 30px;
+    height: 30px;
+    padding-left: 25px;
+    padding-right: 25px;
   }
    
   .social-icons2 img {
 
-    width: 60px;
-    height: 60px;
-    padding-right: 190px;
+    width: 30px;
+    height: 30px;
+
   }
   
   
   
-  .tittleEvents  {
-    position: relative;
-    padding-left:  35px;
-    margin:10px;
-  
-  }
-  .tittleEvents img{
-    width: 60px;
-    height: 60px;
-    margin-left: 100px;
-    justify-content: center;
-    align-items: center;
-  }
+
+
   .paginasEvents h2{
     text-align: center;
     justify-content: center;
@@ -59,8 +49,8 @@ align-items: center;
 
 #info-user{
   padding: 7px;
-  padding-left: 22px;
-  padding-top:22px;
+  padding-left: 10px;
+  padding-top:10px;
 
 }
 #photo-user{
@@ -146,7 +136,7 @@ font-size: 20px;
   margin-left:55px;
   border-radius: 5px;
   background-color: #fff;
-  height: 430px;
+  height: 30px;
 }
 #icons-person1{
   display: flex;
@@ -160,7 +150,7 @@ font-size: 20px;
 
 #cards-available{
   height: 330px;
-  width: 1350px;
+
   padding-top: 10px;
   box-shadow: 9px 5px 33px rgba(72, 72, 72, 0.09);
   border-radius: 33px;
@@ -168,13 +158,13 @@ font-size: 20px;
 
 }
 #cards-available2{
-  height: 50px;
-
-  padding-top: 30px;
-  box-shadow: 9px 5px 33px rgba(72, 72, 72, 0.09);
-  border-radius: 33px;
-  margin: 30px;
-  margin-left: 150px;
+    height: 300px;
+    padding-top: 10px;
+    box-shadow: 9px 5px 33px rgba(72, 72, 72, 0.09);
+    border-radius: 33px;
+    margin: 10px 200px;
+    /* FONT-WEIGHT: 100; */
+    width: 750px;
 
 }
 #name-event{
@@ -182,4 +172,31 @@ font-size: 20px;
   font-size: 17px;
 }
 
+#tab-options-published{
+        margin: 0 auto;
+        width: 80%;
+        text-align: center; 
+}
 
+#name-user{
+    margin: 0px;
+}
+
+#cajita-events-tittle {
+    
+        position: relative;
+       margin: 10px auto;
+      justify-content: center;
+   
+      align-items: center;
+}
+#cajita-events-tittle img{
+   
+    padding-left: 30px;
+    padding-top: 10px;
+   width: 50px;
+}
+
+#cajita-events-tittle  h1{
+  margin: 15px 0px 16px;
+}
