@@ -1,30 +1,6 @@
 
-.example-spacer {
-    flex: 1 1 auto;
-  }
-  .mat-toolbar.mat-primary {
-    background:linear-gradient(90deg, #5C396E 3.89%, #AB529C 74.08%);
-    color: #fff;
-}
-  .mat-toolbar-center {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    
-  }
-  
-/* la barra de transiciones*/
-mat-tab-group{
-  padding: 20px;
-}
-
-
-
-
-
   /* Contenedor principal */
-.container2 {
+  .container2 {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -205,12 +181,10 @@ mat-tab-group{
     width: 40px;
     height: 40px;
   }
-
-
   .tittleEvents {
     text-align: center;
     position: relative;
-    padding: 15px;
+    margin: 5px auto;
   }
   .tittleEvents img{
     width: 30px;
@@ -223,41 +197,10 @@ mat-tab-group{
     text-align: center;
   }
     
-.mat-toolbar-row{
-    background:linear-gradient(90deg, #5C396E 3.89%, #AB529C 74.08%);
-  }
-  .mat-toolbar{
-    background:linear-gradient(90deg, #5C396E 3.89%, #AB529C 74.08%);
-    justify-content: center;
-  }
-
-  
-  .example-spacer {
-    flex: 1 1 auto;
-  }
-  .mat-toolbar.mat-primary {
-    background:linear-gradient(90deg, #5C396E 3.89%, #AB529C 74.08%);
-    color: #fff;
-  }
-  .mat-toolbar-center {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  
-    
-  }
-  
   /* la barra de transiciones*/
   mat-tab-group{
   padding: 20px;
   }
-
-  
-
-  
-  
-  
- 
   
   .social-icons {
     display: flex;
@@ -266,16 +209,15 @@ mat-tab-group{
   }
   
   .social-icons a {
-    margin-left: 40px;
+    margin: 0 auto;
     
   }
-  
   
   .social-icons img {
 
     width: 40px;
     height: 40px;
-    padding: 15px;
+    padding: 5px;
   }
   
   
@@ -308,23 +250,26 @@ mat-tab-group{
   display: flex;
   box-shadow: 9px 5px 33px rgba(72, 72, 72, 0.09);
   width: 330px;
-  padding: 10px;
+
   border-radius: 10px;
 }
 
 #info-user{
-  padding: 22px;
+  padding: 5px;
 
 }
 #photo-user{
   border-radius: 50%;
+  padding-top:5px ;
+  padding-left: 20px;
+  padding-right: 35px;
 }
 
 #card-event-available-box2{
   display: flex;
   box-shadow: 9px 5px 33px rgba(72, 72, 72, 0.09);
   width: 330px;
-  padding: 10px;
+
   border-radius: 10px;
 justify-content: center;
 align-items: center;
@@ -394,26 +339,25 @@ font-size: 20px;
    
     border-radius: 5px;
     background-color: #fff;
-    height: 430px;
+    height: 350px;
   
   
 }
 #icons-person1{
   display: flex;
   box-shadow: 9px 5px 33px rgba(72, 72, 72, 0.09);
-  width: 340px;
-  padding: 5px;
+  width: 330px;
   border-radius: 10px;
 
 }
 
 #cards-available{
-  height: 450px;
+  height: 370px;
   width: 1000px;
-  padding-top: 30px;
+
   box-shadow: 9px 5px 33px rgba(72, 72, 72, 0.09);
   border-radius: 33px;
-  margin: 30px;
+  margin: auto;
   float: right;
 }
 #name-event{
@@ -421,37 +365,3 @@ font-size: 20px;
   font-size: 17px;
 }
 
-
-
-#footer{
-  position:relative;
-  bottom: 0;
-  background: linear-gradient(to right, rgb(92, 57, 110), rgb(171, 82, 156));
-  height: 86px;
-  width: 100%;
-
-}
-
-#information{
-  display: flex;
-  color:white;
-  margin-top:35px;
-}
-
-#about{
-  font-size: 18px;
-  width: 400px;
-  height: 24px;
-  display: flex;
-  margin-left: 100px;
-  margin-top: 20px;
-}
-#contact{
-  margin-left: 15px;
-
-}
-#app-name{
-  font-size: 14px;
-  margin-left: 587px;
-  margin-top: 20px;
-}

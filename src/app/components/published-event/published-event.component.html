@@ -1,34 +1,5 @@
- 
-  <mat-toolbar  id="navcompo">
-    <mat-toolbar-row>
-      <span>My App</span>
-      <span class="example-spacer"></span>
-      <a>Oscar castañedas</a>
-      <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
-        <mat-icon>person</mat-icon>
-      </button>
-    </mat-toolbar-row>
-
-    <mat-toolbar-row>
-      <mat-toolbar id="navcompo" >
-        
-          <span class="spacer"></span>
-      
-   
-          <button mat-button routerLink="/"  style="padding-left: 60px;padding-right: 60px;">Home</button>
-          <button mat-button routerLink="/messages"style="padding-left: 60px;padding-right: 60px;">My Messages</button>
-          <button mat-button routerLink="/publish"style="padding-left: 60px;padding-right: 60px;">Publish Event</button>
-          <button mat-button routerLink="/published" style="padding-left: 60px;padding-right: 60px;">Published Events</button>
-          <button mat-button routerLink="/resume" style="padding-left: 60px;padding-right: 60px; ">Resume</button>
-          <button mat-button routerLink="/support" style="padding-left: 60px; padding-right: 60px;">Support</button>
-     
-      </mat-toolbar>
-      
-      <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
-        <mat-icon>notifications</mat-icon>
-      </button>
-    </mat-toolbar-row>
-  </mat-toolbar>
+<app-header></app-header>
+<div>
   <h1 class="tittleEvents" style="text-align:center">Events <img src="https://lh3.googleusercontent.com/gAB3JyN6ikbvvp-gfPZETR3i9kBLB1G-3Wa14CTSdmXvyDJpjJcxzd7spFZ35zJNEGsBX2DUbYQiRnszw5oiUrIfutcG73zeeMndnFnWIA" ></h1>
   <mat-tab-group  animationDuration="1000ms">
     <mat-tab label="Available" > 
@@ -186,21 +157,6 @@
          </div>
     </mat-tab>
     
-</mat-tab-group>
-
-<div id="footer">
-  <div id="information">
-    <div id="about">
-        <p>About EventXplorer</p>
-        <div id="contact">
-            <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="facebook"></mat-icon>
-            <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="facebook"></mat-icon>
-            <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="facebook"></mat-icon>
-            <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="facebook"></mat-icon>
-        </div>
-    </div>
-    <div id="app-name">
-        <p>© EventXplorer, 2023.</p>
-    </div>
-  </div>
+  </mat-tab-group>
 </div>
+<app-footer></app-footer>
