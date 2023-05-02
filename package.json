@@ -7,8 +7,8 @@
     "build": "ng build && npm run copy-db",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "json-server": "json-server --watch ./db.json",
-    "copy-db": "cp db.json dist/frontend-web-applications/"
+    "json-server": "json-server --watch ./dist/frontend-web-applications/db.json",
+    "copy-db": "cp db.json dist/frontend-web-applications/db.json"
 
   },
   "private": true,
