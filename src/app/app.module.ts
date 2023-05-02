@@ -23,6 +23,8 @@ import { HeaderComponent } from './components/header/header.component';
 import { HomeMainComponent } from './components/home-main/home-main.component';
 import { MyMessagesComponent } from './components/my-messages/my-messages.component';
 import { SupportComponent } from './components/support/support.component';
+import { ResumeComponent } from './components/resume/resume.component';
+import { PublishedEventComponent } from './components/published-event/published-event.component';
 
 
 
@@ -39,7 +41,9 @@ import { SupportComponent } from './components/support/support.component';
     HeaderComponent,
     HomeMainComponent,
     MyMessagesComponent,
-    SupportComponent
+    SupportComponent,
+    ResumeComponent,
+    PublishedEventComponent
 
   ],
   imports: [
