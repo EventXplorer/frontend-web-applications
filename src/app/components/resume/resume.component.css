@@ -62,7 +62,7 @@
     margin: 0 15px 30px; /* ajusta el espacio entre los bloques y las filas */
     box-shadow: 9px 5px 33px rgba(72, 72, 72, 0.09);
     border-radius: 10px;
-    height: 130px;
+    height: 160px;
   }
   .bloque img {
     width: 25%; /* ajusta el ancho de la imagen al ancho del bloque */
