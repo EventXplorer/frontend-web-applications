@@ -1,38 +1,54 @@
 <app-header></app-header>
 
-    <div id="view-home">
-        <div  id="img_home" class="home_account" >
-            <div class="card-1 p-4 shadow-0 border-round w-100 lg:w-20 Home inline-block">
-            <img class="UserPhoto home-img" alt="UserPhoto" :src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8aG9tYnJlcyUyMGl0YWxpYW5vc3xlbnwwfHwwfHw%3D&w=1000&q=80">
-            <aside class="text5">Hi, Oscar!</aside>
-    
-            
-                <div class="popular_events p-4 shadow-0 border-round w-auto lg:w-40 Home ">
-                    <aside class="text3 font-medium line-height-3 ">Popular Events</aside>
-                    
+        
+    <div  id="img_home" class="home_account" >
+        <div class="card-1 p-4 shadow-0 border-round w-100 lg:w-20 Home inline-block">
+        <img class="UserPhoto home-img" alt="UserPhoto" :src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8aG9tYnJlcyUyMGl0YWxpYW5vc3xlbnwwfHwwfHw%3D&w=1000&q=80">
+        <aside class="text5">Hi, Oscar!</aside>
+
+        
+            <div class="popular_events p-4 shadow-0 border-round w-auto lg:w-40 Home ">
+                <aside class="text3 font-medium line-height-3 ">Popular Events</aside>
+                <div class="card1">
+                    <div class="row1">
+                        <div class="event-p1"><img class="popular-event-photo" src="https://elcomercio.pe/resizer/4VDMUOXaowCHmy8K4CYY3BFHIKY=/1200x800/smart/filters:format(jpeg):quality(75)/cloudfront-us-east-1.images.arcpublishing.com/elcomercio/BS5BJY2OVZBKJFQXL5FAPZQB34.jpeg"></div>
+                        <div class="event-p2"><img class="popular-event-photo"  src="https://gestion.pe/resizer/hHboAW6wmT278svDiXbbAnvq_OY=/1200x800/smart/filters:format(jpeg):quality(75)/cloudfront-us-east-1.images.arcpublishing.com/elcomercio/QEJ3GN7KYZHVFC27IP4LG3OSC4.jpg"></div>
+                    </div>
+                    <div class="row2">
+                        <div class="event-p3"><img class="popular-event-photo" src="https://cde.3.elcomercio.pe/ima/0/1/2/9/5/1295045.jpg"></div>
+                        <div class="event-p4"><img class="popular-event-photo"  src="https://arc-anglerfish-arc2-prod-elcomercio.s3.amazonaws.com/public/OBXSRN3D7FEXLOJ5SJXXGVDVEQ.jpg"></div>
+                    </div>
                 </div>
-    
             </div>
-    
-            <div class="card-2 p-4 shadow-0 border-round w-100 lg:w-20 Home inline-block">
-                <div style="text-align: center;">
-                    <a routerLink="/login" ><aside class="text2 font-medium line-height-3">Log Out</aside></a>
-                </div>
-                <button mat-flat-button color="accent">Published Event <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="home"></mat-icon>
-                </button>
-                    <div class="box_blank p-4 shadow-0 border-round w-auto lg:w-20 Home"> </div>
-                        <div class="recent_events p-4 shadow-0 border-round w-auto lg:w-20 Home">
-                            <aside class="text3 font-medium line-height-3">Recent Events</aside>
-                            <div class="Boxes" v-for="product in recent_event.slice(0,2)" :key="event.id">
-                                <div class="box1 p-4 shadow-1 border-round w-full lg:w-20">
-                                    
+
+        </div>
+
+        <div class="card-2 p-4 shadow-0 border-round w-100 lg:w-20 Home inline-block">
+            <div style="text-align: center;">
+                <a href="#" ><aside class="text2 font-medium line-height-3">My account</aside></a>
+            </div>
+            <button mat-flat-button color="accent">Published Event <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="home"></mat-icon>
+            </button>
+                <div class="box_blank p-4 shadow-0 border-round w-auto lg:w-20 Home"> </div>
+                    <div class="recent_events p-4 shadow-0 border-round w-auto lg:w-20 Home">
+                        <aside class="text3 font-medium line-height-3">Recent Events</aside>
+                        <div class="Boxes" v-for="product in recent_event.slice(0,2)" :key="event.id">
+                            <div class="box1 p-4 shadow-1 border-round w-full lg:w-20">
+                                <div class="card2">
+                                    <div class="row1">
+                                        <div class="event-p1"><img class="popular-event-photo" src="https://elcomercio.pe/resizer/Ez_pABMd742FzK1dANHm5zwY49I=/580x330/smart/filters:format(jpeg):quality(75)/cloudfront-us-east-1.images.arcpublishing.com/elcomercio/WJ7SOLTXPFCRPFRUVIIYSBABCU.jpg"></div>
+                                        <div class="event-p2"><img class="popular-event-photo"  src="https://2.bp.blogspot.com/-D128NVSVRZk/WefCxyDeczI/AAAAAAAAHm8/HCE-ZnzWlqMtldlPkdVOxwQgFb63k9ZBACLcBGAs/s1600/Promoci%25C3%25B3n%2Bde%2Blas%2Bexportaciones%2B%252B%2Blas%2Bventajas%2Bde%2Bparticipar%2Ben%2Buna%2BFeria%2BInternacional.jpg"></div>
+                                    </div>
+                                    <div class="row2">
+                                        <div class="event-p3"><img class="popular-event-photo" src="https://3.bp.blogspot.com/-OJKlrWal7g8/WbQnei-OEOI/AAAAAAAAHXk/nPr61h98NlIlm1zpM52q2vLc3wpA4tg7QCLcBGAs/w1200-h630-p-k-no-nu/Las%2BFerias%2BInternacionales%2B%252B%2Bplanificaci%25C3%25B3n%252C%2Bretos%2By%2Boportunidades.jpg"></div>
+                                        <div class="event-p4"><img class="popular-event-photo"  src="https://elcomercio.pe/resizer/k30WIB7FKF2J-k9dgPzhnTugHX4=/980x0/smart/filters:format(jpeg):quality(75)/arc-anglerfish-arc2-prod-elcomercio.s3.amazonaws.com/public/6N2OQNIHWFBMTOGIA6KB7S6UP4.jpg"></div>
+                                    </div>
                                 </div>
                             </div>
-                    </div>
-            </div>
+                        </div>
+                </div>
         </div>
-    </div>   
-    
+    </div>
 
 
 <app-footer></app-footer>
