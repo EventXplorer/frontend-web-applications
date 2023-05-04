@@ -1,0 +1,105 @@
+<app-header></app-header>
+
+<div >
+  <div class="center-title" style="margin-top: 50px;">
+    <p id="id-center-title">Make an Event</p>
+    <img src="../../../assets/cajamorada.jpg" alt="caja morada" id="cajam">
+  </div>
+  
+  <div>
+    <img src="../../../assets/nubemorada.jpg" alt="nube morada" id="nubemorada-id">
+  </div>
+  
+  <div id="imagen">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSBrjjIbQnGKoKdPZ8_tZxGAJgXz5nKQRooS-kuU06RMFHp5Avu" alt="cuadernoylapiz" id="cuaderoylapiz">
+  </div>
+  
+  <div id="id-upload-document">
+    <p class="upload-document-text">Upload Validation Document</p>
+    <form class="upload-document">
+    <mat-form-field class="upload-document-width">
+      <mat-label>URL</mat-label>
+      <input matInput #message maxlength="256" placeholder="Ex: https://www.google.com...">
+    </mat-form-field>
+  </form>
+  </div>
+  
+  <div id="event-title">
+      <p class="title">Event Title</p>
+      <form class="example-title">
+      <mat-form-field class="example-full-title">
+        <mat-label>Title</mat-label>
+        <input matInput placeholder="Inserts a title" value="">
+      </mat-form-field>
+      </form>
+  </div>
+  
+  <div id="event-category">
+      <p class="categ">Category</p>
+      <mat-form-field id="id-event-category">
+      <mat-label>Select Category</mat-label>
+      <mat-select [(ngModel)]="selectedOption">
+        <mat-option *ngFor="let option of options" [value]="option.value">
+          {{option.viewValue}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+  
+  <div id="event-address">
+      <p class="address">Address</p>
+      <form class="example-address">
+      <mat-form-field class="example-full-address">
+        <mat-label>Address</mat-label>
+        <input matInput placeholder="Inserts a address" value="">
+      </mat-form-field>
+      </form>
+  </div>
+  
+  <div id="event-city">
+    <p class="city">City</p>
+    <mat-form-field id="id-select-city">
+    <mat-label>Select City</mat-label>
+    <mat-select [(ngModel)]="selectedOption2">
+      <mat-option *ngFor="let option of options2" [value]="option.value">
+        {{option.viewValue}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  </div>
+  
+  <div id="date-picker">
+      <p class="date">Date</p>
+      <mat-form-field id="id-date-picker" appearance="fill">
+          <mat-label>DD/MM/YYYY</mat-label>
+          <input matInput [matDatepicker]="picker">
+          <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+  </div>
+  
+  <div id="date-hour">
+      <p class="date-hour">Date</p>
+  <input type="time" id="appt" name="appt"
+         min="09:00" max="18:00" required>
+  </div>
+  
+  <div id="capacity">
+      <p class="capacity">Capacity</p>
+      <form class="capacity1">
+          <mat-form-field class="capacity2">
+            <mat-label>Capacity</mat-label>
+            <input type="tel" matInput placeholder="xxxx">
+          </mat-form-field>
+        </form>
+  </div>
+
+  <div style="text-align: center; ">
+    <a id="btn-make-order" style="color: white; " mat-raised-button  routerLink="/publish-event/payment-details">CONTINUE</a>
+  </div>
+  
+      
+</div>
+
+
+<app-footer></app-footer>
