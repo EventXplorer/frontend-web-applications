@@ -1,0 +1,162 @@
+.example-spacer {
+    flex: 1 1 auto;
+  }
+  .mat-toolbar.mat-primary {
+    background:linear-gradient(90deg, #5C396E 3.89%, #AB529C 74.08%);
+    color: #fff;
+}
+  .mat-toolbar-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    
+  }
+  
+/* la barra de transiciones*/
+mat-tab-group{
+  padding: 20px;
+}    
+.mat-toolbar-row{
+    background:linear-gradient(90deg, #5C396E 3.89%, #AB529C 74.08%);
+  }
+  .mat-toolbar{
+    background:linear-gradient(90deg, #5C396E 3.89%, #AB529C 74.08%);
+    justify-content: center;
+  }
+
+  
+  .example-spacer {
+    flex: 1 1 auto;
+  }
+  .mat-toolbar.mat-primary {
+    background:linear-gradient(90deg, #5C396E 3.89%, #AB529C 74.08%);
+    color: #fff;
+  }
+  .mat-toolbar-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+    
+  }
+  
+  /* la barra de transiciones*/
+  mat-tab-group{
+  padding: 20px;
+  }
+
+.mat-toolbar-row{
+    background:linear-gradient(90deg, #5C396E 3.89%, #AB529C 74.08%);
+  }
+  .mat-toolbar{
+    background:linear-gradient(90deg, #5C396E 3.89%, #AB529C 74.08%);
+    justify-content: center;
+  }
+
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       /*contenido*/
+       #payment-card{
+            height: 700px;
+            width: 700px;
+        background:white;
+       margin: 30px auto;
+        }
+        #añaimg{
+        justify-content: center;
+        margin-left: 250px;
+        margin-top: 10px;
+        border-radius:50%;
+        }
+        #ttile{
+            font-family: 'Poppins';
+        background-color: white;
+        display: flex;
+        align-items: center;
+        text-transform: capitalize;
+        text-align: center;
+        padding-left: 100px;
+        font-size: 30px;
+        /* #848484 */
+        height: 100px;
+        color: #848484;
+        margin-left: 140px;
+
+        }
+        #subttile{
+            margin-left: 30px;
+            margin-right: 100px;
+            font-size: 30px;
+            display: inline-block;
+            color:#9F7CA0;
+        }
+        #text{
+            font-size: 30px;
+            color: black;
+            text-align: center;
+            justify-content: center;
+        }
+        #block{
+            box-shadow: 9px 5px 33px rgba(72, 72, 72, 0.09);
+    border-radius: 10px;
+        }
+
+       #cod1{
+        margin: 20px;
+       }
+
+       #accept-block{
+        width: 150px;
+        padding: 40px;
+        background: linear-gradient(90deg, #5C396E 3.89%, #AB529C 74.08%);
+border-radius: 10px;
+        margin: 30px auto;
+       }
+       #accept-text{
+        text-align: center;
+       }
+
+#payment-id{
+    font-family: 'Poppins';
+    font-style: normal;
+    margin-left: -40px;
+    font-weight: 500;
+    font-size: 35px;
+    line-height: 24px;
+    /* identical to box height, or 69% */
+    
+    display: flex;
+    align-items: center;
+    text-transform: capitalize;
+    
+    /* #848484 */
+    
+    color: #848484;
+}
