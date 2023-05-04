@@ -20,19 +20,19 @@ const routes: Routes = [
   {path: '', pathMatch: 'full', redirectTo: 'home'},
   // {path: '**', pathMatch: 'full', redirectTo: 'home'},
   {path: 'login', component:LoginComponent},
-  {path: 'mymessages', component:MyMessagesComponent},
-  {path: 'support', component:SupportComponent},
+  {path: 'mymessages', component:MyMessagesComponent,...canActivate(()=>redirectUnauthorizedTo(['/login']))},
+  {path: 'support', component:SupportComponent,...canActivate(()=>redirectUnauthorizedTo(['/login']))},
   {path: 'register', component:RegisterComponent},
   {path: 'register/information', component:RegisterInformationComponent},
   {path: 'forgotpassword', component:ForgotPasswordComponent},
   {path: 'home', component:HomeMainComponent,...canActivate(()=>redirectUnauthorizedTo(['/login']))},
 
-  {path: 'publishedevent', component:PublishedEventComponent},
-  {path: 'resume', component:ResumeComponent},
-  {path: 'publish-event/make-event', component:PeMakeEventComponent},
-  {path: 'publish-event/payment-details', component:PePaymentdetailsComponent},
-  {path:'publish-event/payment-completed', component:PePaymentCompletedComponent},
-  {path:'publish-event/event-progress', component:PeEventProgressComponent}
+  {path: 'publishedevent', component:PublishedEventComponent,...canActivate(()=>redirectUnauthorizedTo(['/login']))},
+  {path: 'resume', component:ResumeComponent,...canActivate(()=>redirectUnauthorizedTo(['/login']))},
+  {path: 'publish-event/make-event', component:PeMakeEventComponent,...canActivate(()=>redirectUnauthorizedTo(['/login']))},
+  {path: 'publish-event/payment-details', component:PePaymentdetailsComponent,...canActivate(()=>redirectUnauthorizedTo(['/login']))},
+  {path:'publish-event/payment-completed', component:PePaymentCompletedComponent,...canActivate(()=>redirectUnauthorizedTo(['/login']))},
+  {path:'publish-event/event-progress', component:PeEventProgressComponent,...canActivate(()=>redirectUnauthorizedTo(['/login']))}
 ];
 
 @NgModule({
