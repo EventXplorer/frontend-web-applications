@@ -1,310 +1,310 @@
 label {
-    display: block;
-    font: 1rem 'Fira Sans', sans-serif;
-  }
-  
-  input,
-  label {
-    margin: 0.5rem 0;
-  }
-  
-  .center-title{
-    display: flex;
-  }
-  
-  #id-center-title{
-    margin-left: 800px;
-    margin-top: 25px;
-    font-style: normal;
-    font-weight: 1000;
-    font-size: 40px;
-    line-height: 24px;
-    align-items: center;
-    color: #848484;
-  }
-  
-  #cajam{
-      max-width: 50px;
-      height: auto;
-      position: relative;
-      top: -60px;
-      left: 1100px;
-      box-shadow: 9px 5px 33px rgba(72, 72, 72, 0.09);
-      border-radius: 33px;
-    }
-  
-    #nubemorada{
-      max-width: 60px;
-      height: auto;
-      position: relative;
-      top: 40px;
-      left: 360px;
-    }
-  
-  .example-form2{
-    width:80%;
-    margin-left: 30px;
-  }
-  
-  .example-full-address{
-    width:80%;
-  }
-  .addr{
-    /* Address */
-  
-  width: 164px;
-  height: 65px;
-  left: 191px;
-  top: 495px;
-  
-  font-style: normal;
-  font-weight: 700;
-  font-size: 25px;
-  line-height: 24px;
-  /* or 96% */
-  
+  display: block;
+  font: 1rem 'Fira Sans', sans-serif;
+}
+
+input,
+label {
+  margin: 0.5rem 0;
+}
+
+.center-title{
   display: flex;
-  align-items: center;
-  
-  color: #000000;
-  }
-  
-  #event-address{
-    display: flex;
-    margin-top: 100px;
-    margin-left: 410px;
-  }
-  
-  #event-category{
-    
-  }
-  
-  #date-picker{
-    display: flex;
-    margin-right: 100px;
-  }
-  
-  .date{
-    margin-left: 410px;
-    margin-right: 100px;
-    font-style: normal;
-    font-weight: 700;
-    font-size: 25px;
-    line-height: 24px;
-    display: flex;
-    align-items: center;
-    color: #000000;
-  
-  }
-  
-  .capacity1 {
-    min-width: 150px;
-    max-width: 500px;
-    width: 100%;
-  }
-  
-  .capacity2 {
-    width: 20%;
-  }
-  
-  #event-title{
-    display:flex;
-    margin-left: 410px;
-    margin-top: 0px;
-  
-  }
-  
-  .title{
-    font-style: normal;
-    font-weight: 700;
-    font-size: 25px;
-    line-height: 24px;
-    display: flex;
-    align-items: center;
-    margin-right: 30px;
-    color: #000000;
-  }
-  
-  .categ{
-    /* Category */
-    width: 199px;
-    font-style: normal;
-    font-weight: 700;
-    font-size: 25px;
-    line-height: 24px;
-    align-items: center;
-    color: #000000;
-    margin-right: -50px;
-  
-  }
-  
-  #event-category{
-    display: flex;
-    margin-left: 410px;
-    margin-top: -5px;
-  }
-  
-  .address{
-  width: 95px;
+}
+
+#id-center-title{
+  margin-left: 800px;
+  margin-top: 25px;
   font-style: normal;
-  font-weight: 700;
-  font-size: 25px;
+  font-weight: 1000;
+  font-size: 40px;
   line-height: 24px;
-  margin-right: 50px;
-  color: #000000;
+  align-items: center;
+  color: #848484;
+}
+
+#cajam{
+    max-width: 50px;
+    height: auto;
+    position: relative;
+    top: -60px;
+    left: 1100px;
+    box-shadow: 9px 5px 33px rgba(72, 72, 72, 0.09);
+    border-radius: 33px;
   }
-  
-  #event-address{
-    display:flex;
-    margin-left: 409px;
-    margin-top: 0px;
+
+  #nubemorada{
+    max-width: 60px;
+    height: auto;
+    position: relative;
+    top: 40px;
+    left: 360px;
   }
+
+.example-form2{
+  width:80%;
+  margin-left: 30px;
+}
+
+.example-full-address{
+  width:80%;
+}
+.addr{
+  /* Address */
+
+width: 164px;
+height: 65px;
+left: 191px;
+top: 495px;
+
+font-style: normal;
+font-weight: 700;
+font-size: 25px;
+line-height: 24px;
+/* or 96% */
+
+display: flex;
+align-items: center;
+
+color: #000000;
+}
+
+#event-address{
+  display: flex;
+  margin-top: 100px;
+  margin-left: 410px;
+}
+
+#event-category{
   
-  #event-city{
-    display:flex;
-    margin-left: 410px;
-    margin-top: 0px;
-  }
-  
-  .city{
+}
+
+#date-picker{
+  display: flex;
+  margin-right: 100px;
+}
+
+.date{
+  margin-left: 410px;
   margin-right: 100px;
   font-style: normal;
   font-weight: 700;
   font-size: 25px;
   line-height: 24px;
+  display: flex;
   align-items: center;
-  
   color: #000000;
-  
-  }
-  
-  /* */
-  #date-picker{
-    display:flex;
-    margin-left: -1px;
-    margin-top: -5px;
-  }
-  
-  .date{
-    margin-right: 91px;
-  }
-  
-  .date-hour{
-    margin-top: 5px;
-    width: 199px;
-    font-style: normal;
-    font-weight: 700;
-    font-size: 25px;
-    line-height: 24px;
-    align-items: center;
-    color: #000000;
-    margin-right: -50px;
-  
-  }
-  
-  #date-hour{
-    display:flex;
-    margin-left: 410px;
-    margin-top: 0px;
-  }
-  #capacity{
-    display:flex;
-    margin-left: 950px;
-    margin-top: -64px;
-  }
-  
-  .capacity{
-    font-style: normal;
-    font-weight: 700;
-    font-size: 25px;
-    line-height: 24px;
-    margin-right: 50px;
-  /* identical to box height, or 96% */
-  
-    display: flex;
-    align-items: center;
-  
-    color: #000000;
-  }
-  
-  
-  #cajam{
-    display:flex;
-    margin-top: 80px;
-    margin-left: -1100px;
-  }
-  
-  #id-date-picker{
-    width: 160px;
-  }
-  
-  #id-select-city{
-    width: 140px;
-  }
-  
-  #id-event-category{
-    width: 175px;
-  }
-  
-  .event-url-class {
-    min-width: 150px;
-    max-width: 500px;
-    
-  }
-  
-  .event-url-class2 {
-    
-  }
-  
-  #id-upload-document{
-    display:flex;
-    margin-top: -465px;
-    margin-left: 410px;
-  }
-  
-  .upload-document{
-  
-  }
-  
-  .upload-document-text{
-    margin-right: 50px;
-    margin-top: 20px;
-    font-style: normal;
-    font-weight: 600;
-    font-size: 24px;
-    line-height: 36px;
-    text-align: center;
-    text-decoration-line: underline;
-    background: linear-gradient(90deg, #5C396E 3.89%, #AB529C 74.08%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: #AB529C;
-    background-clip: text;
-  }
-  
-  .upload-document-width{
-    width: 500px;
-    
-  }
-  
-  #cuaderoylapiz{
-    display: flex;
-    margin-left: 850px;
-    margin-top: 0px;
-    width: 400px;
-    height: 400px;
-  }
-  
-  #nubemorada-id{
-    display:flex;
-    width: 75px;
-    height: 50px;
-    margin-top: -25px;
-    margin-left: 320px
-  }
+
+}
+
+.capacity1 {
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+}
+
+.capacity2 {
+  width: 20%;
+}
+
+#event-title{
+  display:flex;
+  margin-left: 410px;
+  margin-top: 0px;
+
+}
+
+.title{
+  font-style: normal;
+  font-weight: 700;
+  font-size: 25px;
+  line-height: 24px;
+  display: flex;
+  align-items: center;
+  margin-right: 30px;
+  color: #000000;
+}
+
+.categ{
+  /* Category */
+  width: 199px;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 25px;
+  line-height: 24px;
+  align-items: center;
+  color: #000000;
+  margin-right: -50px;
+
+}
+
+#event-category{
+  display: flex;
+  margin-left: 410px;
+  margin-top: -5px;
+}
+
+.address{
+width: 95px;
+font-style: normal;
+font-weight: 700;
+font-size: 25px;
+line-height: 24px;
+margin-right: 50px;
+color: #000000;
+}
+
+#event-address{
+  display:flex;
+  margin-left: 409px;
+  margin-top: 0px;
+}
+
+#event-city{
+  display:flex;
+  margin-left: 410px;
+  margin-top: 0px;
+}
+
+.city{
+margin-right: 100px;
+font-style: normal;
+font-weight: 700;
+font-size: 25px;
+line-height: 24px;
+align-items: center;
+
+color: #000000;
+
+}
+
+/* */
+#date-picker{
+  display:flex;
+  margin-left: -1px;
+  margin-top: -5px;
+}
+
+.date{
+  margin-right: 91px;
+}
+
+.date-hour{
+  margin-top: 5px;
+  width: 199px;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 25px;
+  line-height: 24px;
+  align-items: center;
+  color: #000000;
+  margin-right: -50px;
+
+}
+
+#date-hour{
+  display:flex;
+  margin-left: 410px;
+  margin-top: 0px;
+}
+#capacity{
+  display:flex;
+  margin-left: 950px;
+  margin-top: -64px;
+}
+
+.capacity{
+  font-style: normal;
+  font-weight: 700;
+  font-size: 25px;
+  line-height: 24px;
+  margin-right: 50px;
+/* identical to box height, or 96% */
+
+  display: flex;
+  align-items: center;
+
+  color: #000000;
+}
 
 
-  #btn-make-order{
-    background: linear-gradient(90deg, #5C396E 3.89%, #AB529C 94.23%);
-    height: 50px;
+#cajam{
+  display:flex;
+  margin-top: 80px;
+  margin-left: -1100px;
+}
+
+#id-date-picker{
+  width: 160px;
+}
+
+#id-select-city{
+  width: 140px;
+}
+
+#id-event-category{
+  width: 175px;
+}
+
+.event-url-class {
+  min-width: 150px;
+  max-width: 500px;
+  
+}
+
+.event-url-class2 {
+  
+}
+
+#id-upload-document{
+  display:flex;
+  margin-top: -465px;
+  margin-left: 410px;
+}
+
+.upload-document{
+
+}
+
+.upload-document-text{
+  margin-right: 50px;
+  margin-top: 20px;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 36px;
+  text-align: center;
+  text-decoration-line: underline;
+  background: linear-gradient(90deg, #5C396E 3.89%, #AB529C 74.08%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: #AB529C;
+  background-clip: text;
+}
+
+.upload-document-width{
+  width: 500px;
+  
+}
+
+#cuaderoylapiz{
+  display: flex;
+  margin-left: 850px;
+  margin-top: 0px;
+  width: 400px;
+  height: 400px;
+}
+
+#nubemorada-id{
+  display:flex;
+  width: 75px;
+  height: 50px;
+  margin-top: -25px;
+  margin-left: 320px
+}
+
+
+#btn-make-order{
+  background: linear-gradient(90deg, #5C396E 3.89%, #AB529C 94.23%);
+  height: 50px;
 
 }

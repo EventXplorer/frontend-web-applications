@@ -1,36 +1,35 @@
 .example-card {
-    max-width: 400px;
-    margin-top: 100px;
-    margin-left: 400px;
-    box-shadow: 9px 5px 33px rgba(72, 72, 72, 0.09);
-    border-radius: 33px;
-  }
-  
-  .example-header-image {
-    background-image: url('https://media.istockphoto.com/id/1273871774/es/foto/joven-joven-%C3%A1rabe-guapo-hombre-que-lleva-camiseta-blanca-casual-cara-feliz-sonriendo-con-los.jpg?s=612x612&w=0&k=20&c=26Su4ruTsO9ppelZcIrHdog54BV43qFc-UE92wlNh_A=');
-    background-size: cover;
-    max-width: 400px;
-  }
+  max-width: 400px;
+  margin-top: 100px;
+  margin-left: 400px;
+  box-shadow: 9px 5px 33px rgba(72, 72, 72, 0.09);
+  border-radius: 33px;
+}
 
-  .subtitle {
-    text-align: center;
-    font-size: 3em;
-    margin-top: 50px;
-    font-weight: bold;
-    color: gray;
-  }
-  .parrafo1 {
-    font-size: 160%;
-    text-align: center;
-    color:grey;
-  }
+.example-header-image {
+  background-image: url('https://media.istockphoto.com/id/1273871774/es/foto/joven-joven-%C3%A1rabe-guapo-hombre-que-lleva-camiseta-blanca-casual-cara-feliz-sonriendo-con-los.jpg?s=612x612&w=0&k=20&c=26Su4ruTsO9ppelZcIrHdog54BV43qFc-UE92wlNh_A=');
+  background-size: cover;
+  max-width: 400px;
+}
 
-  #googlemaps{
-    max-width: 600px;
-    height: auto;
-    position: relative;
-    top: -430px;
-    left: 1000px;
-    box-shadow: 9px 5px 33px rgba(72, 72, 72, 0.09);
-    border-radius: 33px;
+.subtitle {
+  text-align: center;
+  font-size: 3em;
+  margin-top: 50px;
+  font-weight: bold;
+  color: gray;
+}
+.parrafo1 {
+  font-size: 160%;
+  text-align: center;
+  color:grey;
+}
+
+#googlemaps{
+  max-width: 520px;
+  position: relative;
+  top: -500px;
+  left: 1000px;
+  box-shadow: 9px 5px 33px rgba(72, 72, 72, 0.09);
+  border-radius: 33px;
 }

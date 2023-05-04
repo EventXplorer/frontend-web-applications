@@ -4,8 +4,8 @@
     position: absolute;
     width: 334px;
     height: 24px;
-    left: 604px;
-    top: 180px;
+    margin-left: 800px;
+    margin-top: 50px;
     
     font-style: normal;
     font-weight: 600;
@@ -68,8 +68,8 @@ color: #000000;
 position: absolute;
 width: 101px;
 height: 26px;
-left: 418px;
-top: 343px;
+left: 529px;
+top: 430px;
 
 font-style: normal;
 font-weight: 500;
@@ -90,8 +90,8 @@ color: #62637C;
     position: absolute;
     width: 53px;
     height: 53px;
-    left: 531px;
-    top: 334px;
+    left: 620px;
+    top: 420px;
     
 
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
@@ -103,21 +103,15 @@ color: #62637C;
     position: absolute;
 width: 69px;
 height: 24px;
-left: 434px;
-top: 396px;
-
+left: 530px;
+top: 490px;
 font-style: normal;
 font-weight: 600;
 font-size: 16px;
 line-height: 24px;
-/* identical to box height */
-
 display: flex;
 align-items: center;
 text-transform: capitalize;
-
-/* #000000 */
-
 color: #000000;
 }
 
@@ -125,15 +119,12 @@ color: #000000;
     position: absolute;
 width: 125px;
 height: 24px;
-left: 572px;
-top: 396px;
-
+left: 650px;
+top: 490px;
 font-style: normal;
 font-weight: 600;
 font-size: 20px;
 line-height: 23px;
-/* or 115% */
-
 display: flex;
 align-items: center;
 text-transform: uppercase;
@@ -148,8 +139,8 @@ color: #9F7CA0;
 position: absolute;
 width: 138px;
 height: 24px;
-left: 434px;
-top: 430px;
+left: 530px;
+top: 530px;
 
 font-style: normal;
 font-weight: 600;
@@ -171,8 +162,8 @@ color: #000000;
 position: absolute;
 width: 159px;
 height: 24px;
-left: 572px;
-top: 435px;
+left: 660px;
+top: 530px;
 
 font-style: normal;
 font-weight: 600;
@@ -191,10 +182,10 @@ color: #9F7CA0;
 
 #map-adress-publish{
     position: absolute;
-width: 33px;
-height: 33px;
-left: 667px;
-top: 420px;
+    width: 33px;
+    height: 33px;
+    left: 760px;
+    top: 520px;
 
 }
 
@@ -203,8 +194,8 @@ top: 420px;
 position: absolute;
 width: 585px;
 height: 75px;
-left: 189px;
-top: 498px;
+left: 290px;
+top: 658px;
 
 background: #FFFFFF;
 box-shadow: 9px 5px 33px rgba(72, 72, 72, 0.09);
@@ -263,8 +254,8 @@ color: rgba(56, 64, 79, 0.85);
     position: absolute;
     width: 336px;
     height: 350px;
-    left: 910px;
-    top: 225px;
+    left: 1100px;
+    top: 360px;
     
     background: #FFFFFF;
     box-shadow: 9px 5px 33px rgba(72, 72, 72, 0.09);
@@ -274,7 +265,7 @@ color: rgba(56, 64, 79, 0.85);
     position: absolute;
 width: 88px;
 height: 30px;
-left: 23px;
+left: 30px;
 top: 29px;
 
 font-style: normal;
@@ -362,8 +353,8 @@ color: #000000;
     position: absolute;
     width: 249px;
     height: 56px;
-    left: 43px;
-    top: 176px;
+    left: 120px;
+    top: 200px;
 
 }
 
@@ -392,8 +383,8 @@ color: #000000;
     position: absolute;
     width: 249px;
     height: 56px;
-    left: 43px;
-    top: 256px;
+    left: 123px;
+    top: 265px;
 
     border-radius: 10px;
 }
@@ -415,7 +406,7 @@ display: flex;
 align-items: center;
 text-transform: uppercase;
 
-/* Pie de Página */
+/* Pie de PÃ¡gina */
 
 background: linear-gradient(90deg, #5C396E 3.89%, #AB529C 74.08%);
 -webkit-background-clip: text;
@@ -437,14 +428,13 @@ background-clip: text;
 
 
 
-
 /*-------------------------------------------------------changevisa------------------------------*/
 #changes{
     position: absolute;
 width: 259px;
 height: 34px;
-left: 638px;
-top: 580px;
+left: 590px;
+top: 740px;
 
 font-style: normal;
 font-weight: 500;
@@ -471,4 +461,14 @@ color: #79627C;
 #btn-cancel{
     background: white;
     height: 50px;
+}
+
+#card1-publish{
+    margin-top: 100px;
+    margin-left: 100px;
+}
+
+#check{
+    display: flex;
+    margin-top: 130px;
 }

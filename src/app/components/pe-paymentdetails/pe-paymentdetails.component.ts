@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./pe-paymentdetails.component.css']
 })
 export class PePaymentdetailsComponent {
-
+  isChecked=false;
 }
