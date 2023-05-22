@@ -1,3 +1,7 @@
+.my-profile{
+  padding: 100px;
+}
+
 .perfil {
     max-width: 300px;
     display: inline-block; /* para que el div ocupe solo el ancho que necesita */

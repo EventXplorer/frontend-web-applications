@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { MyMessagesComponent } from './my-messages.component';
+import { MyProfileComponent } from './my-profile.component';
 
-describe('MyMessagesComponent', () => {
-  let component: MyMessagesComponent;
-  let fixture: ComponentFixture<MyMessagesComponent>;
+describe('MyProfileComponent', () => {
+  let component: MyProfileComponent;
+  let fixture: ComponentFixture<MyProfileComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ MyMessagesComponent ]
+      declarations: [ MyProfileComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(MyMessagesComponent);
+    fixture = TestBed.createComponent(MyProfileComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
