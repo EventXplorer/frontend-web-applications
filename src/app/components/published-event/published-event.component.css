@@ -1,5 +1,5 @@
 *{
- font-family: 'Poppins';
+ 
 }
 
 .social-icons {
@@ -202,4 +202,32 @@ font-size: 20px;
 
 #cajita-events-tittle  h1{
   margin: 15px 0px 16px;
+}
+
+#input-search-event{
+  margin-top: 35px;
+  width: 50%;
+}
+
+
+table {
+  background-color: #a18ebc;
+  color: white; 
+}
+
+.table-events-by-category{
+  margin-top: 25px;
+}
+
+
+.custom-paginator {
+  background: linear-gradient(to right, rgb(92, 57, 110), rgb(171, 82, 156));
+  color: black;
+  font-weight: bold; 
+}
+
+#btn-add-favorites{
+  background: linear-gradient(90deg, #5C396E 3.89%, #AB529C 94.23%);
+  height: 50px;
+  color:white;
 }
