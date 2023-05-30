@@ -18,12 +18,15 @@ export class RegisterInformationComponent implements OnInit{
   datos: User={
     uid: null,
     email: null,
-    fullname: null,
-    date: null,
+    id: null,
+    name: null,
+    age: null,
+    city: null,
     country: null,
-    phone: null,
-    typeIdentify: null,
-    numid: null,
+    url_photo: null,
+    birthday: null,
+    type_identification: null,
+    number_identification: null
   }
 
   constructor(private auth: UserService, private router: Router){

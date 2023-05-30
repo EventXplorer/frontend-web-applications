@@ -182,3 +182,7 @@ button{
     margin-top:20px;
   }
 
+  .logout:hover{
+    cursor: pointer;
+  }
+

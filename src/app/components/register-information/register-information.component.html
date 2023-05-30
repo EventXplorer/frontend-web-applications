@@ -10,36 +10,44 @@
       <form (submit)="submitUser()"  style="margin: auto 70px;">
         <div class="form-group-row">
           <div class="form-group-col">
-            <label for="username" style="color:#9F7CA0; font-weight: normal; display: block; font-weight: 500; font-size: 18px;" >Fullname</label>
+            <label for="username" style="color:#9F7CA0; font-weight: normal; display: block; font-weight: 500; font-size: 18px;" >Name</label>
             <div class="form-group" style="margin: 10px 0;">
                 <mat-form-field appearance="outline" style="width: 400px;">
-                <input matInput type="text" placeholder="fullname" name="fullname" [(ngModel)]="datos.fullname">
+                <input matInput type="text" placeholder="name" name="name" [(ngModel)]="datos.name">
                 </mat-form-field>
             </div>   
           </div>
           <div class="form-group-col">
-            <label for="date" style="color:#9F7CA0; font-weight: normal; display: block; font-weight: 500; font-size: 18px;" >Date Of Birth</label>
+            <label for="date" style="color:#9F7CA0; font-weight: normal; display: block; font-weight: 500; font-size: 18px;" >Age</label>
             <div class="form-group" style="margin: 10px 0;">
                 <mat-form-field appearance="outline" style="width: 400px;">
-                <input matInput type="date" placeholder="dd/mm/yyyy" name="date" [(ngModel)]="datos.date">
+                <input matInput type="date" placeholder="age" name="age" [(ngModel)]="datos.age">
                 </mat-form-field>
             </div>   
           </div>
         </div>
         <div class="form-group-row">
             <div class="form-group-col">
-                <label for="country" style="color:#9F7CA0; font-weight: normal; display: block; font-weight: 500; font-size: 18px;" >Country</label>
+                <label for="country" style="color:#9F7CA0; font-weight: normal; display: block; font-weight: 500; font-size: 18px;" >City</label>
                 <div class="form-group" style="margin: 10px 0;">
                     <mat-form-field appearance="outline" style="width: 400px;">
-                    <input matInput type="text" placeholder="country" name="country"  [(ngModel)]="datos.country">
+                    <input matInput type="text" placeholder="city" name="city"  [(ngModel)]="datos.city">
                     </mat-form-field>
                 </div>      
             </div>
             <div class="form-group-col">
-                <label for="phone" style="color:#9F7CA0; font-weight: normal; display: block; font-weight: 500; font-size: 18px;" >Phone Of Number</label>
+                <label for="phone" style="color:#9F7CA0; font-weight: normal; display: block; font-weight: 500; font-size: 18px;" >Country</label>
                 <div class="form-group" style="margin: 10px 0;">
                     <mat-form-field appearance="outline" style="width: 400px;">
-                    <input matInput type="number" placeholder="+51 999999999" name="phone" [(ngModel)]="datos.phone">
+                    <input matInput type="number" placeholder="country" name="country" [(ngModel)]="datos.country">
+                    </mat-form-field>
+                </div>  
+            </div>
+            <div class="form-group-col">
+                <label for="typeIdentify" style="color:#9F7CA0; font-weight: normal; display: block; font-weight: 500; font-size: 18px;" >Date Of Birth</label>
+                <div class="form-group" style="margin: 10px 0;">
+                    <mat-form-field appearance="outline" style="width: 150px;">
+                    <input matInput type="text" placeholder="yyyy-MM-xx" name="birthday"  [(ngModel)]="datos.birthday">
                     </mat-form-field>
                 </div>  
             </div>
@@ -47,18 +55,18 @@
 
         <div class="form-group-row">
             <div class="form-group-col">
-                <label for="typeIdentify" style="color:#9F7CA0; font-weight: normal; display: block; font-weight: 500; font-size: 18px;" >Identify Card</label>
-                <div class="form-group" style="margin: 10px 0;">
-                    <mat-form-field appearance="outline" style="width: 150px;">
-                    <input matInput type="text" placeholder="select type" name="typeIdentify"  [(ngModel)]="datos.typeIdentify">
-                    </mat-form-field>
-                </div>  
-            </div>
-            <div class="form-group-col">
-                <label for="typeIdentify" style="color:#9F7CA0; font-weight: normal; display: block; font-weight: 500; font-size: 18px;" >Number Of Idetify Card</label>
+                <label for="typeIdentify" style="color:#9F7CA0; font-weight: normal; display: block; font-weight: 500; font-size: 18px;" >Type Of Identify Card</label>
                 <div class="form-group" style="margin: 10px 0;">
                     <mat-form-field appearance="outline" style="width: 200px;">
-                    <input matInput type="text" placeholder="49453765" name="numid" [(ngModel)]="datos.numid">
+                    <input matInput type="text" placeholder="type_identification" name="type_identification" [(ngModel)]="datos.type_identification">
+                    </mat-form-field>
+                </div>   
+            </div>
+            <div class="form-group-col">
+                <label for="typeIdentify" style="color:#9F7CA0; font-weight: normal; display: block; font-weight: 500; font-size: 18px;" >Number Of Identify Card</label>
+                <div class="form-group" style="margin: 10px 0;">
+                    <mat-form-field appearance="outline" style="width: 200px;">
+                    <input matInput type="text" placeholder="79453765" name="number_identification" [(ngModel)]="datos.number_identification">
                     </mat-form-field>
                 </div>   
             </div>
