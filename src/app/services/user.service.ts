@@ -25,5 +25,13 @@ export class UserService {
   logout(){
     return signOut(this.auth);
   }
+
+  getUserEmail(){
+    return this.auth.currentUser?.email;
+  }
+
+  getUserUid(){
+    return this.auth.currentUser?.uid;
+  }
   
 }

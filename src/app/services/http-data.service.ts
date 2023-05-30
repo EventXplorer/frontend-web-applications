@@ -39,6 +39,8 @@ export class HttpDataService {
     );
   }
 
+  
+
   /* agregarUsuarioInformacionEnAPI(formRegInfo:FormGroup): Observable<any> {
     let firebaseUserId: string;
 

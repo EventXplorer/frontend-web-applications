@@ -5,9 +5,9 @@
       <div class="perfil">
         <mat-card>
             <img mat-card-image src="https://cdn-images.livecareer.es/pages/foto_cv_lc_es_7.jpg">
-            <mat-card-title>Lili Ramos</mat-card-title>
+            <mat-card-title>{{dataUser.name}}</mat-card-title>
             <mat-card-content>
-                <p>Hi, I’m Lili and I live in Lima, Peru. I would like to bring great events from Lima and have people from cities of the country</p> 
+                <p>Hi, I’m {{dataUser.name}} and I live in {{dataUser.city}}, {{dataUser.country}}. I would like to bring great events from {{dataUser.city}} and have people from cities of the country</p> 
             </mat-card-content>
         </mat-card>
     </div>
@@ -18,24 +18,24 @@
             <div class="Information" >
               <mat-tab label="Informacion Personal" >
                 <div class="info-data" style="padding:50px">
-                <div><strong>Nombre completo:</strong></div>
+                <div><strong>Nombre:</strong></div>
                 <mat-card>
                     <mat-card-content>
-                    <p>Lili Ramos</p> 
+                    <p>{{dataUser.name}}</p> 
                  </mat-card-content>
                 </mat-card>
                 
                 <div><strong>Edad:</strong> </div>
                 <mat-card>
                   <mat-card-content>
-                  <p>25 años</p> 
+                  <p>{{dataUser.age}}</p> 
                </mat-card-content>
               </mat-card>
 
                 <div><strong>E-mail:</strong> </div>
                 <mat-card>
                   <mat-card-content>
-                  <p>liliramos@gmail.com</p> 
+                  <p>{{dataUser.email}}</p> 
                </mat-card-content>
               </mat-card>
                 
@@ -43,7 +43,7 @@
                 <div><strong>Ciudad:</strong></div> 
                 <mat-card>
                   <mat-card-content>
-                  <p>Lima</p> 
+                  <p>{{dataUser.city}}</p> 
                </mat-card-content>
               </mat-card>
             </div>
