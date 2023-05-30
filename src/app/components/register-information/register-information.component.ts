@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 import { User } from 'src/app/models/user.model';
+import { UserDataService } from 'src/app/services/user-data.service';
 import { UserService } from 'src/app/services/user.service';
 
 import Swal from 'sweetalert2';
@@ -15,69 +16,42 @@ import Swal from 'sweetalert2';
 export class RegisterInformationComponent implements OnInit{
   
   
-  datos: User={
+  data: User={
     uid: null,
     email: null,
     id: null,
     name: null,
     age: null,
     city: null,
-    country: null,
+    country: 'Perú',
     url_photo: null,
     birthday: null,
     type_identification: null,
     number_identification: null
   }
 
-  constructor(private auth: UserService, private router: Router){
+  constructor(private userService: UserService, private router: Router, private userDataService: UserDataService){
     
   }
 
   ngOnInit(): void {
-    
+  
+    this.data.email = this.userService.getUserEmail();
+    this.data.uid = this.userService.getUserUid();
+  }
+
+  private getUserDataByID(){
+    this.userDataService.getUserById().subscribe(data=>{
+      this.data=data;
+    })
   }
 
   async submitUser(){
-  console.log(this.datos);
-   const res = await this.auth.register(this.datos).catch( error => {console.log(error)});
-   if(res){
-    //se creo el usuario correctamente
-    const path = 'Users'
-    const idUser = res.user.uid;
-    const emailUser = res.user.email;
-    this.datos.uid=idUser;
-    this.datos.email=emailUser;
-   } 
+  this.getUserDataByID();
+  console.log(this.data);
+   this.router.navigate(['/register/information']);
   }
 
-  /* submitUserInfo(): void {
-    if (this.formRegInfo.valid) {
-      this.userService!.getCurrentUser().subscribe(user => {
-        if (user) {
-          this.httpDataService.agregarUsuarioInformacionEnAPI(this.formRegInfo).subscribe(
-            (res: any) => {
-              console.log(res);
-              Swal.fire({
-                title: 'Información guardada exitosamente',
-                icon: 'success',
-                confirmButtonText: 'Ok'
-              }).then(() => {
-                this.router.navigate(['/home']);
-              });
-            },
-            (err: any) => {
-              console.error(err);
-              Swal.fire({
-                title: 'Error',
-                text: 'Hubo un problema al guardar la información',
-                icon: 'error',
-                confirmButtonText: 'Ok'
-              });
-            }
-          );
-        }
-      });
-    }
-  } */
+ 
   
 }

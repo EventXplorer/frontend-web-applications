@@ -31,7 +31,6 @@ import { PeEventProgressComponent } from './components/pe-event-progress/pe-even
 import { MyProfileComponent } from './components/my-profile/my-profile.component';
 
 
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -62,9 +61,11 @@ import { MyProfileComponent } from './components/my-profile/my-profile.component
     BrowserAnimationsModule,
     HttpClientModule,
     provideFirebaseApp(() => initializeApp(environment.firebase)),
-    provideAuth(() => getAuth())
+    provideAuth(() => getAuth()),
   ],
-  providers: [],
+  providers: [
+    
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

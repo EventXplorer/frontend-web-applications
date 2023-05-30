@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { User } from 'src/app/models/user.model';
 import { HttpDataService } from 'src/app/services/http-data.service';
+import { UserDataService } from 'src/app/services/user-data.service';
 import { UserService } from 'src/app/services/user.service';
 
 @Component({
@@ -13,21 +14,29 @@ export class MyProfileComponent {
     uid: null,
     email: null,
     id: null,
-    name: 'Farid',
-    age: 20,
-    city: 'Lima',
-    country: 'Perú',
-    url_photo: 'dksamdkasm',
-    birthday: '2003-02-15',
-    type_identification: 'dni',
-    number_identification: 73045603
+    name: null,
+    age: null,
+    city: null,
+    country: null,
+    url_photo: null,
+    birthday: null,
+    type_identification: null,
+    number_identification: null
   };
 
-  constructor(private userService: UserService) {}
+  constructor(private userService: UserService, private userDataService: UserDataService) {}
 
   ngOnInit(): void {
+    this.getUserDataByID();
+  
     this.dataUser.email = this.userService.getUserEmail();
     this.dataUser.uid = this.userService.getUserUid();
+  }
+
+  private getUserDataByID(){
+    this.userDataService.getUserById().subscribe(data=>{
+      this.dataUser=data;
+    })
   }
   
 }

@@ -13,7 +13,7 @@
             <label for="username" style="color:#9F7CA0; font-weight: normal; display: block; font-weight: 500; font-size: 18px;" >Name</label>
             <div class="form-group" style="margin: 10px 0;">
                 <mat-form-field appearance="outline" style="width: 400px;">
-                <input matInput type="text" placeholder="name" name="name" [(ngModel)]="datos.name">
+                <input matInput type="text" placeholder="name" name="name" [(ngModel)]="data.name">
                 </mat-form-field>
             </div>   
           </div>
@@ -21,7 +21,7 @@
             <label for="date" style="color:#9F7CA0; font-weight: normal; display: block; font-weight: 500; font-size: 18px;" >Age</label>
             <div class="form-group" style="margin: 10px 0;">
                 <mat-form-field appearance="outline" style="width: 400px;">
-                <input matInput type="date" placeholder="age" name="age" [(ngModel)]="datos.age">
+                <input matInput type="date" placeholder="age" name="age" [(ngModel)]="data.age">
                 </mat-form-field>
             </div>   
           </div>
@@ -31,23 +31,16 @@
                 <label for="country" style="color:#9F7CA0; font-weight: normal; display: block; font-weight: 500; font-size: 18px;" >City</label>
                 <div class="form-group" style="margin: 10px 0;">
                     <mat-form-field appearance="outline" style="width: 400px;">
-                    <input matInput type="text" placeholder="city" name="city"  [(ngModel)]="datos.city">
+                    <input matInput type="text" placeholder="city" name="city"  [(ngModel)]="data.city">
                     </mat-form-field>
                 </div>      
             </div>
-            <div class="form-group-col">
-                <label for="phone" style="color:#9F7CA0; font-weight: normal; display: block; font-weight: 500; font-size: 18px;" >Country</label>
-                <div class="form-group" style="margin: 10px 0;">
-                    <mat-form-field appearance="outline" style="width: 400px;">
-                    <input matInput type="number" placeholder="country" name="country" [(ngModel)]="datos.country">
-                    </mat-form-field>
-                </div>  
-            </div>
+            
             <div class="form-group-col">
                 <label for="typeIdentify" style="color:#9F7CA0; font-weight: normal; display: block; font-weight: 500; font-size: 18px;" >Date Of Birth</label>
                 <div class="form-group" style="margin: 10px 0;">
                     <mat-form-field appearance="outline" style="width: 150px;">
-                    <input matInput type="text" placeholder="yyyy-MM-xx" name="birthday"  [(ngModel)]="datos.birthday">
+                    <input matInput type="text" placeholder="yyyy-MM-xx" name="birthday"  [(ngModel)]="data.birthday">
                     </mat-form-field>
                 </div>  
             </div>
@@ -58,7 +51,7 @@
                 <label for="typeIdentify" style="color:#9F7CA0; font-weight: normal; display: block; font-weight: 500; font-size: 18px;" >Type Of Identify Card</label>
                 <div class="form-group" style="margin: 10px 0;">
                     <mat-form-field appearance="outline" style="width: 200px;">
-                    <input matInput type="text" placeholder="type_identification" name="type_identification" [(ngModel)]="datos.type_identification">
+                    <input matInput type="text" placeholder="type_identification" name="type_identification" [(ngModel)]="data.type_identification">
                     </mat-form-field>
                 </div>   
             </div>
@@ -66,7 +59,7 @@
                 <label for="typeIdentify" style="color:#9F7CA0; font-weight: normal; display: block; font-weight: 500; font-size: 18px;" >Number Of Identify Card</label>
                 <div class="form-group" style="margin: 10px 0;">
                     <mat-form-field appearance="outline" style="width: 200px;">
-                    <input matInput type="text" placeholder="79453765" name="number_identification" [(ngModel)]="datos.number_identification">
+                    <input matInput type="text" placeholder="79453765" name="number_identification" [(ngModel)]="data.number_identification">
                     </mat-form-field>
                 </div>   
             </div>
