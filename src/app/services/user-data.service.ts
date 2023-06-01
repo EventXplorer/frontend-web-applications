@@ -16,12 +16,12 @@ export class UserDataService {
 
   //Metodo que retorna la lista de user del backend
   getUserById(userId: any):Observable<User>{
-    console.log(this.httpClient.get<User>(`${this.baseUrl}/${userId}`));
+    //console.log(this.httpClient.get<User>(`${this.baseUrl}/${userId}`));
     return this.httpClient.get<User>(`${this.baseUrl}/${userId}`);
   }
 
   createUser(user: User): Observable<any> {
-    console.log(user);
+    //console.log(user);
     return this.httpClient.post(`${this.baseUrl}`, user);
   }
 

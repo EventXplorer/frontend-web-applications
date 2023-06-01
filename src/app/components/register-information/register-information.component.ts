@@ -37,13 +37,12 @@ export class RegisterInformationComponent implements OnInit{
     this.data.email = this.userService.getUserEmail();
     this.data.id = this.userService.getUserUid();
     this.data.uid = this.userService.getUserUid();
-
   }
 
   private getUserDataByID(userId: any){
     this.userDataService.getUserById(userId).subscribe(
-      (data: User) => { // Asegúrate de especificar el tipo de datos esperado (User)
-        console.log(data);
+      (data: User) => { 
+        //console.log(data);
         this.data = data; // Asigna el resultado al objeto this.data
       },
       (error) => {
@@ -60,16 +59,15 @@ export class RegisterInformationComponent implements OnInit{
       this.userDataService.createUser(this.data).subscribe(
         (response) => {
           console.log('Usuario creado:', response);
-    
-          // Navegar a la página de información del usuario
           this.router.navigate(['/home']);
         },
         (error) => {
-          console.error('Error al crear el usuario:', error);
+          //console.error('Error al crear el usuario:', error);
+          this.router.navigate(['/home']);
         }
       );
     } catch (error) {
-      console.error('Error al obtener los datos del usuario:', error);
+      //console.error('Error al obtener los datos del usuario:', error);
     }
   }
 
@@ -123,6 +121,10 @@ export class RegisterInformationComponent implements OnInit{
       });
   }
   
- 
+  documentTypes = [
+    'Passport',
+    'DNI',
+  ];
+  
   
 }

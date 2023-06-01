@@ -53,7 +53,7 @@ export class RegisterComponent implements OnInit{
       Swal.fire({
         icon: 'warning',
         title: 'Warning',
-        text: 'Ups...! Algo salio mal, por favor verifique que todos los campos esten rellenados.',
+        text: 'Ups...! Algo salio mal, por favor vuelva a intentarlo.',
         confirmButtonColor: '#a8549c',
         confirmButtonText: 'Aceptar'
       })

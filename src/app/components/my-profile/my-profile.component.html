@@ -4,7 +4,7 @@
     <div id="view-profile">
       <div class="perfil">
         <mat-card>
-            <img mat-card-image [src]="dataUser.urlPhoto">
+            <img mat-card-image [src]="dataUser.urlPhoto ? dataUser.urlPhoto : 'https://bysperfeccionoral.com/wp-content/uploads/2020/01/136-1366211_group-of-10-guys-login-user-icon-png.jpg'">
             <mat-card-title>{{dataUser.name}}</mat-card-title>
             <mat-card-content>
                 <p>Hi, I’m {{dataUser.name}} and I live in {{dataUser.city}}, {{dataUser.country}}. I would like to bring great events from {{dataUser.city}} and have people from cities of the country</p> 

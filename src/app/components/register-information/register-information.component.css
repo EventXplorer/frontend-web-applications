@@ -69,6 +69,12 @@
     margin:30px 0;
   }
 
+  #btn-register-information-save{
+    background: linear-gradient(90deg, #5C396E 3.89%, #AB529C 94.23%);
+    margin:30px 0;
+    height: 30px;
+  }
+
   .btn-global{
     background: linear-gradient(90deg, #5C396E 3.89%, #AB529C 94.23%);
     height: 50px;
