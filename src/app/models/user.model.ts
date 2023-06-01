@@ -6,8 +6,8 @@ export interface User {
     age: any,
     city: any,
     country: any,
-    url_photo: any,
+    urlPhoto: any,
     birthday: any,
-    type_identification: any,
-    number_identification: any
+    typeIdentification: any,
+    numberIdentification: any
 }

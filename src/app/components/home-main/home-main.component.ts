@@ -19,16 +19,16 @@ export class HomeMainComponent {
     age: null,
     city: null,
     country: null,
-    url_photo: null,
+    urlPhoto: null,
     birthday: null,
-    type_identification: null,
-    number_identification: null
+    typeIdentification: null,
+    numberIdentification: null
   }
 
   constructor(private userService: UserService, private router:Router, private userDataService: UserDataService){}
 
   ngOnInit(): void{
-    this.getUserDataByID();
+    this.getUserDataByID(this.dataUser.id);
     this.dataUser.email = this.userService.getUserEmail();
     this.dataUser.uid = this.userService.getUserUid();
   }
@@ -41,8 +41,8 @@ export class HomeMainComponent {
     .catch(e=>console.log(e))
   }
 
-  private getUserDataByID(){
-    this.userDataService.getUserById().subscribe(data=>{
+  private getUserDataByID(userId: any){
+    this.userDataService.getUserById(userId).subscribe(data=>{
       this.dataUser=data;
     })
   }

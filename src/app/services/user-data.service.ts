@@ -12,11 +12,16 @@ export class UserDataService {
   //Url que retorna toda la lista de user del backend
   private baseUrl = "http://localhost:8080/user"; 
 
-  constructor(private httpClient: HttpClient, private userService:UserService) { }
+  constructor(private httpClient: HttpClient) { }
 
   //Metodo que retorna la lista de user del backend
-  getUserById():Observable<User>{
-    return this.httpClient.get<User>(`${this.baseUrl}/${this.userService.getUserId()}`);
+  getUserById(userId: any):Observable<User>{
+    return this.httpClient.get<User>(`${this.baseUrl}/${userId}`);
+  }
+
+  createUser(user: User): Observable<any> {
+    console.log(user);
+    return this.httpClient.post(`${this.baseUrl}`, user);
   }
 
   

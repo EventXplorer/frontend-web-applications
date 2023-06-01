@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Auth, createUserWithEmailAndPassword, sendPasswordResetEmail, signInWithEmailAndPassword, signOut } from '@angular/fire/auth';
 import { User } from '../models/user.model';
+import { UserDataService } from './user-data.service';
 
 
 @Injectable({
@@ -11,18 +12,18 @@ export class UserService {
   data: User={
     uid: null,
     email: null,
-    id: 1,
+    id: null,
     name: null,
     age: null,
     city: null,
     country: 'Perú',
-    url_photo: null,
+    urlPhoto: null,
     birthday: null,
-    type_identification: null,
-    number_identification: null
+    typeIdentification: null,
+    numberIdentification: null
   }
 
-  constructor(private auth: Auth) { }
+  constructor(private auth: Auth, private userDataService:UserDataService) { }
 
   resetPassword({ email }: any){
     return  sendPasswordResetEmail(this.auth, email);
@@ -48,8 +49,4 @@ export class UserService {
     return this.auth.currentUser?.uid;
   }
 
-  getUserId(){
-    return this.data.id;
-  }
-  
 }

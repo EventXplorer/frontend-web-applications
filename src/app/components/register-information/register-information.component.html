@@ -21,7 +21,7 @@
             <label for="date" style="color:#9F7CA0; font-weight: normal; display: block; font-weight: 500; font-size: 18px;" >Age</label>
             <div class="form-group" style="margin: 10px 0;">
                 <mat-form-field appearance="outline" style="width: 400px;">
-                <input matInput type="date" placeholder="age" name="age" [(ngModel)]="data.age">
+                <input matInput type="text" placeholder="age" name="age" [(ngModel)]="data.age">
                 </mat-form-field>
             </div>   
           </div>
@@ -40,10 +40,12 @@
                 <label for="typeIdentify" style="color:#9F7CA0; font-weight: normal; display: block; font-weight: 500; font-size: 18px;" >Date Of Birth</label>
                 <div class="form-group" style="margin: 10px 0;">
                     <mat-form-field appearance="outline" style="width: 150px;">
-                    <input matInput type="text" placeholder="yyyy-MM-xx" name="birthday"  [(ngModel)]="data.birthday">
+                    <input matInput type="date" placeholder="yyyy-MM-dd" name="birthday"  [(ngModel)]="data.birthday">
                     </mat-form-field>
                 </div>  
             </div>
+
+            
         </div>
 
         <div class="form-group-row">
@@ -51,7 +53,7 @@
                 <label for="typeIdentify" style="color:#9F7CA0; font-weight: normal; display: block; font-weight: 500; font-size: 18px;" >Type Of Identify Card</label>
                 <div class="form-group" style="margin: 10px 0;">
                     <mat-form-field appearance="outline" style="width: 200px;">
-                    <input matInput type="text" placeholder="type_identification" name="type_identification" [(ngModel)]="data.type_identification">
+                    <input matInput type="text" placeholder="type_identification" name="type_identification" [(ngModel)]="data.typeIdentification">
                     </mat-form-field>
                 </div>   
             </div>
@@ -59,13 +61,30 @@
                 <label for="typeIdentify" style="color:#9F7CA0; font-weight: normal; display: block; font-weight: 500; font-size: 18px;" >Number Of Identify Card</label>
                 <div class="form-group" style="margin: 10px 0;">
                     <mat-form-field appearance="outline" style="width: 200px;">
-                    <input matInput type="text" placeholder="79453765" name="number_identification" [(ngModel)]="data.number_identification">
+                    <input matInput type="text" placeholder="79453765" name="number_identification" [(ngModel)]="data.numberIdentification">
                     </mat-form-field>
                 </div>   
             </div>
 
-            <a href="#" style="color: #9F7CA0; font-size: 14px; margin-left: 10px;"><mat-icon>cloud_upload</mat-icon>Upload Document</a>
-            
+            <a reouterlink="#" (click)="openCard()" style="color: #9F7CA0; font-size: 14px; margin-left: 10px;"> 
+              <mat-icon>cloud_upload</mat-icon> Upload Photo
+            </a>
+            <div class="overlay" *ngIf="showCard">
+              <mat-card class="card-url-photo">
+                <mat-card-title style="text-align: center; margin-top: 10px; color:#9F7CA0; font-weight: bold;">Upload Photo</mat-card-title>
+                <mat-card-content>
+                  <mat-form-field>
+                    <input matInput type="text" placeholder="Enter Photo URL" name="url_photo" [(ngModel)]="data.urlPhoto" >
+                  </mat-form-field>
+                </mat-card-content>
+                <mat-card-actions>
+                  <button mat-button color="primary" (click)="savePhoto()">Save</button>
+                </mat-card-actions>
+              </mat-card>
+            </div>
+             
+
+
         </div>
       </form>
 
@@ -73,8 +92,10 @@
    
     </div>
     <div class="image-container" style="display: flex; flex-direction: column;">
-        <img src="../../../../assets/img/icon.png" alt="image" class="image" style="height: 270px;">
-        <a href="#" style="color: #9F7CA0; font-size: 14px; margin-left: 10px; margin-top: 20px;"><mat-icon>cloud_upload</mat-icon>Upload Photo</a>
+        <img [src]="data.urlPhoto ? data.urlPhoto : 'https://bysperfeccionoral.com/wp-content/uploads/2020/01/136-1366211_group-of-10-guys-login-user-icon-png.jpg'" alt="PhotoUser" class="image" style="height: 270px;">
+        
+        
+
     </div>
 
     </div>

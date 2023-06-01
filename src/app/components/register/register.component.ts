@@ -32,14 +32,14 @@ export class RegisterComponent implements OnInit{
     .then(response=>{
       console.log(response);
       this.router.navigate(['/register/information']);
-      this.httpDataService.guardarUsuarioEnAPI().subscribe(
+      /* this.httpDataService.guardarUsuarioEnAPI().subscribe(
         response => {
           console.log(response);
         },
         error => {
           console.error(error);
         }
-      );
+      ); */
       Swal.fire({
         icon: 'success',
         title: 'Success',
