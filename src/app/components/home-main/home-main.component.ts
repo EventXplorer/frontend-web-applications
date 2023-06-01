@@ -28,9 +28,14 @@ export class HomeMainComponent {
   constructor(private userService: UserService, private router:Router, private userDataService: UserDataService){}
 
   ngOnInit(): void{
-    this.getUserDataByID(this.dataUser.id);
     this.dataUser.email = this.userService.getUserEmail();
     this.dataUser.uid = this.userService.getUserUid();
+
+    const currentUser = this.userService.getCurrentUser();
+    if (currentUser) {
+      this.dataUser = currentUser;
+      this.getUserDataByID(currentUser.uid);
+    } 
   }
 
   onClick(){

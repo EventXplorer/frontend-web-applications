@@ -42,9 +42,9 @@ export class RegisterInformationComponent implements OnInit{
 
   private getUserDataByID(userId: any){
     this.userDataService.getUserById(userId).subscribe(
-      (data) => {
+      (data: User) => { // Asegúrate de especificar el tipo de datos esperado (User)
         console.log(data);
-        this.data = data;
+        this.data = data; // Asigna el resultado al objeto this.data
       },
       (error) => {
         console.error('Error al obtener los datos del usuario:', error);

@@ -49,4 +49,13 @@ export class UserService {
     return this.auth.currentUser?.uid;
   }
 
+  getCurrentUser(): User | null {
+    const currentUser = this.auth.currentUser;
+    if (currentUser) {
+      const { uid, email } = currentUser;
+      return { uid, email, id: null, name: null, age: null, city: null, country: 'Perú', urlPhoto: null, birthday: null, typeIdentification: null, numberIdentification: null };
+    }
+    return null;
+  }
+
 }

@@ -16,6 +16,7 @@ export class UserDataService {
 
   //Metodo que retorna la lista de user del backend
   getUserById(userId: any):Observable<User>{
+    console.log(this.httpClient.get<User>(`${this.baseUrl}/${userId}`));
     return this.httpClient.get<User>(`${this.baseUrl}/${userId}`);
   }
 

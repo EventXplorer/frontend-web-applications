@@ -26,10 +26,15 @@ export class MyProfileComponent {
   constructor(private userService: UserService, private userDataService:UserDataService) {}
 
   ngOnInit(): void {
-    this.getUserDataByID(this.dataUser.uid);
-  
+    this.dataUser.id = this.userService.getUserUid();
     this.dataUser.email = this.userService.getUserEmail();
     this.dataUser.uid = this.userService.getUserUid();
+
+    const currentUser = this.userService.getCurrentUser();
+    if (currentUser) {
+      this.dataUser = currentUser;
+      this.getUserDataByID(currentUser.uid);
+    } 
   }
 
   private getUserDataByID(userId: any){
