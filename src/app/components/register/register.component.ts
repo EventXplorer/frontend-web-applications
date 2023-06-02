@@ -31,15 +31,15 @@ export class RegisterComponent implements OnInit{
     this.userService.register(this.formReg.value)
     .then(response=>{
       console.log(response);
-      this.router.navigate(['/home']);
-      this.httpDataService.guardarUsuarioEnAPI().subscribe(
+      this.router.navigate(['/register/information']);
+      /* this.httpDataService.guardarUsuarioEnAPI().subscribe(
         response => {
           console.log(response);
         },
         error => {
           console.error(error);
         }
-      );
+      ); */
       Swal.fire({
         icon: 'success',
         title: 'Success',
@@ -53,7 +53,7 @@ export class RegisterComponent implements OnInit{
       Swal.fire({
         icon: 'warning',
         title: 'Warning',
-        text: 'Ups...! Algo salio mal, por favor verifique que todos los campos esten rellenados.',
+        text: 'Ups...! Algo salio mal, por favor vuelva a intentarlo.',
         confirmButtonColor: '#a8549c',
         confirmButtonText: 'Aceptar'
       })

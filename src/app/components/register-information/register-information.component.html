@@ -10,61 +10,85 @@
       <form (submit)="submitUser()"  style="margin: auto 70px;">
         <div class="form-group-row">
           <div class="form-group-col">
-            <label for="username" style="color:#9F7CA0; font-weight: normal; display: block; font-weight: 500; font-size: 18px;" >Fullname</label>
+            <label for="username" style="color:#9F7CA0; font-weight: normal; display: block; font-weight: 500; font-size: 18px;" >Name</label>
             <div class="form-group" style="margin: 10px 0;">
                 <mat-form-field appearance="outline" style="width: 400px;">
-                <input matInput type="text" placeholder="fullname" name="fullname" [(ngModel)]="datos.fullname">
+                <input matInput type="text" placeholder="name" name="name" [(ngModel)]="data.name" pattern="^.{1,100}$" required>
                 </mat-form-field>
             </div>   
           </div>
           <div class="form-group-col">
-            <label for="date" style="color:#9F7CA0; font-weight: normal; display: block; font-weight: 500; font-size: 18px;" >Date Of Birth</label>
+            <label for="date" style="color:#9F7CA0; font-weight: normal; display: block; font-weight: 500; font-size: 18px;" >Age</label>
             <div class="form-group" style="margin: 10px 0;">
                 <mat-form-field appearance="outline" style="width: 400px;">
-                <input matInput type="date" placeholder="dd/mm/yyyy" name="date" [(ngModel)]="datos.date">
+                <input matInput type="text" placeholder="age" name="age" [(ngModel)]="data.age" pattern="[1-9][0-9]?|100" required>
                 </mat-form-field>
             </div>   
           </div>
         </div>
         <div class="form-group-row">
             <div class="form-group-col">
-                <label for="country" style="color:#9F7CA0; font-weight: normal; display: block; font-weight: 500; font-size: 18px;" >Country</label>
+                <label for="country" style="color:#9F7CA0; font-weight: normal; display: block; font-weight: 500; font-size: 18px;" >City</label>
                 <div class="form-group" style="margin: 10px 0;">
                     <mat-form-field appearance="outline" style="width: 400px;">
-                    <input matInput type="text" placeholder="country" name="country"  [(ngModel)]="datos.country">
+                    <input matInput type="text" placeholder="city" name="city"  [(ngModel)]="data.city" required>
                     </mat-form-field>
                 </div>      
             </div>
+            
             <div class="form-group-col">
-                <label for="phone" style="color:#9F7CA0; font-weight: normal; display: block; font-weight: 500; font-size: 18px;" >Phone Of Number</label>
+                <label for="typeIdentify" style="color:#9F7CA0; font-weight: normal; display: block; font-weight: 500; font-size: 18px;" >Date Of Birth</label>
                 <div class="form-group" style="margin: 10px 0;">
-                    <mat-form-field appearance="outline" style="width: 400px;">
-                    <input matInput type="number" placeholder="+51 999999999" name="phone" [(ngModel)]="datos.phone">
+                    <mat-form-field appearance="outline" style="width: 150px;">
+                    <input matInput type="date" placeholder="yyyy-MM-dd" name="birthday"  [(ngModel)]="data.birthday" pattern="\d{4}-\d{2}-\d{2}" required>
                     </mat-form-field>
                 </div>  
             </div>
+
+            
         </div>
 
         <div class="form-group-row">
+          <div class="form-group-col">
+            <label for="typeIdentify" style="color:#9F7CA0; font-weight: normal; display: block; font-weight: 500; font-size: 18px;">Type Of Identify Card</label>
+            <div class="form-group" style="margin: 10px 0;">
+              <mat-form-field appearance="outline" style="width: 200px;">
+                <mat-select placeholder="Select Type" name="type_identification" [(ngModel)]="data.typeIdentification" required>
+                  <mat-option *ngFor="let type of documentTypes" [value]="type">{{ type }}</mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>   
+          </div>
             <div class="form-group-col">
-                <label for="typeIdentify" style="color:#9F7CA0; font-weight: normal; display: block; font-weight: 500; font-size: 18px;" >Identify Card</label>
-                <div class="form-group" style="margin: 10px 0;">
-                    <mat-form-field appearance="outline" style="width: 150px;">
-                    <input matInput type="text" placeholder="select type" name="typeIdentify"  [(ngModel)]="datos.typeIdentify">
-                    </mat-form-field>
-                </div>  
-            </div>
-            <div class="form-group-col">
-                <label for="typeIdentify" style="color:#9F7CA0; font-weight: normal; display: block; font-weight: 500; font-size: 18px;" >Number Of Idetify Card</label>
+                <label for="typeIdentify" style="color:#9F7CA0; font-weight: normal; display: block; font-weight: 500; font-size: 18px;" >Number Of Identify Card</label>
                 <div class="form-group" style="margin: 10px 0;">
                     <mat-form-field appearance="outline" style="width: 200px;">
-                    <input matInput type="text" placeholder="49453765" name="numid" [(ngModel)]="datos.numid">
+                    <input matInput type="text" placeholder="79453765" name="number_identification" [(ngModel)]="data.numberIdentification" pattern="[0-9]{1,8}" required>
                     </mat-form-field>
                 </div>   
             </div>
 
-            <a href="#" style="color: #9F7CA0; font-size: 14px; margin-left: 10px;"><mat-icon>cloud_upload</mat-icon>Upload Document</a>
-            
+            <a reouterlink="#" (click)="openCard()" style="color: #9F7CA0; font-size: 14px; margin-left: 10px;"> 
+              <mat-icon>cloud_upload</mat-icon> Upload Photo
+            </a>
+            <div class="overlay" *ngIf="showCard">
+              <div class="container">
+                <mat-card class="card-url-photo" >
+                  <mat-card-title style="text-align: center; margin-top: 20px; margin-bottom: 20px; color:#9F7CA0; font-weight: bold;">Upload Photo</mat-card-title>
+                  <mat-card-content style="text-align: center;">
+                    <mat-form-field style="width: 100%;">
+                      <input matInput type="text" placeholder="Enter Photo URL" name="url_photo" [(ngModel)]="data.urlPhoto">
+                    </mat-form-field>
+                  </mat-card-content>
+                  <mat-card-actions style="text-align: center; ">
+                    <a id="btn-register-information-save" (click)="savePhoto()"  style="color: white; width: 400px; margin-left: 200px;" mat-raised-button>Save</a>
+                  </mat-card-actions>
+                </mat-card>
+              </div>
+            </div>
+             
+
+
         </div>
       </form>
 
@@ -72,8 +96,11 @@
    
     </div>
     <div class="image-container" style="display: flex; flex-direction: column;">
-        <img src="../../../../assets/img/icon.png" alt="image" class="image" style="height: 270px;">
-        <a href="#" style="color: #9F7CA0; font-size: 14px; margin-left: 10px; margin-top: 20px;"><mat-icon>cloud_upload</mat-icon>Upload Photo</a>
+        <img [src]="data.urlPhoto ? data.urlPhoto : 'https://bysperfeccionoral.com/wp-content/uploads/2020/01/136-1366211_group-of-10-guys-login-user-icon-png.jpg'" alt="PhotoUser" class="image" style="height: 270px;">
+        
+        <mat-card-title style="text-align: center; margin-top: 20px; margin-bottom: 20px; color:#9F7CA0; font-weight: bold; font-size: 20px;">Profile Photo</mat-card-title>
+                 
+
     </div>
 
     </div>

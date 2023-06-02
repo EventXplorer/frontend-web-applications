@@ -1,10 +1,13 @@
 export interface User {
     uid: any,
     email: any,
-    fullname: any,
-    date: any,
+    id: any,
+    name: any,
+    age: any,
+    city: any,
     country: any,
-    phone: any,
-    typeIdentify: any,
-    numid: any,
+    urlPhoto: any,
+    birthday: any,
+    typeIdentification: any,
+    numberIdentification: any
 }
