@@ -10,7 +10,7 @@ import { UserService } from './user.service';
 export class UserDataService {
 
   //Url que retorna toda la lista de user del backend
-  private baseUrl = "http://localhost:8080/user"; 
+  private baseUrl = "https://eventxplorer-backend.azurewebsites.net/user"; 
 
   constructor(private httpClient: HttpClient) { }
 
