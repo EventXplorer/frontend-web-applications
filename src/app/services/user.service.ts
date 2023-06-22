@@ -20,7 +20,8 @@ export class UserService {
     urlPhoto: null,
     birthday: null,
     typeIdentification: null,
-    numberIdentification: null
+    numberIdentification: null,
+    creditCard: "4000 1234 5678 9010"
   }
 
   constructor(private auth: Auth, private userDataService:UserDataService) { }
@@ -53,9 +54,17 @@ export class UserService {
     const currentUser = this.auth.currentUser;
     if (currentUser) {
       const { uid, email } = currentUser;
-      return { uid, email, id: null, name: null, age: null, city: null, country: 'Perú', urlPhoto: null, birthday: null, typeIdentification: null, numberIdentification: null };
+      return { uid, email, id: null, name: null, age: null, city: null, country: 'Perú', urlPhoto: null, birthday: null, typeIdentification: null, numberIdentification: null, creditCard: null };
     }
     return null;
+  }
+
+  getUserNumberIdentification(){
+    return this.data.numberIdentification;
+  }
+
+  getUserCreditCard(){
+    return this.data.creditCard;
   }
 
 }

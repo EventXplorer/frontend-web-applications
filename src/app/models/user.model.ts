@@ -9,5 +9,6 @@ export interface User {
     urlPhoto: any,
     birthday: any,
     typeIdentification: any,
-    numberIdentification: any
+    numberIdentification: any,
+    creditCard: any
 }

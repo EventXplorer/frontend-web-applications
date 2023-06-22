@@ -26,8 +26,9 @@
 <div id="contenido2">
     <span id="method-pay">payment method</span>
     <img id="visa"src="https://invatatiafaceri.ro/wp-content/uploads/full-color-800x450-cee226a48bed4177b90351075b332227.jpg" >
-    <span id="visa-id">**** **** **** 1234</span>
+    <input id="visa-id" matInput type="text" placeholder="Enter credit card number" name="credit-card" [value]="user?.creditCard" readonly style="width: 180px;">
 </div>
+
 <div id="contenido3">
     <div>
         <span id="event-id-publish">Event ID</span>
@@ -35,18 +36,39 @@
         <span id="amount">Total:</span>
         <span id="money">560 usd</span>
     </div>
-    <label id="check">
-        <input type="checkbox" [(ngModel)]="isChecked">
-        <span style="font-size: 12px; color: #848484;">I declare that I have read and accepted <span style ="text-decoration: underline">the terms and conditions</span></span> 
-      </label>
-    <div id="block-confirm-publish">
-        <a id="btn-payment" class="btn-global" style="color: white;" mat-raised-button routerLink="/publish-event/payment-completed">CONFIRM</a>
-    </div>
-    <div id="block-cancel-publish">
-        <a id="btn-cancel" class="btn-global" style="color: black;" mat-raised-button >CANCEL</a>
-    </div>
+    
 </div>
 
-<div id="changes">Change payment method</div>
+<div id="changes">
+    <a (click)="openPaymentForm()">Open payment form</a>
+  </div>
+
+  <div class="overlay" *ngIf="showPaymentForm">
+    <div class="container">
+      <mat-card class="card-form-payment" >
+        <mat-card-title style="text-align: center; margin-top: 20px; margin-bottom: 20px; color:#9F7CA0; font-weight: bold;">Payment Form</mat-card-title>
+        <mat-card-content style="text-align: center;">
+          <mat-form-field style="width: 100%;">
+            <mat-icon matPrefix>credit_card</mat-icon>
+            <input matInput type="text" placeholder="Enter credit card number" name="credit-card" [value]="user?.creditCard" readonly>
+          </mat-form-field>
+          <mat-form-field style="width: 100%;">
+            <mat-icon matPrefix>attach_money</mat-icon>
+            <input matInput type="text" placeholder="Enter the amount to pay" name="amount" >
+          </mat-form-field>
+          <label id="check">
+            <input type="checkbox" [(ngModel)]="isChecked">
+            <span style="font-size: 12px; color: #848484;">I declare that I have read and accepted <span style ="text-decoration: underline">the terms and conditions</span></span> 
+          </label>
+        </mat-card-content>
+        <mat-card-actions style="text-align: center; ">
+          <a id="btn-payment" (click)="createPayment()"  style="color: white; width: 200px; margin-left: 120px; " mat-raised-button>Pay</a> 
+        </mat-card-actions>
+        <mat-card-actions style="text-align: center; ">
+          <a id="btn-payment" (click)="closePaymentForm()"  style="color: white; width: 200px; margin-left: 120px; margin-bottom: 60px;" mat-raised-button>Cancel</a> 
+        </mat-card-actions>
+      </mat-card>
+    </div>
+  </div>
 
 <app-footer></app-footer>

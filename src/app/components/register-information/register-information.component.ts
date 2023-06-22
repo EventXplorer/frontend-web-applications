@@ -26,7 +26,8 @@ export class RegisterInformationComponent implements OnInit{
     urlPhoto: null,
     birthday: null,
     typeIdentification: null,
-    numberIdentification: null
+    numberIdentification: null, 
+    creditCard: null
   }
 
   constructor(private userService: UserService, private router: Router, private userDataService: UserDataService){
