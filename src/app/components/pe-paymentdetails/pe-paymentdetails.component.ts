@@ -4,6 +4,8 @@ import { Payment } from 'src/app/models/payment.model';
 import { PaymentService } from 'src/app/services/payment.service';
 import { UserDataService } from 'src/app/services/user-data.service';
 import { UserService } from 'src/app/services/user.service';
+import Swal from 'sweetalert2';
+
 
 @Component({
   selector: 'app-pe-paymentdetails',
@@ -38,7 +40,7 @@ export class PePaymentdetailsComponent {
   constructor(private paymentService: PaymentService, private userService: UserService, private router:Router, private userDataService:UserDataService) {
     this.dataPayment.user_id = this.userService.getUserUid();
     this.user = {
-      numberIdentification: this.userService.getUserNumberIdentification()
+      creditCard: this.userService.getUserCreditCard()
     };
   }
   
@@ -47,13 +49,32 @@ export class PePaymentdetailsComponent {
     }
 
   createPayment(){
+
+    if (!this.isChecked) {
+      Swal.fire({
+        icon: 'warning',
+        title: 'Warning',
+        text: 'Please accept the terms and conditions.',
+        confirmButtonColor: '#a8549c',
+        confirmButtonText: 'Accept'
+      });
+      return;
+    }
+
     this.paymentService.createPayment(this.dataPayment, this.dataPayment.user_id).subscribe(
       (response) => {
-        console.log('Payment created successfully:', response);
+        console.log('The payment was successful.', response);
         this.router.navigate(['/payment-completed']);
       },
       (error) => {
         console.error('Error creating payment:', error);
+        Swal.fire({
+          icon: 'warning',
+          title: 'Warning',
+          text: 'Error when making the payment.',
+          confirmButtonColor: '#a8549c',
+          confirmButtonText: 'Aceptar'
+        });
       }
     );
     this.closePaymentForm();
