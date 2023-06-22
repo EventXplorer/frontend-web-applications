@@ -28,6 +28,7 @@
     <img id="visa"src="https://invatatiafaceri.ro/wp-content/uploads/full-color-800x450-cee226a48bed4177b90351075b332227.jpg" >
     <span id="visa-id">**** **** **** 1234</span>
 </div>
+
 <div id="contenido3">
     <div>
         <span id="event-id-publish">Event ID</span>
@@ -47,6 +48,29 @@
     </div>
 </div>
 
-<div id="changes">Change payment method</div>
+<div id="changes">
+    <a (click)="openPaymentForm()">Open payment form</a>
+  </div>
+
+  <div class="overlay" *ngIf="showPaymentForm">
+    <div class="container">
+      <mat-card class="card-form-payment" >
+        <mat-card-title style="text-align: center; margin-top: 20px; margin-bottom: 20px; color:#9F7CA0; font-weight: bold;">Payment Form</mat-card-title>
+        <mat-card-content style="text-align: center;">
+          <mat-form-field style="width: 100%;">
+            <mat-icon matPrefix>credit_card</mat-icon>
+            <input matInput type="text" placeholder="Enter credit card number" name="credit-card" [value]="user?.numberIdentification" readonly>
+          </mat-form-field>
+          <mat-form-field style="width: 100%;">
+            <mat-icon matPrefix>attach_money</mat-icon>
+            <input matInput type="text" placeholder="Enter the amount to pay" name="amount" >
+          </mat-form-field>
+        </mat-card-content>
+        <mat-card-actions style="text-align: center; ">
+          <a id="btn-payment" (click)="createPayment()"  style="color: white; width: 200px; margin-left: 120px;" mat-raised-button>Pay</a> 
+        </mat-card-actions>
+      </mat-card>
+    </div>
+  </div>
 
 <app-footer></app-footer>

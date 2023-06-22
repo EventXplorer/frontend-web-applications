@@ -58,4 +58,8 @@ export class UserService {
     return null;
   }
 
+  getUserNumberIdentification(){
+    return this.data.numberIdentification;
+  }
+
 }
