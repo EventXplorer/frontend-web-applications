@@ -1,35 +1,24 @@
-import { Component } from '@angular/core';
+import { Component, AfterViewInit, ViewChild, ElementRef } from '@angular/core';
 
-interface Option {
-  value: string;
-  viewValue: string;
-}
-interface Option2 {
-  value: string;
-  viewValue: string;
-}
+declare const google: any;
 
 @Component({
   selector: 'app-pe-make-event',
   templateUrl: './pe-make-event.component.html',
   styleUrls: ['./pe-make-event.component.css']
 })
-export class PeMakeEventComponent {
-  selectedOption: string ='Option1';
-  options: Option[] = [
-    {value: 'option-1', viewValue: 'Social Events'},
-    {value: 'option-2', viewValue: 'Sports Events'},
-    {value: 'option-3', viewValue: 'Academic Events'},
-    {value: 'option-4', viewValue:'Party Events'}
+export class PeMakeEventComponent implements AfterViewInit {
+  @ViewChild('inputPlaces') inputPlaces!: ElementRef;
+  autocomplete: any;
 
-  ];
-  selectedOption2: string ='Option1';
-  options2:Option2[]=[
-    {value: 'option-1', viewValue: 'Lima'},
-    {value: 'option-2', viewValue: 'Arequipa'},
-    {value: 'option-3', viewValue: 'Trujillo'},
-    {value: 'option-4', viewValue:'Chiclayo'},
-    {value: 'option-5', viewValue:'Cusco'},
-    {value: 'option-6', viewValue:'Iquitos'},
-  ];
+  ngAfterViewInit() {
+    this.autocomplete = new google.maps.places.Autocomplete(this.inputPlaces.nativeElement);
+    this.autocomplete.setFields(['address_components', 'geometry']);
+
+    this.autocomplete.addListener('place_changed', () => {
+      const place = this.autocomplete.getPlace();
+      console.log(place);
+      // Aquí puedes realizar cualquier lógica adicional con los datos de la ubicación seleccionada
+    });
+  }
 }

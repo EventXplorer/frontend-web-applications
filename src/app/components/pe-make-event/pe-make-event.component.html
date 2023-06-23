@@ -14,7 +14,7 @@
     <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSBrjjIbQnGKoKdPZ8_tZxGAJgXz5nKQRooS-kuU06RMFHp5Avu" alt="cuadernoylapiz" id="cuaderoylapiz">
   </div>
   <div id="make-an-event">
-    <form>
+    <form >
       <div id="id-upload-document">
         <p class="upload-document-text" style="font-size: 20px;">Upload Validation Document</p>
         <form class="upload-document">
@@ -35,7 +35,7 @@
           </form>
       </div>
       
-      <div id="event-category">
+     <!--<div id="event-category">
           <p class="categ">Category</p>
           <mat-form-field id="id-event-category">
           <mat-label>Select Category</mat-label>
@@ -45,19 +45,17 @@
             </mat-option>
           </mat-select>
         </mat-form-field>
-      </div>
+      </div> -->
       
       <div id="event-address">
-          <p class="address">Address</p>
-          <form class="example-address">
-          <mat-form-field class="example-full-address">
-            <mat-label>Address</mat-label>
-            <input matInput placeholder="Inserts a address" value="">
-          </mat-form-field>
-          </form>
+        <p class="address">Address</p>
+        <mat-form-field class="example-full-address">
+          <mat-label>Address</mat-label>
+          <input type="text" matInput placeholder="Insert an address" #inputPlaces>
+        </mat-form-field>
       </div>
       
-      <div id="event-city">
+      <!-- <div id="event-city">
         <p class="city">City</p>
         <mat-form-field id="id-select-city">
         <mat-label>Select City</mat-label>
@@ -67,7 +65,7 @@
           </mat-option>
         </mat-select>
       </mat-form-field>
-      </div>
+      </div> -->
       
       <div id="date-picker">
           <p class="date">Date</p>
@@ -106,8 +104,6 @@
   </div>
       
 </div>
-
-
 
 
 <app-footer></app-footer>

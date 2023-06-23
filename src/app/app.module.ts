@@ -29,6 +29,7 @@ import { PePaymentdetailsComponent } from './components/pe-paymentdetails/pe-pay
 import { PePaymentCompletedComponent } from './components/pe-payment-completed/pe-payment-completed.component';
 import { PeEventProgressComponent } from './components/pe-event-progress/pe-event-progress.component';
 import { MyProfileComponent } from './components/my-profile/my-profile.component';
+import { ReactiveFormsModule} from '@angular/forms'
 
 
 @NgModule({
@@ -50,8 +51,8 @@ import { MyProfileComponent } from './components/my-profile/my-profile.component
     PePaymentdetailsComponent,
     PePaymentCompletedComponent,
     PeEventProgressComponent,
-    MyProfileComponent
-
+    MyProfileComponent,
+    
   ],
   imports: [
     BrowserModule,
@@ -60,6 +61,7 @@ import { MyProfileComponent } from './components/my-profile/my-profile.component
     RouterModule,
     BrowserAnimationsModule,
     HttpClientModule,
+    ReactiveFormsModule,
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideAuth(() => getAuth()),
   ],
