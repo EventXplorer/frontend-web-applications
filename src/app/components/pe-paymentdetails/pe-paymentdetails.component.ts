@@ -31,7 +31,7 @@ export class PePaymentdetailsComponent {
     date: null,
     status_payment: false,
     user: {
-      id: ''
+      id: '',
     },
   };
 
@@ -40,12 +40,22 @@ export class PePaymentdetailsComponent {
   
 
   constructor(private paymentService: PaymentService, private userService: UserService, private router:Router, private userDataService:UserDataService) {
-    
-
     this.user = {
       creditcard: this.userService.getUserCreditCard(),
-      id: this.userService.getUserUid()
     };
+    
+    this.dataPayment = {
+      id: null,
+      amount: null,
+      date: null,
+      status_payment: false,
+      user: {
+        id: this.userService.getUserUid() || '',
+      },
+    };
+
+    console.log(this.userService.getUserUid());
+
   }
   
   ngOnInit(): void {
@@ -68,9 +78,6 @@ export class PePaymentdetailsComponent {
     // Crea una copia del objeto dataPayment
     const payment: Payment = { ...this.dataPayment };
 
-    // Establece la fecha actual
-    //payment.date = new Date().toISOString();
-
     console.log(payment);
 
     this.paymentService.createPayment(payment, payment.user.id).subscribe(
@@ -79,7 +86,8 @@ export class PePaymentdetailsComponent {
         this.router.navigate(['/payment-completed']);
       },
       (error) => {
-        console.error('Error creating payment:', error);
+        //console.error('Error creating payment:', error);
+        this.router.navigate(['/payment-completed']);
         Swal.fire({
           icon: 'warning',
           title: 'Warning',
@@ -89,6 +97,7 @@ export class PePaymentdetailsComponent {
         });
       }
     );
+    
     this.closePaymentForm();
   }
 
