@@ -7,11 +7,11 @@ import { UserService } from './user.service';
 @Injectable({
   providedIn: 'root'
 })
-export class UserDataService {
+export class UserDataService {  
 
   //Url que retorna toda la lista de user del backend
   private baseUrl = "https://eventxplorer-backend.azurewebsites.net/user"; 
-
+  
   constructor(private httpClient: HttpClient) { }
 
   //Metodo que retorna la lista de user del backend

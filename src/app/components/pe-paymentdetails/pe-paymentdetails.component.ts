@@ -29,7 +29,7 @@ export class PePaymentdetailsComponent {
     id: null,
     amount: null,
     date: null,
-    status_payment: true,
+    status_payment: false,
     user_id: null
   };
 
@@ -39,8 +39,9 @@ export class PePaymentdetailsComponent {
 
   constructor(private paymentService: PaymentService, private userService: UserService, private router:Router, private userDataService:UserDataService) {
     this.dataPayment.user_id = this.userService.getUserUid();
+
     this.user = {
-      creditCard: this.userService.getUserCreditCard()
+      creditcard: this.userService.getUserCreditCard()
     };
   }
   
@@ -61,7 +62,15 @@ export class PePaymentdetailsComponent {
       return;
     }
 
-    this.paymentService.createPayment(this.dataPayment, this.dataPayment.user_id).subscribe(
+    // Crea una copia del objeto dataPayment
+    const payment: Payment = { ...this.dataPayment };
+
+    // Establece la fecha actual
+    //payment.date = new Date().toISOString();
+
+    console.log(payment);
+
+    this.paymentService.createPayment(payment, this.dataPayment.user_id).subscribe(
       (response) => {
         console.log('The payment was successful.', response);
         this.router.navigate(['/payment-completed']);
@@ -78,6 +87,20 @@ export class PePaymentdetailsComponent {
       }
     );
     this.closePaymentForm();
+  }
+
+  formatCreditCard(creditCard: string): string {
+    if (!creditCard) {
+      return '';
+    }
+  
+    // Eliminar todos los caracteres no numéricos del número de tarjeta de crédito
+    const numericCreditCard = creditCard.replace(/\D/g, '');
+  
+    // Aplicar el formato deseado (ejemplo: "**** **** **** 1234")
+    const formattedCreditCard = numericCreditCard.replace(/(\d{4}(?=\d))/g, '$1 ');
+  
+    return formattedCreditCard;
   }
 }
   

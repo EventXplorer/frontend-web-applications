@@ -10,5 +10,5 @@ export interface User {
     birthday: any,
     typeIdentification: any,
     numberIdentification: any,
-    creditCard: any
+    creditcard: any
 }

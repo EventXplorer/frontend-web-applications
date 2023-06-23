@@ -26,7 +26,7 @@
 <div id="contenido2">
     <span id="method-pay">payment method</span>
     <img id="visa"src="https://invatatiafaceri.ro/wp-content/uploads/full-color-800x450-cee226a48bed4177b90351075b332227.jpg" >
-    <input id="visa-id" matInput type="text" placeholder="Enter credit card number" name="credit-card" [value]="user?.creditCard" readonly style="width: 180px;">
+    <input id="visa-id" matInput type="text" placeholder="Enter credit card number" name="credit-card" [value]="formatCreditCard(user?.creditcard)" readonly style="width: 180px;">
 </div>
 
 <div id="contenido3">
@@ -50,11 +50,11 @@
         <mat-card-content style="text-align: center;">
           <mat-form-field style="width: 100%;">
             <mat-icon matPrefix>credit_card</mat-icon>
-            <input matInput type="text" placeholder="Enter credit card number" name="credit-card" [value]="user?.creditCard" readonly>
+            <input matInput type="text" placeholder="Enter credit card number" name="credit-card" [value]="formatCreditCard(user?.creditcard)" readonly>
           </mat-form-field>
           <mat-form-field style="width: 100%;">
             <mat-icon matPrefix>attach_money</mat-icon>
-            <input matInput type="text" placeholder="Enter the amount to pay" name="amount" >
+            <input matInput type="text" placeholder="Enter the amount to pay" name="amount" [(ngModel)]="dataPayment.amount">
           </mat-form-field>
           <label id="check">
             <input type="checkbox" [(ngModel)]="isChecked">

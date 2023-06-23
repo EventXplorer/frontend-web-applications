@@ -23,7 +23,7 @@ export class HomeMainComponent {
     birthday: null,
     typeIdentification: null,
     numberIdentification: null, 
-    creditCard: null
+    creditcard: null
   }
 
   constructor(private userService: UserService, private router:Router, private userDataService: UserDataService){}

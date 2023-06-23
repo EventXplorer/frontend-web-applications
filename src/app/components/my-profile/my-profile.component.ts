@@ -21,7 +21,7 @@ export class MyProfileComponent {
     birthday: null,
     typeIdentification: null,
     numberIdentification: null, 
-    creditCard: null
+    creditcard: null
   };
 
   constructor(private userService: UserService, private userDataService:UserDataService) {}
