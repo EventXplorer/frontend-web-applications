@@ -14,7 +14,6 @@ import Swal from 'sweetalert2';
 })
 export class PePaymentdetailsComponent {
   isChecked=false;
-
   showPaymentForm = false;
 
   openPaymentForm() {
@@ -24,12 +23,11 @@ export class PePaymentdetailsComponent {
     this.showPaymentForm = false;
   }
   
-
   dataPayment: Payment={
-    id: null,
+    id: undefined,
     amount: null,
-    date: null,
-    status_payment: false,
+    date: undefined,
+    status_payment: true,
     user: {
       id: '',
     },
@@ -37,32 +35,25 @@ export class PePaymentdetailsComponent {
 
   user: any;
 
-  
-
   constructor(private paymentService: PaymentService, private userService: UserService, private router:Router, private userDataService:UserDataService) {
     this.user = {
       creditcard: this.userService.getUserCreditCard(),
     };
     
     this.dataPayment = {
-      id: null,
+      id: undefined,
       amount: null,
-      date: null,
-      status_payment: false,
+      date: undefined,
+      status_payment: true,
       user: {
         id: this.userService.getUserUid() || '',
       },
     };
-
-    console.log(this.userService.getUserUid());
-
   }
   
-  ngOnInit(): void {
+  ngOnInit(): void {}
 
-    }
-
-  createPayment(){
+  async createPayment(){
 
     if (!this.isChecked) {
       Swal.fire({
@@ -75,43 +66,24 @@ export class PePaymentdetailsComponent {
       return;
     }
 
-    // Crea una copia del objeto dataPayment
-    const payment: Payment = { ...this.dataPayment };
-
-    console.log(payment);
-
-    this.paymentService.createPayment(payment, payment.user.id).subscribe(
-      (response) => {
-        console.log('The payment was successful.', response);
-        this.router.navigate(['/payment-completed']);
-      },
-      (error) => {
-        //console.error('Error creating payment:', error);
-        this.router.navigate(['/payment-completed']);
-        Swal.fire({
-          icon: 'warning',
-          title: 'Warning',
-          text: 'Error when making the payment.',
-          confirmButtonColor: '#a8549c',
-          confirmButtonText: 'Aceptar'
-        });
-      }
-    );
-    
+    try {
+      const response = await this.paymentService.createPayment(this.dataPayment, this.dataPayment.user.id).toPromise();
+      console.log('The payment was successful.', response);
+      //this.router.navigate(['/publish-event/payment-completed']);
+    } catch (error) {
+      this.router.navigate(['/publish-event/payment-completed']);
+    }
     this.closePaymentForm();
   }
-
+  
   formatCreditCard(creditCard: string): string {
     if (!creditCard) {
       return '';
     }
-  
     // Eliminar todos los caracteres no numéricos del número de tarjeta de crédito
     const numericCreditCard = creditCard.replace(/\D/g, '');
-  
     // Aplicar el formato deseado (ejemplo: "**** **** **** 1234")
     const formattedCreditCard = numericCreditCard.replace(/(\d{4}(?=\d))/g, '$1 ');
-  
     return formattedCreditCard;
   }
 }
