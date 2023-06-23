@@ -18,7 +18,6 @@ export class PeMakeEventComponent implements AfterViewInit {
     this.autocomplete.addListener('place_changed', () => {
       const place = this.autocomplete.getPlace();
       console.log(place);
-      // Aquí puedes realizar cualquier lógica adicional con los datos de la ubicación seleccionada
     });
   }
 }
