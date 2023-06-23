@@ -30,7 +30,9 @@ export class PePaymentdetailsComponent {
     amount: null,
     date: null,
     status_payment: false,
-    user_id: null
+    user: {
+      id: ''
+    },
   };
 
   user: any;
@@ -38,10 +40,11 @@ export class PePaymentdetailsComponent {
   
 
   constructor(private paymentService: PaymentService, private userService: UserService, private router:Router, private userDataService:UserDataService) {
-    this.dataPayment.user_id = this.userService.getUserUid();
+    
 
     this.user = {
-      creditcard: this.userService.getUserCreditCard()
+      creditcard: this.userService.getUserCreditCard(),
+      id: this.userService.getUserUid()
     };
   }
   
@@ -70,7 +73,7 @@ export class PePaymentdetailsComponent {
 
     console.log(payment);
 
-    this.paymentService.createPayment(payment, this.dataPayment.user_id).subscribe(
+    this.paymentService.createPayment(payment, payment.user.id).subscribe(
       (response) => {
         console.log('The payment was successful.', response);
         this.router.navigate(['/payment-completed']);

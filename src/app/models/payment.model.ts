@@ -3,5 +3,7 @@ export interface Payment {
     amount: any;
     date: any;
     status_payment: any;
-    user_id: any; 
+    user: {
+        id: string;
+    };
 }
