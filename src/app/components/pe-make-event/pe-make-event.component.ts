@@ -7,6 +7,7 @@ import { HttpEventService } from 'src/app/services/http-event.service';
 import { Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
+import { Category } from 'src/app/models/category.model';
 
 interface Option {
   value: string;
@@ -48,8 +49,9 @@ export class PeMakeEventComponent implements OnInit{
       id: '',
     },
     category:{
-      id: '',
-    }
+      id: null,
+      name: '',
+    }as Category,
 
   }
   constructor(
@@ -73,25 +75,30 @@ export class PeMakeEventComponent implements OnInit{
   }
 
   ngAfterViewInit() {
+    //obtener direcciones
     this.addressAutocomplete = new google.maps.places.Autocomplete(this.inputPlaces.nativeElement, {
       componentRestrictions: { country: 'pe' } // Filtrar por Perú
     });
     this.addressAutocomplete.setFields(['address_components', 'geometry']);
-
+    //obtener ciudades
     this.cityAutocomplete = new google.maps.places.Autocomplete(this.inputCities.nativeElement, {
       types: ['(cities)'],
       componentRestrictions: { country: 'pe' } // Filtrar por Perú
     });
     this.cityAutocomplete.setFields(['address_components', 'geometry']);
-
+    //agregar listener para obtener la dirección seleccionada
+    // y almacenarla en la variable address
     this.addressAutocomplete.addListener('place_changed', () => {
       const place = this.addressAutocomplete.getPlace();
-      console.log(place);
+      
+      this.datae.address = place.formatted_address;
     });
-
+    //agregar listener para obtener la ciudad seleccionada
+    // y almacenarla en la variable city
     this.cityAutocomplete.addListener('place_changed', () => {
       const place = this.cityAutocomplete.getPlace();
-      console.log(place);
+
+      this.datae.city = place.name;
     });
   }
 
@@ -99,6 +106,9 @@ export class PeMakeEventComponent implements OnInit{
   
     try {
       console.log(this.datae);
+      const category = this.dataCategory.find((c:Category) => c.id === this.datae.category.id);
+      this.datae.category= category;
+
       const response = await this.eventService.createEvent(this.datae).toPromise();
       console.log('The payment was successful.', response);
       this.router.navigate(['/publish-event/payment-completed']);
