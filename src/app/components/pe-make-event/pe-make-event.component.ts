@@ -6,7 +6,7 @@ import { UserService } from 'src/app/services/user.service';
 import { HttpEventService } from 'src/app/services/http-event.service';
 import { Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-
+import { HttpClient } from '@angular/common/http';
 
 interface Option {
   value: string;
@@ -29,6 +29,7 @@ export class PeMakeEventComponent implements OnInit{
   @ViewChild('inputCities') inputCities!: ElementRef;
   addressAutocomplete: any;
   cityAutocomplete: any;
+  dataCategory: any;
 
 
   datae: Event = {
@@ -56,6 +57,7 @@ export class PeMakeEventComponent implements OnInit{
     private router: Router, 
     private userDataService: UserDataService,
     private eventService: HttpEventService,
+    private http: HttpClient
     )
     {
     

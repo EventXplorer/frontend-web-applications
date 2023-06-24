@@ -8,6 +8,16 @@
         <mat-label>Enter your photo</mat-label>
         <input matInput placeholder="Photo Event" name="url_photo" [(ngModel)]="datae.url_photo" requerided >
       </mat-form-field>
+      <!--Categoria del evento-->
+      <mat-form-field>
+        <mat-label>Select Category</mat-label>
+        <mat-select placeholder="Category Event" name="category" [(ngModel)]="datae.category" required>
+          <mat-option *ngFor="let category of dataCategory" [value]="category.id">
+            {{ category.name }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+
       <!--Titulo del evento-->
       <mat-form-field>
         <mat-label>Enter your title</mat-label>
