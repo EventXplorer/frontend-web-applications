@@ -11,7 +11,7 @@ import { HttpEventService } from 'src/app/services/http-event.service';
   styleUrls: ['./published-event.component.css']
 })
 export class PublishedEventComponent {
-  displayedColumns: string[] = ['name', 'photo', 'organizator', 'city', 'category', 'date', 'actions'];
+  displayedColumns: string[] = ['url_photo', 'title', 'address', 'date' ];
   data: any[] = [];
   dataSource = new MatTableDataSource<any>(this.data);
   events=[];
@@ -24,6 +24,10 @@ export class PublishedEventComponent {
     private router: Router,
   ) {}
 
+  ngOnInit(): void {
+    this.getEvents()
+  }
+
   getEvents(){
     let eventData;
     for(let i = 1; i<=10; i++)
@@ -32,8 +36,11 @@ export class PublishedEventComponent {
       (
         res => {
           eventData = {
-            name: res.name,
+            url_photo: res.url_photo,
+            title: res.title,
             date: res.date,
+            address: res.address,
+
 
           }
           this.data.push(eventData)
@@ -60,5 +67,6 @@ export class PublishedEventComponent {
     //Example
     //this.router.navigateByUrl(`/detail/${row.position}`);
   }
+
 
 }

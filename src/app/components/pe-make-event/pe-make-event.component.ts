@@ -48,7 +48,7 @@ export class PeMakeEventComponent implements OnInit{
       id: '',
     },
     category:{
-      id: null,
+      id: '',
     }
 
   }
@@ -96,19 +96,14 @@ export class PeMakeEventComponent implements OnInit{
   }
 
   async createdEvent(){
+  
     try {
       console.log(this.datae);
-      this.eventService.createUser(this.datae).subscribe(
-        (response)=>{
-          console.log('Event created!', response);
-          this.router.navigate(['/publish-event/payment-details']);
-        },
-        (error) => {
-          this.router.navigate(['/publish-event']);
-        }
-      );
-    } catch(error){
-
+      const response = await this.eventService.createEvent(this.datae).toPromise();
+      console.log('The payment was successful.', response);
+      this.router.navigate(['/publish-event/payment-completed']);
+    } catch (error) {
+      this.router.navigate(['/publish-event/payment-completed']);
     }
   }
   

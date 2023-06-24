@@ -11,9 +11,11 @@ export class HttpEventService {
   private baseUrl = "https://eventxplorer-backend.azurewebsites.net/event"; 
 
   constructor(private httpClient: HttpClient) { }
-  createUser(event: Event): Observable<any> {
-    //console.log(user);
-    return this.httpClient.post(`${this.baseUrl}`, event);}
+
+  createEvent(event: Event): Observable<any> {
+    const url = `${this.baseUrl}`;
+    return this.httpClient.post(url, event);
+  }
 
   getEvent(index:any){
       return this.httpClient.get<any>(`${this.baseUrl}/${index}`);

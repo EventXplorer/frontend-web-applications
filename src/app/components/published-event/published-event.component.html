@@ -107,52 +107,32 @@
       <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 table-events-by-category">
 
         <!-- name Column -->
-        <ng-container matColumnDef="name">
-          <th mat-header-cell *matHeaderCellDef style="color:#000; font-weight: bold;"> Name </th>
-          <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+        <ng-container matColumnDef="url_photo">
+          <th mat-header-cell *matHeaderCellDef style="color:#000; font-weight: bold;"> Photo </th>
+          <td mat-cell *matCellDef="let element"> {{element.url_photo}} </td>
         </ng-container>
 
         <!-- photo Column -->
-        <ng-container matColumnDef="photo">
-          <th mat-header-cell *matHeaderCellDef style="color:#000; font-weight: bold;"> Photo </th>
-          <td mat-cell *matCellDef="let element"> {{element.photo}} </td>
+        <ng-container matColumnDef="title">
+          <th mat-header-cell *matHeaderCellDef style="color:#000; font-weight: bold;"> Title </th>
+          <td mat-cell *matCellDef="let element"> {{element.title}} </td>
         </ng-container>
       
-        <!-- organizator Column -->
-        <ng-container matColumnDef="organizator">
-          <th mat-header-cell *matHeaderCellDef style="color:#000; font-weight: bold;"> Organizator </th>
-          <td mat-cell *matCellDef="let element"> {{element.organizator}} </td>
-        </ng-container>
-      
+       
         <!-- city Column -->
-        <ng-container matColumnDef="city">
-          <th mat-header-cell *matHeaderCellDef style="color:#000; font-weight: bold;"> City </th>
-          <td mat-cell *matCellDef="let element"> {{element.city}} </td>
+        <ng-container matColumnDef="address">
+          <th mat-header-cell *matHeaderCellDef style="color:#000; font-weight: bold;"> Address </th>
+          <td mat-cell *matCellDef="let element"> {{element.address}} </td>
         </ng-container>
 
-         <!-- category Column -->
-         <ng-container matColumnDef="category">
-          <th mat-header-cell *matHeaderCellDef style="color:#000; font-weight: bold;"> Category </th>
-          <td mat-cell *matCellDef="let element"> {{element.category}} </td>
-        </ng-container>
 
-         <!-- date Column -->
-         <ng-container matColumnDef="date" >
+        <!-- date Column -->
+        <ng-container matColumnDef="date" >
           <th mat-header-cell *matHeaderCellDef style="color:#000; font-weight: bold;"> Date </th>
           <td mat-cell *matCellDef="let element"> {{element.date}} </td>
         </ng-container>
 
-        <!-- date Column -->
-        <ng-container matColumnDef="actions" >
-          <th mat-header-cell *matHeaderCellDef style="color:#000; font-weight: bold;"> Actions </th>
-          <td mat-cell *matCellDef = "let element">
-            <div class="box-actions" style="padding:10px">
-              <button id="btn-add-favorites" mat-raised-button color="accent" [routerLink]="['/publishedevent']">
-                <mat-icon>star</mat-icon> Add to favorites
-              </button>
-            </div>
-          </td>
-        </ng-container>
+      
     
         <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
         <tr mat-row *matRowDef="let row; columns: displayedColumns;" (click)="getNameByCategory(row)"></tr>
@@ -161,9 +141,7 @@
         </tr>
       </table>
     
-      <mat-paginator class="custom-paginator" [pageSizeOptions]="[5, 10, 20]"
-                     showFirstLastButtons
-                     aria-label="Select page of periodic elements">
+      <mat-paginator class="custom-paginator" [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons aria-label="Select page of periodic elements">
       </mat-paginator>
       
 
