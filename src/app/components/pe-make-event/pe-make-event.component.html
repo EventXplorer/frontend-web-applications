@@ -31,12 +31,12 @@
       <!--Direccion del evento-->
       <mat-form-field>
         <mat-label>Enter the address</mat-label>
-        <input matInput placeholder="Address" name="address" [(ngModel)]="datae.address">
+        <input matInput placeholder="Address" name="address" [(ngModel)]="datae.address" #inputPlaces>
       </mat-form-field>
       <!--Ciudad del evento-->
       <mat-form-field>
         <mat-label>Enter the city</mat-label>
-        <input matInput placeholder="City" name="city" [(ngModel)]="datae.city">
+        <input matInput placeholder="City" name="city" [(ngModel)]="datae.city" #inputCities>
       </mat-form-field>
       <!--Distrito del evento-->
       <mat-form-field>

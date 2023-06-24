@@ -12,5 +12,8 @@ export interface Event {
     district: any,
     user:{
         id:any;
+    },
+    category:{
+        id:any;
     }
 }

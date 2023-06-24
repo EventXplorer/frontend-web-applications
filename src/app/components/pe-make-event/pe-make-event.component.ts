@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit, ViewChild, ElementRef  } from '@angular/core';
 import { User } from 'src/app/models/user.model';
 import { Event } from 'src/app/models/event.model';
 import { UserDataService } from 'src/app/services/user-data.service';
@@ -17,29 +17,19 @@ interface Option2 {
   viewValue: string;
 }
 
+declare const google: any;
+
 @Component({
   selector: 'app-pe-make-event',
   templateUrl: './pe-make-event.component.html',
   styleUrls: ['./pe-make-event.component.css']
 })
 export class PeMakeEventComponent implements OnInit{
-  selectedOption: string ='Option1';
-  options: Option[] = [
-    {value: 'option-1', viewValue: 'Social Events'},
-    {value: 'option-2', viewValue: 'Sports Events'},
-    {value: 'option-3', viewValue: 'Academic Events'},
-    {value: 'option-4', viewValue:'Party Events'}
+  @ViewChild('inputPlaces') inputPlaces!: ElementRef;
+  @ViewChild('inputCities') inputCities!: ElementRef;
+  addressAutocomplete: any;
+  cityAutocomplete: any;
 
-  ];
-  selectedOption2: string ='Option1';
-  options2:Option2[]=[
-    {value: 'option-1', viewValue: 'Lima'},
-    {value: 'option-2', viewValue: 'Arequipa'},
-    {value: 'option-3', viewValue: 'Trujillo'},
-    {value: 'option-4', viewValue:'Chiclayo'},
-    {value: 'option-5', viewValue:'Cusco'},
-    {value: 'option-6', viewValue:'Iquitos'},
-  ];
 
   datae: Event = {
     id: null,
@@ -54,7 +44,10 @@ export class PeMakeEventComponent implements OnInit{
     city:null,
     district: null,
     user:{
-      id: "dsadas",
+      id: '',
+    },
+    category:{
+      id: null,
     }
 
   }
@@ -69,8 +62,30 @@ export class PeMakeEventComponent implements OnInit{
   }
 
   ngOnInit(): void {
-    //this.datae.user = this.userService.getUserUid();
-    
+    this.datae.user.id = this.userService.getUserUid();
+  }
+
+  ngAfterViewInit() {
+    this.addressAutocomplete = new google.maps.places.Autocomplete(this.inputPlaces.nativeElement, {
+      componentRestrictions: { country: 'pe' } // Filtrar por Perú
+    });
+    this.addressAutocomplete.setFields(['address_components', 'geometry']);
+
+    this.cityAutocomplete = new google.maps.places.Autocomplete(this.inputCities.nativeElement, {
+      types: ['(cities)'],
+      componentRestrictions: { country: 'pe' } // Filtrar por Perú
+    });
+    this.cityAutocomplete.setFields(['address_components', 'geometry']);
+
+    this.addressAutocomplete.addListener('place_changed', () => {
+      const place = this.addressAutocomplete.getPlace();
+      console.log(place);
+    });
+
+    this.cityAutocomplete.addListener('place_changed', () => {
+      const place = this.cityAutocomplete.getPlace();
+      console.log(place);
+    });
   }
 
   async createdEvent(){
@@ -79,7 +94,7 @@ export class PeMakeEventComponent implements OnInit{
       this.eventService.createUser(this.datae).subscribe(
         (response)=>{
           console.log('Event created!', response);
-          this.router.navigate(['/payment-details']);
+          this.router.navigate(['/publish-event/payment-details']);
         },
         (error) => {
           this.router.navigate(['/publish-event']);
