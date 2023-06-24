@@ -28,7 +28,7 @@ export class PublishedEventComponent {
     let eventData;
     for(let i = 1; i<=10; i++)
     {
-      this.eventService.getPokemons(i).subscribe
+      this.eventService.getEvent(i).subscribe
       (
         res => {
           eventData = {
