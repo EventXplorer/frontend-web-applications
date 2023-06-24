@@ -28,11 +28,16 @@
         <mat-label>Event Date</mat-label>
         <input matInput type="date" placeholder="yyyy-MM-dd" name="Date"  [(ngModel)]="datae.date" pattern="\d{4}-\d{2}-\d{2}" required>
       </mat-form-field>
-      <!--Comienzo del evento-->
+     <!--Comienzo del evento-->
       <mat-form-field>
-        <mat-label>Event Date</mat-label>
-        <input matInput type="date" placeholder="HH:mm" name="start_time"  [(ngModel)]="datae.start_time" pattern="\m{2}-:HH{2}" required>
+        <mat-label>Start Time</mat-label>
+        <input matInput type="time" placeholder="HH:mm" name="start_time"  [(ngModel)]="datae.start_time" pattern="\m{2}-:HH{2}" required>
       </mat-form-field>
+      <!--Termino del evento-->
+      <mat-form-field>
+        <mat-label>End Time</mat-label>
+        <input matInput type="time" placeholder="HH:mm" name="end_time"  [(ngModel)]="datae.end_time" pattern="\m{2}-:HH{2}" required>
+      </mat-form-field> 
       <!--Capacidad del evento-->
       <mat-form-field>
         <mat-label>Enter your max number of assitends</mat-label>
@@ -53,6 +58,7 @@
         <mat-label>Enter the district</mat-label>
         <input matInput placeholder="District" name="district" [(ngModel)]="datae.district">
       </mat-form-field>
+      <!--                JENNY AGREGA CAMPO DE CATEGORY              -->
       
     </form>
     <div id="imagen">
