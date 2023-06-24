@@ -9,14 +9,29 @@ declare const google: any;
 })
 export class PeMakeEventComponent implements AfterViewInit {
   @ViewChild('inputPlaces') inputPlaces!: ElementRef;
-  autocomplete: any;
+  @ViewChild('inputCities') inputCities!: ElementRef;
+  addressAutocomplete: any;
+  cityAutocomplete: any;
 
   ngAfterViewInit() {
-    this.autocomplete = new google.maps.places.Autocomplete(this.inputPlaces.nativeElement);
-    this.autocomplete.setFields(['address_components', 'geometry']);
+    this.addressAutocomplete = new google.maps.places.Autocomplete(this.inputPlaces.nativeElement, {
+      componentRestrictions: { country: 'pe' } // Filtrar por Perú
+    });
+    this.addressAutocomplete.setFields(['address_components', 'geometry']);
 
-    this.autocomplete.addListener('place_changed', () => {
-      const place = this.autocomplete.getPlace();
+    this.cityAutocomplete = new google.maps.places.Autocomplete(this.inputCities.nativeElement, {
+      types: ['(cities)'],
+      componentRestrictions: { country: 'pe' } // Filtrar por Perú
+    });
+    this.cityAutocomplete.setFields(['address_components', 'geometry']);
+
+    this.addressAutocomplete.addListener('place_changed', () => {
+      const place = this.addressAutocomplete.getPlace();
+      console.log(place);
+    });
+
+    this.cityAutocomplete.addListener('place_changed', () => {
+      const place = this.cityAutocomplete.getPlace();
       console.log(place);
     });
   }
