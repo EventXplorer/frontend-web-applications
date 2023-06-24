@@ -15,7 +15,7 @@ export class HttpEventService {
     //console.log(user);
     return this.httpClient.post(`${this.baseUrl}`, event);}
 
-  getPokemons(index:any){
+  getEvent(index:any){
       return this.httpClient.get<any>(`${this.baseUrl}/${index}`);
   }
 }
