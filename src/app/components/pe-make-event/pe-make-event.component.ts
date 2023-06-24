@@ -65,6 +65,11 @@ export class PeMakeEventComponent implements OnInit{
 
   ngOnInit(): void {
     this.datae.user.id = this.userService.getUserUid();
+    
+    this.http.get('https://eventxplorer-backend.azurewebsites.net/category').subscribe((response) => {
+      this.dataCategory = response;
+      console.log(this.dataCategory); // Mostrar los datos en la consola para verificar
+    });
   }
 
   ngAfterViewInit() {
