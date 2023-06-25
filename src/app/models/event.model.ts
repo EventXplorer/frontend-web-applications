@@ -1,10 +1,10 @@
 export interface Event {
     id: any,
-    url_photo: any,
+    urlPhoto: any,
     title:any,
     date: any,
-    start_time: any,
-    end_time:any,
+    startTime: any,
+    endTime:any,
     capacity:any,
     amount: any,
     address:any,

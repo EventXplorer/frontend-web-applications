@@ -6,7 +6,7 @@
       <!--Foto del evento-->
       <mat-form-field>
         <mat-label>Enter your photo</mat-label>
-        <input matInput placeholder="Photo Event" name="url_photo" [(ngModel)]="datae.url_photo" requerided >
+        <input matInput placeholder="Photo Event" name="url_photo" [(ngModel)]="datae.urlPhoto" requerided >
       </mat-form-field>
       <!--Categoria del evento-->
       <mat-form-field>
@@ -31,12 +31,12 @@
      <!--Comienzo del evento-->
       <mat-form-field>
         <mat-label>Start Time</mat-label>
-        <input matInput type="time" placeholder="HH:mm" name="start_time"  [(ngModel)]="datae.start_time" pattern="\m{2}-:HH{2}" required>
+        <input matInput type="time" placeholder="HH:mm" name="start_time"  [(ngModel)]="datae.startTime" pattern="\m{2}-:HH{2}" required>
       </mat-form-field>
       <!--Termino del evento-->
       <mat-form-field>
         <mat-label>End Time</mat-label>
-        <input matInput type="time" placeholder="HH:mm" name="end_time"  [(ngModel)]="datae.end_time" pattern="\m{2}-:HH{2}" required>
+        <input matInput type="time" placeholder="HH:mm" name="end_time"  [(ngModel)]="datae.endTime" pattern="\m{2}-:HH{2}" required>
       </mat-form-field> 
       <!--Capacidad del evento-->
       <mat-form-field>
@@ -58,17 +58,17 @@
         <mat-label>Enter the district</mat-label>
         <input matInput placeholder="District" name="district" [(ngModel)]="datae.district">
       </mat-form-field>
-      <!--                JENNY AGREGA CAMPO DE CATEGORY              -->
       
+      <div id="container-b">
+        <a id="btn-make-order" style="color: white; " mat-raised-button (click)="createdEvent()">CONTINUE</a>
+      </div>
     </form>
     <div id="imagen">
       <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSBrjjIbQnGKoKdPZ8_tZxGAJgXz5nKQRooS-kuU06RMFHp5Avu" alt="cuadernoylapiz" id="cuaderoylapiz">
     </div>
     
   </div>
-  <div id="container-b">
-    <a id="btn-make-order" style="color: white; " mat-raised-button (click)="createdEvent()">CONTINUE</a>
-  </div>
+  
 </div>
 
 

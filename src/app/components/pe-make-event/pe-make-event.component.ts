@@ -35,11 +35,11 @@ export class PeMakeEventComponent implements OnInit{
 
   datae: Event = {
     id: null,
-    url_photo: null,
+    urlPhoto: null,
     title:null,
     date: null,
-    start_time: null,
-    end_time:null,
+    startTime: null,
+    endTime:null,
     capacity:null,
     amount: null,
     address:null,
@@ -74,8 +74,8 @@ export class PeMakeEventComponent implements OnInit{
   }
 
   ngAfterViewInit() {
-    //obtener direcciones
-    this.addressAutocomplete = new google.maps.places.Autocomplete(this.inputPlaces.nativeElement, {
+     //obtener direcciones
+     this.addressAutocomplete = new google.maps.places.Autocomplete(this.inputPlaces.nativeElement, {
       componentRestrictions: { country: 'pe' } // Filtrar por Perú
     });
     this.addressAutocomplete.setFields(['address_components', 'geometry']);
@@ -85,20 +85,7 @@ export class PeMakeEventComponent implements OnInit{
       componentRestrictions: { country: 'pe' } // Filtrar por Perú
     });
     this.cityAutocomplete.setFields(['address_components', 'geometry']);
-    //agregar listener para obtener la dirección seleccionada
-    // y almacenarla en la variable address
-    this.addressAutocomplete.addListener('place_changed', () => {
-      const place = this.addressAutocomplete.getPlace();
-
-      this.datae.address = place.formatted_address;
-    });
-    //agregar listener para obtener la ciudad seleccionada
-    // y almacenarla en la variable city
-    this.cityAutocomplete.addListener('place_changed', () => {
-      const place = this.cityAutocomplete.getPlace();
-
-      this.datae.city = place.name;
-    });
+ 
   }
 
   async createdEvent(){
@@ -125,9 +112,9 @@ export class PeMakeEventComponent implements OnInit{
 
   
   findAmount() {
-    if (this.datae.start_time && this.datae.end_time) {
-      const startTimeParts = this.datae.start_time.split(':');
-      const endTimeParts = this.datae.end_time.split(':');
+    if (this.datae.startTime && this.datae.endTime) {
+      const startTimeParts = this.datae.startTime.split(':');
+      const endTimeParts = this.datae.endTime.split(':');
   
       const startHours = parseInt(startTimeParts[0], 10);
       const startMinutes = parseInt(startTimeParts[1], 10);
