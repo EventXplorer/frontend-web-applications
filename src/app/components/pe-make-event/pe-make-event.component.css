@@ -18,13 +18,26 @@
   justify-content: center;
   height: auto; /* Ajusta la altura según tus necesidades */
 }
+
+/*
 .example-container mat-form-field + mat-form-field {
   margin-left: 8px;
   display: flex;
   
   align-items: flex-start;
   flex:1;
+}*/
+.example-container mat-form-field + mat-form-field {
+  margin-left: 8px;
 }
+
+#row-1{
+  flex: 1;
+}
+#row-2{
+  flex:1;
+}
+
 
 #btn-make-order{
   background: linear-gradient(90deg, #5C396E 3.89%, #AB529C 94.23%);
