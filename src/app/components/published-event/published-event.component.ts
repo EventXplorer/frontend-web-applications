@@ -36,7 +36,7 @@ export class PublishedEventComponent {
       (
         res => {
           eventData = {
-            url_photo: res.url_photo,
+            url_photo: res.urlPhoto,
             title: res.title,
             date: res.date,
             address: res.address,
