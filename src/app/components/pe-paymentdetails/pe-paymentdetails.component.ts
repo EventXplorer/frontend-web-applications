@@ -86,6 +86,8 @@ export class PePaymentdetailsComponent {
     const formattedCreditCard = numericCreditCard.replace(/(\d{4}(?=\d))/g, '$1 ');
     return formattedCreditCard;
   }
+
+
 }
   
   

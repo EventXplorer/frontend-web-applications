@@ -8,6 +8,7 @@ import { Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { Category } from 'src/app/models/category.model';
+import Swal from 'sweetalert2';
 
 interface Option {
   value: string;
@@ -89,28 +90,30 @@ export class PeMakeEventComponent implements OnInit{
   }
 
   async createdEvent(){
-   
-    try {
-      console.log(this.datae);
-      
-      const category:Category = this.dataCategory.find((c:Category) => c.id === this.datae.category.id);
-      this.datae.category= category;
+    if (this.validateForm()) {
 
+      try {
+        console.log(this.datae);
+        
+        const category:Category = this.dataCategory.find((c:Category) => c.id === this.datae.category.id);
+        this.datae.category= category;
+
+        this.findAmount();
+
+        //Post Event
+        const response= await this.http.post('https://eventxplorer-backend.azurewebsites.net/event',this.datae).toPromise();
+
+        console.log('The payment was successful.', response);
+
+        this.router.navigate(['/publish-event/payment-details']);
+      } catch (error) {
+        this.router.navigate(['/publish-event/payment-details']);
+      }
+      
       this.findAmount();
 
-      //Post Event
-      const response= await this.http.post('https://eventxplorer-backend.azurewebsites.net/event',this.datae).toPromise();
-
-      console.log('The payment was successful.', response);
-
-      this.router.navigate(['/publish-event/payment-details']);
-    } catch (error) {
-      this.router.navigate(['/publish-event/payment-details']);
+      console.log(this.datae);
     }
-    
-    this.findAmount();
-
-    console.log(this.datae);
   }
 
   
@@ -142,5 +145,18 @@ export class PeMakeEventComponent implements OnInit{
     }
   }
 
-  
+  validateForm(): boolean {
+   
+    if (!this.datae.urlPhoto || !this.datae.category.id || !this.datae.title || !this.datae.date || !this.datae.startTime || !this.datae.endTime || !this.datae.capacity || !this.datae.address || !this.datae.city || !this.datae.district) {
+      Swal.fire({
+        icon: 'warning',
+        title: 'Incomplete Form',
+        text: 'Please fill in all the required fields.',
+        confirmButtonColor: '#a8549c',
+        confirmButtonText: 'OK'
+      });
+      return false; 
+    }
+    return true; 
+  }
 }
