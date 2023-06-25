@@ -117,7 +117,7 @@ export class PeMakeEventComponent implements OnInit{
     const startNumeric = startHours + startMinutes / 60;
     const endNumeric = endHours + endMinutes / 60;
 //logica para el monto
-    const duration = (end_time + start_time);
+    const duration = end_time - start_time;
     let amount=((capacity * duration)/100) + 5;
 
     if(amount>50){
@@ -129,10 +129,14 @@ export class PeMakeEventComponent implements OnInit{
   
     try {
       console.log(this.datae);
-      const category = this.dataCategory.find((c:Category) => c.id === this.datae.category.id);
+      
+      const category:Category = this.dataCategory.find((c:Category) => c.id === this.datae.category.id);
       this.datae.category= category;
+      
+      //Post Event
+      const response= await this.http.post('https://eventxplorer-backend.azurewebsites.net/event',this.datae).toPromise();
 
-      const response = await this.eventService.createEvent(this.datae).toPromise();
+      //const response = await this.eventService.createEvent(this.datae).toPromise();
       console.log('The payment was successful.', response);
       this.router.navigate(['/publish-event/payment-completed']);
     } catch (error) {
