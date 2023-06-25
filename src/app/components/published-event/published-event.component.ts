@@ -3,6 +3,8 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
 import { Router } from '@angular/router';
 import { HttpEventService } from 'src/app/services/http-event.service';
+import { UserDataService } from 'src/app/services/user-data.service';
+import { UserService } from 'src/app/services/user.service';
 
 
 @Component({
@@ -15,6 +17,9 @@ export class PublishedEventComponent {
   data: any[] = [];
   dataSource = new MatTableDataSource<any>(this.data);
   events=[];
+//
+  allEvent:any[]=[];
+  
   @ViewChild(MatPaginator, {static:true}) paginator!: MatPaginator;
 
   searchCategory: string = '';
@@ -27,6 +32,19 @@ export class PublishedEventComponent {
 
   ngOnInit(): void {
     this.getEvents()
+    //
+    this.getCreatedEvents();
+  }
+  //
+  getCreatedEvents(){
+    this.eventService.getAllEvents().subscribe(
+      (response:any[])=>{
+        this.allEvent=response;
+      },
+      (error)=>{
+        console.error(error);
+      }
+    );
   }
 
   getEvents(){

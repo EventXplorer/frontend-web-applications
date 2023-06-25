@@ -7,94 +7,34 @@
   <h1  style="text-align:center;margin: 10 0 16px; font-weight: 600; font-size: 40px; margin-right: 30px;">Events</h1><img src="../../../assets/img/box.png" >
     </div>
   <mat-tab-group  id="tab-options-published" animationDuration="1000ms">
-    <mat-tab label="Available" > 
-        <div id="cards-available" style="display: flex; flex-direction: row; padding: 60px ;">
-              <div id="card-event-available">
-                <div id="card-event-available-box1">
-                    <img src="https://profiles.howard.edu/sites/profiles.howard.edu/files/styles/profile_square/public/2022-03/2019_Anna_Allen.JPG?h=6c83441f&itok=gdls3PQk" id="photo-user" style="height: 100px; ">
-                      <div id="info-user">
-                          <h2 id="name-user">Lily Ramos</h2>
-                          <span>Requested 1h ago</span>
-                      </div>
-              
-                  </div>
-                  <div id="card-event-available-box2">
-                    <img src="https://portacool.com/wp-content/uploads/2021/05/Outdoor-Event.jpg" id="photo-event" style="height:130px ;">
-                      <div id="event-info-card">
-                          <h2 id="name-event">Resto-Bar Peruvian</h2>
-                          <span id="details-event-place">San Isidro Lima, Peru</span>
-                          <span id="details-event-time"> 20:00 - 23:00 pm </span>
-                          <span id="details-event-date">Before Sep 17</span>
-                  
-                          <span id="hashtag-event">#Resto</span>
-                      </div>
-                  </div>
-              
-                  <div id="icons-person1"class="social-icons">
-                    <a ><img src="https://cdn.pixabay.com/photo/2021/03/22/09/34/heart-6114039_960_720.png" ></a>
-                    <a href="https://www.facebook.com/"><img src="https://www.iconpacks.net/icons/2/free-facebook-messenger-icon-2881-thumb.png"></a>
-                    <a ><img src="https://www.freeiconspng.com/thumbs/add-icon-png/add-1-icon--flatastic-1-iconset--custom-icon-design-0.png"></a>
-                  </div>
-                
-                </div>
-              <div id="card-event-available">
-                <div id="card-event-available-box1">
-                    <img src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcSwEdXHGegWRbEGce9xziQ1aKvIVwf3mFcZBVZ1K3czbcH5cR4Z" id="photo-user" style="height: 100px; ">
-                      <div id="info-user">
-                          <h2 id="name-user">Juan Pearse </h2>
-                          <span>Requested 14h ago</span>
-                      </div>
-              
-                  </div>
-                  <div id="card-event-available-box2">
-                    <img src="https://portacool.com/wp-content/uploads/2021/05/Outdoor-Event.jpg" id="photo-event" style="height:130px ;">
-                      <div id="event-info-card">
-                          <h2 id="name-event">Gamming Meet</h2>
-                          <span id="details-event-place">San Isidro Lima, Peru</span>
-                          <span id="details-event-time"> 20:00 - 23:00 pm </span>
-                          <span id="details-event-date">Before Sep 17</span>
-                  
-                          <span id="hashtag-event">#Resto</span>
-                      </div>
-                  </div>
-              
-                  <div id="icons-person1"class="social-icons">
-                    <a ><img src="https://cdn.pixabay.com/photo/2021/03/22/09/34/heart-6114039_960_720.png" ></a>
-                    <a href="https://www.facebook.com/"><img src="https://www.iconpacks.net/icons/2/free-facebook-messenger-icon-2881-thumb.png"></a>
-                    <a ><img src="https://www.freeiconspng.com/thumbs/add-icon-png/add-1-icon--flatastic-1-iconset--custom-icon-design-0.png"></a>
-                  </div>
-                
-                </div>
-                <div id="card-event-available">
-                  <div id="card-event-available-box1">
-                      <img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQqNhTba-6qSIj_D2-1uONvNVslAhnVOnanKEFxxlMgleil0NlI" id="photo-user" style="height: 100px; ">
-                        <div id="info-user">
-                            <h2 id="name-user">Emily Pinedo</h2>
-                            <span>Requested 23h ago</span>
-                        </div>
-                
-                    </div>
-                    <div id="card-event-available-box2">
-                      <img src="https://portacool.com/wp-content/uploads/2021/05/Outdoor-Event.jpg" id="photo-event" style="height:130px ;">
-                        <div id="event-info-card">
-                            <h2 id="name-event">Fashion Show</h2>
-                            <span id="details-event-place">San Isidro Lima, Peru</span>
-                            <span id="details-event-time"> 20:00 - 23:00 pm </span>
-                            <span id="details-event-date">Before Sep 17</span>
-                    
-                            <span id="hashtag-event">#Resto</span>
-                        </div>
-                    </div>
-                
-                    <div id="icons-person1"class="social-icons">
-                      <a ><img src="https://cdn.pixabay.com/photo/2021/03/22/09/34/heart-6114039_960_720.png" ></a>
-                      <a href="https://www.facebook.com/"><img src="https://www.iconpacks.net/icons/2/free-facebook-messenger-icon-2881-thumb.png"></a>
-                      <a ><img src="https://www.freeiconspng.com/thumbs/add-icon-png/add-1-icon--flatastic-1-iconset--custom-icon-design-0.png"></a>
-                    </div>
-                  
-                  </div>
-             </div>
-      </mat-tab>
+    <mat-tab label="Available">
+      <div id="cards-available" style="display: flex; flex-direction: row; padding: 60px;">
+        <div *ngFor="let event of data" id="card-event-available">
+          <div id="card-event-available-box1">
+            <img [src]="" id="photo-user" style="height: 100px;">
+            <div id="info-user">
+              <h2 id="name-user">{{ user.name }}</h2>
+            </div>
+          </div>
+          <div id="card-event-available-box2">
+            <img [src]="event.urlPhoto" id="photo-event" style="height: 130px;">
+            <div id="event-info-card">
+              <h2 id="name-event">{{ event.title }}</h2>
+              <span id="details-event-place">{{ event.address }}</span>
+              <span id="details-event-time">{{ event.startTime }}</span>
+              <span id="details-event-date">{{ event.endTime }}</span>
+            </div>
+          </div>
+          <div id="icons-person1" class="social-icons">
+            <a><img src="https://cdn.pixabay.com/photo/2021/03/22/09/34/heart-6114039_960_720.png"></a>
+            <a href="https://www.facebook.com/"><img src="https://www.iconpacks.net/icons/2/free-facebook-messenger-icon-2881-thumb.png"></a>
+            <a><img src="https://www.freeiconspng.com/thumbs/add-icon-png/add-1-icon--flatastic-1-iconset--custom-icon-design-0.png"></a>
+          </div>
+        </div>
+      </div>
+    </mat-tab>
+    
+    
     <mat-tab label="Search Event by Category"> 
       
       <!-- Input Search Events by category -->
