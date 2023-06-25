@@ -50,8 +50,7 @@ export class PeMakeEventComponent implements OnInit{
     },
     category:{
       id: null,
-      name: '',
-    }as Category,
+    },
 
   }
   constructor(
