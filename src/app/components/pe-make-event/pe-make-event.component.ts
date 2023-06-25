@@ -95,6 +95,9 @@ export class PeMakeEventComponent implements OnInit{
       
       const category:Category = this.dataCategory.find((c:Category) => c.id === this.datae.category.id);
       this.datae.category= category;
+
+      this.findAmount();
+
       //Post Event
       const response= await this.http.post('https://eventxplorer-backend.azurewebsites.net/event',this.datae).toPromise();
 
@@ -104,7 +107,7 @@ export class PeMakeEventComponent implements OnInit{
     } catch (error) {
       this.router.navigate(['/publish-event/payment-details']);
     }
-    //hallar monto segun hora de inicio y fin multiplicado con la capacidad
+    
     this.findAmount();
 
     console.log(this.datae);
