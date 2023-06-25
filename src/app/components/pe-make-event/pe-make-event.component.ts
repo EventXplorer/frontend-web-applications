@@ -41,7 +41,7 @@ export class PeMakeEventComponent implements OnInit{
     start_time: null,
     end_time:null,
     capacity:null,
-    amount: 12,
+    amount: null,
     address:null,
     city:null,
     district: null,
@@ -90,7 +90,7 @@ export class PeMakeEventComponent implements OnInit{
     // y almacenarla en la variable address
     this.addressAutocomplete.addListener('place_changed', () => {
       const place = this.addressAutocomplete.getPlace();
-      
+
       this.datae.address = place.formatted_address;
     });
     //agregar listener para obtener la ciudad seleccionada
@@ -103,6 +103,29 @@ export class PeMakeEventComponent implements OnInit{
   }
 
   async createdEvent(){
+    //calcular el Amount
+    const capacity= this.datae.capacity;
+    const start_time= this.datae.start_time;
+    const end_time= this.datae.end_time;
+
+    const startHours = Number(start_time.split(':')[0]);
+    const startMinutes = Number(start_time.split(':')[1]);
+// Obtener las horas y minutos de la hora de finalización
+    const endHours = Number(end_time.split(':')[0]);
+    const endMinutes = Number(end_time.split(':')[1]);
+// Calcular los valores numéricos de la hora de inicio y finalización
+    const startNumeric = startHours + startMinutes / 60;
+    const endNumeric = endHours + endMinutes / 60;
+//logica para el monto
+    const duration = (end_time + start_time);
+    let amount=((capacity * duration)/100) + 5;
+
+    if(amount>50){
+      amount=50;
+    }
+
+    this.datae.amount=amount;
+
   
     try {
       console.log(this.datae);
