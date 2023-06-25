@@ -11,13 +11,14 @@ import { HttpEventService } from 'src/app/services/http-event.service';
   styleUrls: ['./published-event.component.css']
 })
 export class PublishedEventComponent {
-  displayedColumns: string[] = ['url_photo', 'title', 'address', 'date' ];
+  displayedColumns: string[] = ['url_photo', 'title', 'address', 'date' , 'category'];
   data: any[] = [];
   dataSource = new MatTableDataSource<any>(this.data);
   events=[];
   @ViewChild(MatPaginator, {static:true}) paginator!: MatPaginator;
 
-  
+  searchCategory: string = '';
+  dataCategory: any[] = [];
 
   constructor(
     private eventService: HttpEventService,
@@ -40,9 +41,10 @@ export class PublishedEventComponent {
             title: res.title,
             date: res.date,
             address: res.address,
-
+            category: res.category.name,
 
           }
+          
           this.data.push(eventData)
           this.dataSource=new MatTableDataSource<any>(this.data);
           this.dataSource.paginator = this.paginator;
@@ -55,18 +57,13 @@ export class PublishedEventComponent {
 
   }
 
-  applyFilter(event: Event) {
-    const filterValue = (event.target as HTMLInputElement).value;
-    this.dataSource.filter = filterValue.trim().toLowerCase();
-
+  
+  applyFilter() {
+    this.dataSource.filter = this.searchCategory.trim().toLowerCase();
+  
     if (this.dataSource.paginator) {
       this.dataSource.paginator.firstPage();
     }
   }
-  getNameByCategory(row: any){
-    //Example
-    //this.router.navigateByUrl(`/detail/${row.position}`);
-  }
-
 
 }
