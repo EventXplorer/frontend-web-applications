@@ -100,7 +100,7 @@ export class PeMakeEventComponent implements OnInit{
     try {
       console.log(this.datae);
      
-      const response = await this.eventService.createEvent(this.datae).toPromise();
+      const response= await this.http.post('https://eventxplorer-backend.azurewebsites.net/event',this.datae).toPromise();
       console.log('The payment was successful.', response);
 
       this.router.navigate(['/publish-event/payment-details']);
