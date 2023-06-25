@@ -40,7 +40,7 @@ export class PeMakeEventComponent implements OnInit{
     start_time: null,
     end_time:null,
     capacity:null,
-    amount: 12,
+    amount: null,
     address:null,
     city:null,
     district: null,
@@ -99,12 +99,48 @@ export class PeMakeEventComponent implements OnInit{
   
     try {
       console.log(this.datae);
+     
       const response = await this.eventService.createEvent(this.datae).toPromise();
       console.log('The payment was successful.', response);
-      this.router.navigate(['/publish-event/payment-completed']);
+
+      this.router.navigate(['/publish-event/payment-details']);
     } catch (error) {
-      this.router.navigate(['/publish-event/payment-completed']);
+      this.router.navigate(['/publish-event/payment-details']);
+    }
+    //hallar monto segun hora de inicio y fin multiplicado con la capacidad
+    this.findAmount();
+
+    console.log(this.datae);
+  }
+
+  
+  findAmount() {
+    if (this.datae.start_time && this.datae.end_time) {
+      const startTimeParts = this.datae.start_time.split(':');
+      const endTimeParts = this.datae.end_time.split(':');
+  
+      const startHours = parseInt(startTimeParts[0], 10);
+      const startMinutes = parseInt(startTimeParts[1], 10);
+      const endHours = parseInt(endTimeParts[0], 10);
+      const endMinutes = parseInt(endTimeParts[1], 10);
+  
+      if (!isNaN(startHours) && !isNaN(startMinutes) && !isNaN(endHours) && !isNaN(endMinutes)) {
+        const startTime = new Date();
+        startTime.setHours(startHours);
+        startTime.setMinutes(startMinutes);
+  
+        const endTime = new Date();
+        endTime.setHours(endHours);
+        endTime.setMinutes(endMinutes);
+  
+        const capacity = Number(this.datae.capacity);
+  
+        if (!isNaN(capacity)) {
+          this.datae.amount = capacity * (endTime.getTime() - startTime.getTime()) / (1000 * 60); // Cálculo del tiempo en minutos
+        }
+      }
     }
   }
+
   
 }

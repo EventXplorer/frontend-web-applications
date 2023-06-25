@@ -11,7 +11,7 @@
       <!--Categoria del evento-->
       <mat-form-field>
         <mat-label>Select Category</mat-label>
-        <mat-select placeholder="Category Event" name="category" [(ngModel)]="datae.category" required>
+        <mat-select placeholder="Category Event" name="category" [(ngModel)]="datae.category.id" required>
           <mat-option *ngFor="let category of dataCategory" [value]="category.id">
             {{ category.name }}
           </mat-option>
