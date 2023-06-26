@@ -37,18 +37,15 @@ export class ResumeComponent{
   assist: any[] = [];
 
   getAssist() {
-    const userId= this.UserService.getCurrentUser()?.id;
-
-    if (userId) {
-      this.assistService.getAssistsByUser(userId).subscribe(
-        res => {
-          this.assist = res;
-        },
-        err => {
-          console.error('Error al obtener los asistentes:', err);
-        }
-      );
-    }
+    this.assistService.getAllAssists().subscribe(
+      res => {
+        this.assist = res;
+      },
+      err => {
+        console.error('Error al obtener los asistentes:', err);
+      }
+    );
   }
+  
 }
   
