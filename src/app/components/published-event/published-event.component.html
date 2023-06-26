@@ -11,7 +11,7 @@
       <div id="cards-available" style="display: flex; flex-direction: row; padding: 60px;">
         <div *ngFor="let event of data" id="card-event-available">
           <div id="card-event-available-box1">
-            <img [src]="" id="photo-user" style="height: 100px;">
+            <img [src]="user.urlPhoto" id="photo-user" style="height: 100px;">
             <div id="info-user">
               <h2 id="name-user">{{ user.name }}</h2>
             </div>
@@ -25,14 +25,13 @@
               <span id="details-event-date">{{ event.endTime }}</span>
             </div>
           </div>
-          <div id="icons-person1" class="social-icons">
-            <a><img src="https://cdn.pixabay.com/photo/2021/03/22/09/34/heart-6114039_960_720.png"></a>
-            <a href="https://www.facebook.com/"><img src="https://www.iconpacks.net/icons/2/free-facebook-messenger-icon-2881-thumb.png"></a>
-            <a><img src="https://www.freeiconspng.com/thumbs/add-icon-png/add-1-icon--flatastic-1-iconset--custom-icon-design-0.png"></a>
+          <div id="mat-raised-button" class="button_assist_event">
+            <button mat-raised-button color="primary">Asistir a evento</button>
           </div>
         </div>
       </div>
     </mat-tab>
+    
     
     
     <mat-tab label="Search Event by Category"> 

@@ -6,19 +6,19 @@
 <div id="contenido">
         <div id="card1-publish">
             <img  id="img-publish" src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTWnkldJ6yl_wHnJy6YRms9bOYO9UrSM42eg6zISSI_Keg7b1XW">
-            <span id="texto-publish">CONVENCIÓN DE COMICS PERUANOS N°10</span>
+            <span id="texto-publish">{{datae.title}}</span>
         </div>
         <div>
-            <span id="organized-publish">Organized by</span>
-            <img  src="https://prosettings.net/acd-cgi/img/v1/wp-content/uploads/mixwell.png?dpr=1|f=auto|fit=contain|height=200|q=99|sharpen=1|width=200" id="img-organized">
+            <span id="organized-publish">Organized by {{dataUser.name}}</span>
+            <img  src="{{dataUser.urlPhoto}}" id="img-organized">
         </div>
         <div>
             <span id="id-publish">Event ID:</span>
-            <span id="contra-publish">GRGATSA</span>
+            <span id="contra-publish">{{datae.id}}</span>
         </div>
         <div>
             <span id="adress-publish">Adress:</span>
-            <span id="password-publish">*******</span>
+            <span id="password-publish">{{datae.address}}</span>
             <img id="map-adress-publish" src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcSn5GW4WdIxdAl3jP2ozoyvsstVXI_UPBhYTNT-XiVRhGhrDRyh">
         </div>
 </div>
@@ -32,9 +32,9 @@
 <div id="contenido3">
     <div>
         <span id="event-id-publish">Event ID</span>
-        <span id="event-code">GRGATSA </span>
+        <span id="event-code">{{datae.id}}</span>
         <span id="amount">Total:</span>
-        <span id="money">560 usd</span>
+        <span id="money">S/.{{datae.amount}}</span>
     </div>
     
 </div>

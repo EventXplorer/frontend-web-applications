@@ -25,8 +25,8 @@ export class UserDataService {
     return this.httpClient.post(`${this.baseUrl}`, user);
   }
 
-   //
-   getAllUsers(): Observable<any[]>{
+  //
+  getAllUsers(){
     return this.httpClient.get<any[]>(`${this.baseUrl}`);
   }
 

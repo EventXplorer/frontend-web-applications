@@ -4,6 +4,9 @@ import { Payment } from 'src/app/models/payment.model';
 import { PaymentService } from 'src/app/services/payment.service';
 import { UserDataService } from 'src/app/services/user-data.service';
 import { UserService } from 'src/app/services/user.service';
+import { HttpEventService } from 'src/app/services/http-event.service';
+import { Event } from 'src/app/models/event.model';
+import { User } from 'src/app/models/user.model';
 import Swal from 'sweetalert2';
 
 
@@ -35,7 +38,49 @@ export class PePaymentdetailsComponent {
 
   user: any;
 
-  constructor(private paymentService: PaymentService, private userService: UserService, private router:Router, private userDataService:UserDataService) {
+  dataUser: User={
+    uid: null,
+    email: null,
+    id: null,
+    name: null,
+    age: null,
+    city: null,
+    country: null,
+    urlPhoto: null,
+    birthday: null,
+    typeIdentification: null,
+    numberIdentification: null, 
+    creditcard: null
+  }
+
+
+  datae: Event = {
+    id: null,
+    urlPhoto: null,
+    title:null,
+    date: null,
+    startTime: null,
+    endTime:null,
+    capacity:null,
+    amount: null,
+    address:null,
+    city:null,
+    district: null,
+    user:{
+      id: '',
+    },
+    category:{
+      id: null,
+    },
+  }
+
+  constructor(
+    private paymentService: PaymentService, private userService: UserService, 
+    private router:Router, 
+    private userDataService:UserDataService,
+    private eventService: HttpEventService,
+    ) 
+    {
     this.user = {
       creditcard: this.userService.getUserCreditCard(),
     };
@@ -51,11 +96,46 @@ export class PePaymentdetailsComponent {
     };
   }
   
-  ngOnInit(): void {}
+  ngOnInit(): void {
+
+    this.dataUser.email = this.userService.getUserEmail();
+    this.dataUser.uid = this.userService.getUserUid();
+
+    const currentUser = this.userService.getCurrentUser();
+    if (currentUser) {
+      this.dataUser = currentUser;
+      this.getUserDataByID(currentUser.uid);
+    } 
+
+    //Pasar el ultimo id de evento
+    this.eventService.getAllEvents().subscribe(events => {
+      const lastEvent = events.reduce((prev, current) => (prev.id > current.id ? prev : current));
+      this.getEventDataByID(lastEvent.id);
+    });
+    
+  }
+
+
+  private getEventDataByID(eventId: any){
+    this.eventService.getEvent(eventId).subscribe(data=>{
+      this.datae=data;
+      console.log(this.datae);
+    })
+
+  }
+
+  private getUserDataByID(userId: any){
+    this.userDataService.getUserById(userId).subscribe(data=>{
+      this.dataUser=data;
+    })
+  }
 
   async createPayment(){
+    console.log(this.dataPayment.amount);
+    console.log(this.datae.amount);
 
-    if (!this.isChecked) {
+
+    if (!this.isChecked && this.dataPayment.amount === this.datae.amount) {
       Swal.fire({
         icon: 'warning',
         title: 'Warning',
