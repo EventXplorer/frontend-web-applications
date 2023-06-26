@@ -39,14 +39,22 @@ export class PeEventProgressComponent {
 
 
   ngOnInit(): void {
-    this.getEventDataByID(this.eventService.getAllEvents.length);
+    
+    //Pasar el ultimo id de evento
+    this.eventService.getAllEvents().subscribe(events => {
+      const lastEvent = events.reduce((prev, current) => (prev.id > current.id ? prev : current));
+      this.getEventDataByID(lastEvent.id);
+    });
+    
   }
 
 
   private getEventDataByID(eventId: any){
     this.eventService.getEvent(eventId).subscribe(data=>{
       this.datae=data;
+      console.log(this.datae);
     })
+
   }
 
 
