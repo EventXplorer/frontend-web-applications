@@ -33,6 +33,7 @@ export class PeMakeEventComponent implements OnInit{
   cityAutocomplete: any;
   dataCategory: any;
 
+  mapUrl:String='';
 
   datae: Event = {
     id: null,
@@ -79,13 +80,33 @@ export class PeMakeEventComponent implements OnInit{
      this.addressAutocomplete = new google.maps.places.Autocomplete(this.inputPlaces.nativeElement, {
       componentRestrictions: { country: 'pe' } // Filtrar por Perú
     });
-    this.addressAutocomplete.setFields(['address_components', 'geometry']);
+    this.addressAutocomplete.setFields(['formatted_address']); //obtener direcciones completas
+    //guardar la dirección en el modelo
+    this.addressAutocomplete.addListener('place_changed', () => {
+      const place = this.addressAutocomplete.getPlace();
+      const address = place.formatted_address;
+      //Lat and long
+      const latitude = place.geometry.location.lat();
+      const longitude = place.geometry.location.lng();
+
+      this.datae.address = address; 
+      this.mapUrl = `https://www.google.com/maps?q=${latitude},${longitude}`; 
+      
+      console.log('URL del mapa:', this.mapUrl);
+    });
+    
     //obtener ciudades
     this.cityAutocomplete = new google.maps.places.Autocomplete(this.inputCities.nativeElement, {
       types: ['(cities)'],
       componentRestrictions: { country: 'pe' } // Filtrar por Perú
     });
-    this.cityAutocomplete.setFields(['address_components', 'geometry']);
+    this.cityAutocomplete.setFields(['formatted_address']);
+    //guardar la ciudad en el modelo
+    this.cityAutocomplete.addListener('place_changed', () => {
+      const place = this.cityAutocomplete.getPlace();
+      const city = place.formatted_address;
+      this.datae.city = city;
+    });
  
   }
 
