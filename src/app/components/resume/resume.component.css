@@ -1,368 +1,119 @@
+.social-icons {
+  display: flex;
+  justify-content: left;
+}
 
-  /* Contenedor principal */
-  .container2 {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 10vh;
-    margin-top:30px; /* ajusta el espacio entre el contenedor y la lista */
-  }
-  
-  .container2 h1 {
-    text-align: center;
- 
-  }
-  
-  /* Opciones */
-  ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-  }
-  
-  #options li {
-    display: block;
-    margin: 15px;
-    float: left;
-  }
-  
-  #options li:hover {
-    color: blue;
-  }
-  
-  #options li:hover,
-  h1:active {
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-  }
-  
-  /* Imágenes */
-  .contenedor {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    height: 50vh;
-  }
-  
-  .fila {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap; /* permite que los elementos se envuelvan en la siguiente fila */
-    max-width: 1000px; /* establece el ancho máximo para evitar que los elementos se estiren demasiado */
-    margin: 0 auto; /* centra la fila en la página */
-  }
-  
-  .bloque {
-    display: flex;
-    align-items: center;
-    flex: 1 1 calc(50% - 30px); /* ajusta el ancho y la distribución de los bloques */
-    max-width: 400px; /* ajusta el ancho máximo de los bloques */
-    margin: 0 15px 30px; /* ajusta el espacio entre los bloques y las filas */
-    box-shadow: 9px 5px 33px rgba(72, 72, 72, 0.09);
-    border-radius: 10px;
-    height: 160px;
-  }
-  .bloque img {
-    width: 25%; /* ajusta el ancho de la imagen al ancho del bloque */
-    height: auto; /* mantiene la proporción de aspecto original de la imagen */
-    float: left;
-    margin-right: 20px;
-  }
-  
-  .texto {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 20px;
-  }
-  
-  h2 {
-    margin: 0;
-  }
-  
-  p {
-    text-align: center;
-  }
-  
-  /* Media queries */
-  @media screen and (min-width: 768px) {
-    /* Para pantallas de tamaño mediano */
-    .container2 {
-      height: auto;
-      padding: 20px;
-      margin-top: 5vh;
-    }
-  
-    #options li {
-      margin: 0 20px;
-    }
-  
-    .bloque {
-      width: calc(50% - 40px);
-      margin: 20px;
-    }
-  }
-  
-  @media screen and (min-width: 1024px) {
-    /* Para pantallas grandes */
-    .bloque {
-      width: calc(33.33% - 40px);
-    }
-  }
-  
-  
- 
-  .centrado p{
-    text-align: center;
-    color: #666;
-    opacity: 0.4;
-    font-size: 50px;
-  }
-  
-  #vertical-list2  a{
-    text-align: center;
-   margin: 100px;
-    
-  }
+.social-icons a {
+  margin-left: 40px;
+}
 
-  /*contenedor de todo*/
-  .block-container {
-    width: 1000px;
-    height: 300px;
-    background-color: #eee;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px;
-    margin-left:15%;
-   
-    
-  }
-  /*contenedor de las imagenes con la descripcion*/
-  .block {
-    width: calc(33.33% - 20px);
-    height: 90%;
-    background-color: white;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    padding: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-    align-items: center;
-     
-  }
-  
-  .block img {
-    width: 100px;
-    height: 100px;
-    display: flex;
-  }
-  
-  .block h3 {
-    margin-top: 0;
-  }
-  
-  .social-icons {
-    display: flex;
-    justify-content: left;
-   
-  }
-  
-  .social-icons a {
-    margin-left: 40px;
-    
-  }
-  
- 
-  .social-icons img {
-    justify-content: center;
-    width: 40px;
-    height: 40px;
-  }
-  .tittleEvents {
-    text-align: center;
-    position: relative;
-    margin: 5px auto;
-  }
-  .tittleEvents img{
-    width: 30px;
-    height: 30px;
-    margin-left: 100px;
-    justify-content: center;
-    align-items: center;
-  }
-  .paginasEvents h2{
-    text-align: center;
-  }
-    
-  /* la barra de transiciones*/
-  mat-tab-group{
-  padding: 20px;
-  }
-  
-  .social-icons {
-    display: flex;
-    justify-content: left;
-  
-  }
-  
-  .social-icons a {
-    margin: 0 auto;
-    
-  }
-  
-  .social-icons img {
+.social-icons img {
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+}
 
-    width: 40px;
-    height: 40px;
-    padding: 5px;
-  }
-  
-  
-  .tittleEvents {
-    position: relative;
-    padding-left:  35px;
-    margin:10px;
-  }
-  .tittleEvents img{
-    width: 30px;
-    height: 30px;
-    margin-left: 100px;
-    justify-content: center;
-    align-items: center;
-  }
-  .paginasEvents h2{
-    text-align: center;
-  }
-  
-  
-.mat-toolbar-row{
-    background:linear-gradient(90deg, #5C396E 3.89%, #AB529C 74.08%);
-  }
-  .mat-toolbar{
-    background:linear-gradient(90deg, #5C396E 3.89%, #AB529C 74.08%);
-    justify-content: center;
-  }
+.tittleEvents {
+  position: relative;
+  padding-left: 35px;
+  margin: 10px;
+}
 
-#card-event-available-box1{
+.tittleEvents img {
+  width: 30px;
+  height: 30px;
+  margin-left: 100px;
+  justify-content: center;
+  align-items: center;
+}
+
+.paginasEvents h2 {
+  text-align: center;
+}
+
+#card-event-available-box1 {
   display: flex;
   box-shadow: 9px 5px 33px rgba(72, 72, 72, 0.09);
   width: 330px;
-
   border-radius: 10px;
-  margin:10px 0;
+  margin: 10px 0;
 }
 
-#info-user{
+#info-user {
   padding: 5px;
-
 }
-#photo-user{
+
+#photo-user {
   border-radius: 50%;
-  padding-top:5px ;
+  padding-top: 5px;
   padding-left: 20px;
   padding-right: 35px;
 }
 
-#card-event-available-box2{
+#card-event-available-box2 {
   display: flex;
   box-shadow: 9px 5px 33px rgba(72, 72, 72, 0.09);
   width: 330px;
-
   border-radius: 10px;
-justify-content: center;
-align-items: center;
-
+  justify-content: center;
+  align-items: center;
 }
 
-#photo-event{
+#photo-event {
   border-radius: 20%;
   height: 127px;
   width: 113px;
-
 }
 
-#event-info-card{
-padding: 22px;
+#event-info-card {
+  padding: 22px;
 }
 
 #details-event-place {
   padding: 3px;
   font-family: 'Roboto';
-font-style: normal;
-font-weight: 300;
-font-size: 14px;
-line-height: 24px;
-display:flex;
-}
-
-#details-event-time{
-  padding: 3px;
-  font-family: 'Roboto';
   font-style: normal;
   font-weight: 300;
   font-size: 14px;
   line-height: 24px;
-  display:flex;
-}
-
-#details-event-date{
-  padding: 3px;
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 300;
-  font-size: 14px;
-  line-height: 24px;
-  display:flex;
-}
-
-
-#hashtag-event{
-  background: linear-gradient(90deg, #5C396E 3.89%, #AB529C 74.08%);
--webkit-background-clip: text;
--webkit-text-fill-color: transparent;
-background-clip: text;
-/*text-fill-color: transparent;*/
-font-family: 'Roboto';
-font-style: normal;
-font-weight: 300;
-font-size: 20px;
-
-}
-
-#card-event-available{
-
-    
-   margin-left:100px;
-    padding: 30 0px;
-   
-    border-radius: 5px;
-    background-color: #fff;
-    height: 350px;
-  
-  
-}
-#icons-person1{
   display: flex;
-  box-shadow: 9px 5px 33px rgba(72, 72, 72, 0.09);
-  width: 330px;
-  border-radius: 10px;
-
 }
 
-#cards-available{
-  height: 370px;
-  width: 1000px;
-
-  box-shadow: 9px 5px 33px rgba(72, 72, 72, 0.09);
-  border-radius: 33px;
-  margin: auto;
-  
-}
-#name-event{
-  margin: 0;
-  font-size: 17px;
+#details-event-time {
+  padding: 3px;
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 24px;
+  display: flex;
 }
 
+#details-event-date {
+  padding: 3px;
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 24px;
+  display: flex;
+}
+
+#hashtag-event {
+  background: linear-gradient(90deg, #5C396E 3.89%, #AB529C 74.08%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 300;
+  font-size: 20px;
+}
+
+#card-event-available {
+  margin-left: 100px;
+  padding: 30px 0px;
+  border-radius: 5px;
+  background-color: #fff;
+  height: 330px;
+}

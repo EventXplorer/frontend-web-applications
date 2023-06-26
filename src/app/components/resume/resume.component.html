@@ -9,15 +9,15 @@
         <div id="card-event-available-box1">
           <img [src]="assist.user.urlPhoto" id="photo-user" style="height: 100px;">
           <div id="info-user">
-            <h2 id="name-user">{{ assist.user.name }}</h2>
-            <span>Requested {{ assist.confirmedTime }} ago</span>
+            <h2 id="name-user">Name: {{ assist.user.name }}</h2>
+            <span>Requested: {{ assist.confirmedTime }} ago</span>
           </div>
         </div>
         <div id="card-event-available-box2" style="margin-top: 45px;">
           <img [src]="assist.event.urlPhoto" id="photo-event" style="height: 130px;">
           <div id="event-info-card">
             <h2 id="name-event" style="font-weight: 600; font-size: 20px; text-align: center;">{{ assist.event.title }}</h2>
-            <span id="details-event-place">{{ assist.event.address }}</span>
+            <span id="details-event-place" style="color: white;">Address: {{ assist.event.address }}</span>
           </div>
         </div>
       </div>
