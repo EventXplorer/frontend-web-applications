@@ -31,20 +31,20 @@
                 <div class="box_blank p-4 shadow-0 border-round w-auto lg:w-20 Home"> </div>
                     <div class="recent_events p-4 shadow-0 border-round w-auto lg:w-20 Home">
                         <aside class="text3 font-medium line-height-3">Recent Events</aside>
-                        <div class="Boxes" v-for="product in recent_event.slice(0,2)" :key="event.id">
+                        <div class="Boxes" *ngFor="let event of recentEvents">
                             <div class="box1 p-4 shadow-1 border-round w-full lg:w-20">
-                                <div class="card2">
-                                    <div class="row1">
-                                        <div class="event-p1"><img class="popular-event-photo" [src]="p1.photo"></div>
-                                        <div class="event-p2"><img class="popular-event-photo"  [src]="p2.photo"></div>
-                                    </div>
-                                    <div class="row2">
-                                        <div class="event-p3"><img class="popular-event-photo" [src]="p2.photo"></div>
-                                        <div class="event-p4"><img class="popular-event-photo"  [src]="p3.photo"></div>
-                                    </div>
+                              <div class="card2">
+                                <div class="row1">
+                                  <div class="event-p1"><img class="popular-event-photo" [src]="event.photo"></div>
+                                  <div class="event-p2"><img class="popular-event-photo" [src]="event.photo"></div>
                                 </div>
+                                <div class="row2">
+                                  <div class="event-p3"><img class="popular-event-photo" [src]="event.photo"></div>
+                                  <div class="event-p4"><img class="popular-event-photo" [src]="event.photo"></div>
+                                </div>
+                              </div>
                             </div>
-                        </div>
+                          </div>
                 </div>
         </div>
     </div>

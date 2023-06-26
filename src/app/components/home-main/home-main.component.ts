@@ -22,6 +22,8 @@ export interface lastEvents {
 
 export class HomeMainComponent {
 
+  recentEvents: lastEvents[] = [];
+
   dataUser: User={
     uid: null,
     email: null,
@@ -62,26 +64,42 @@ export class HomeMainComponent {
     } 
 
       //Pasar el ultimo id de evento
-    this.eventService.getAllEvents().subscribe(events => {
+    /*this.eventService.getAllEvents().subscribe(events => {
       const lastEvent = events.reduce((prev, current) => (prev.id > current.id ? prev : current));
       for (let i = 0; i < 4; i++) {
-        this.getEventDataByID((lastEvent.id)-1, i);
+        this.getEventDataByID((lastEvent.id)-i, i);
+        console.log(this.getEventDataByID((lastEvent.id)-i, i));
       }
+    });*/
+
+    this.eventService.getAllEvents().subscribe(events => {
+      const sortedEvents = events.sort((a, b) => b.id - a.id);
+      const recentEvents = sortedEvents.slice(0, 4);
+      this.recentEvents = recentEvents.map(event => ({
+        photo: event.urlPhoto,
+        title: event.title
+      }));
     });
     
   }
 
 
-  private getEventDataByID(eventId: any, index: any){
-    this.eventService.getEvent(eventId).subscribe(data=>{
-      if(index==1){this.p1.photo=data.urlPhoto; this.p1.title=data.title}else{
-      if(index==2){this.p2.photo=data.urlPhoto; this.p2.title=data.title}else{
-      if(index==3){this.p3.photo=data.urlPhoto; this.p3.title=data.title}else{
-      if(index==4){this.p4.photo=data.urlPhoto; this.p4.title=data.title}}}}
-      
-    })
-
+  private getEventDataByID(eventId: any, index: any) {
+    this.eventService.getEvent(eventId).subscribe(data => {
+      const event: lastEvents = { photo: data.urlPhoto, title: data.title };
+  
+      if (index === 0) {
+        this.p1 = event;
+      } else if (index === 1) {
+        this.p2 = event;
+      } else if (index === 2) {
+        this.p3 = event;
+      } else if (index === 3) {
+        this.p4 = event;
+      }
+    });
   }
+  
 
   onClick(){
     this.userService.logout()
