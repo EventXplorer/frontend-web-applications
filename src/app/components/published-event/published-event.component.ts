@@ -39,7 +39,6 @@ export class PublishedEventComponent {
   }
   //
   getCreatedEvents() {
-
     this.eventService.getAllEvents().subscribe(
       res => {
         this.events = res; // Asigna la respuesta de eventos al arreglo this.events
@@ -58,6 +57,10 @@ export class PublishedEventComponent {
               address: event.address,
               category: event.category.name,
               username: users[index].name,
+              contact: users[index].email,
+              startTime: event.startTime,
+              endTime: event.endTime,
+              capacity: event.capacity,
             }));
   
            
@@ -115,4 +118,5 @@ export class PublishedEventComponent {
     }
   }
 
+  
 }

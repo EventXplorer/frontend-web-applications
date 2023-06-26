@@ -7,30 +7,32 @@
   <h1  style="text-align:center;margin: 10 0 16px; font-weight: 600; font-size: 40px; margin-right: 30px;">Events</h1><img src="../../../assets/img/box.png" >
     </div>
   <mat-tab-group  id="tab-options-published" animationDuration="1000ms">
-    <mat-tab label="Available" >
-      <div id="cards-available" style="display: flex; flex-direction: row; padding: 60px;">
-        <div *ngFor="let event of data" id="card-event-available">
-          <div id="card-event-available-box1">
-            <img [src]="event.urlphoto" id="photo-user" style="height: 100px;">
+    <mat-tab label="Available" style="margin-right: 20px;">
+      <div id="cards-available" style="display: flex; flex-direction: row; justify-content: space-between; padding: 60px; ">
+        <div *ngFor="let event of data" id="card-event-available" style="background-color: #e2d3df; margin-right: 20px; width: 450px; height: 400px;">
+          <div id="card-event-available-box1" style="background: rgb(171,82,156);">
+            <img [src]="event.url_photo" id="photo-user" style="height: 75px;">
             <div id="info-user">
-              <h2 id="name-user">{{ event.username }}</h2>
+              <h2 id="name-user">Name: {{ event.username }}</h2>
+              <h2 id="email-user">Email: {{ event.contact }}</h2>
             </div>
           </div>
-          <div id="card-event-available-box2">
-            <img [src]="event.url_photo" id="photo-event" style="height: 130px;">
+          <div id="card-event-available-box2" style="background-color: #b181a9; margin-top: 25px; height: 200px;">
+            <img [src]="event.urlphoto" id="photo-event" style="height: 130px;">
             <div id="event-info-card">
-              <h2 id="name-event">{{ event.title }}</h2>
-              <span id="details-event-place">{{ event.address }}</span>
-              <span id="details-event-time">{{ event.startTime }}</span>
-              <span id="details-event-date">{{ event.endTime }}</span>
+              <h2 id="name-event" style="color: white;"> <b>{{ event.title }}</b></h2>
+              <span id="details-event-place" style="color: white;">Address: {{ event.address }}</span>
+              <span id="details-event-time" style="color: white;">Start Time: {{ event.startTime }}</span>
+              <span id="details-event-date" style="color: white;">End Time: {{ event.endTime }}</span>
             </div>
           </div>
           <div id="mat-raised-button" class="button_assist_event">
-            <button ((click))="attendEvent(event)">Asistir a evento</button>
+            <a id="btn-assist" class="btn-global" style="color: white; margin-top: 15px;" mat-raised-button (click)="attendEvent(event)">ASSIST</a>
           </div>
         </div>
       </div>
     </mat-tab>
+    
     
     
     

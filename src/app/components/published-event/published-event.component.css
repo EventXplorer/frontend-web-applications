@@ -187,6 +187,13 @@ font-size: 20px;
 
 #name-user{
     margin: 0px;
+    font-size: 17px;
+    color:white;
+}
+#email-user{
+  margin: 0px;
+  font-size: 13px;
+  color:white;
 }
 
 #cajita-events-tittle {
@@ -235,3 +242,9 @@ table {
   height: 50px;
   color:white;
 }
+
+.btn-global{
+  background: linear-gradient(90deg, #5C396E 3.89%, #AB529C 94.23%);
+  height: 50px;
+}
+
