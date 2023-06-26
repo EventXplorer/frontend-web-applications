@@ -1,59 +1,29 @@
 
 <app-header></app-header>
   
-<mat-tab-group animationDuration="1000ms" style="padding:80px 100px">
-  <mat-tab label="My Attended" > 
-    <h2  style="text-align:center ;padding: 10px; font-weight: 600; font-size: 40px; margin-top: 35px;" >Reserved Events</h2>    
-    <div id="cards-available" style="display: flex; flex-direction: row; margin:100px">
-      <div id="card-event-available">
+<mat-tab-group animationDuration="1000ms" style="padding: 80px 100px">
+  <mat-tab label="My Attended">
+    <h2 style="text-align: center; padding: 10px; font-weight: 600; font-size: 40px; margin-top: 35px;">Reserved Events</h2>
+    <div id="cards-available" style="display: flex; flex-direction: row; margin: 100px">
+      <div *ngFor="let assist of assist" id="card-event-available">
         <div id="card-event-available-box1">
-            <img src="https://vivolabs.es/wp-content/uploads/2022/03/perfil-hombre-vivo.png" id="photo-user" style="height: 100px; ">
-              <div id="info-user">
-                  <h2 id="name-user">Raul alvarez</h2>
-                  <span>Requested 1h ago</span>
-              </div>
-      
+          <img [src]="assist.user.urlPhoto" id="photo-user" style="height: 100px;">
+          <div id="info-user">
+            <h2 id="name-user">{{ assist.user.name }}</h2>
+            <span>Requested {{ assist.confirmedTime }} ago</span>
           </div>
-          <div id="card-event-available-box2" style="margin-top: 45px;">
-            <img src="https://larepublica.cronosmedia.glr.pe/original/2023/01/16/63c57ae56dcdff6efc7295d2.jpg" id="photo-event" style="height:130px ;">
-              <div id="event-info-card">
-                  <h2 id="name-event" style="font-weight: 600;font-size: 20px; text-align: center;">Peruvian Carnaval</h2>
-                  <span id="details-event-place">Cajamarca, Peru</span>
-                  <span id="details-event-date">Before 5 November</span>
-        
-              </div>
-          </div>
-      
-        
-        </div>
-      <div id="card-event-available">
-        <div id="card-event-available-box1">
-          <img src="https://images.pexels.com/photos/733872/pexels-photo-733872.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" id="photo-user" style="height: 100px; width: 100px;">
-            <div id="info-user">
-                <h2 id="name-user">Sara Moledo</h2>
-                <span>Requested 1h ago</span>
-            </div>
-    
         </div>
         <div id="card-event-available-box2" style="margin-top: 45px;">
-          <img src="https://losmejoresdelima.org.pe/wp-content/uploads/2019/03/discotecas-en-san-juan-de-lurigancho-2022.jpg" id="photo-event" style="height:130px ;">
-            <div id="event-info-card">
-                <h2 id="name-event" style="font-weight: 600;font-size: 20px; text-align: center;">Disco Party</h2>
-                <span id="details-event-place">Av, Brazil</span>
-                <span id="details-event-date">Before 10 December</span>
-      
-            </div>
+          <img [src]="assist.event.urlPhoto" id="photo-event" style="height: 130px;">
+          <div id="event-info-card">
+            <h2 id="name-event" style="font-weight: 600; font-size: 20px; text-align: center;">{{ assist.event.title }}</h2>
+            <span id="details-event-place">{{ assist.event.address }}</span>
+          </div>
         </div>
-      
-    
-        
-        </div>
-        <div style=" text-align: end;"><a routerLink="/resume"><span style="text-decoration-line: underline; color: #545454; font-weight: 600; font-size: 20px;">More</span></a></div>
-
-     </div>
-     
+      </div>
+    </div>
   </mat-tab>
-
 </mat-tab-group>
+
 
 <app-footer></app-footer>

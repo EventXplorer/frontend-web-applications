@@ -7,6 +7,8 @@ import { UserDataService } from 'src/app/services/user-data.service';
 import { UserService } from 'src/app/services/user.service';
 import { forkJoin } from 'rxjs';
 import { Observable } from 'rxjs';
+import { AssistService } from 'src/app/services/assist.service';
+
 
 
 @Component({
@@ -29,7 +31,8 @@ export class PublishedEventComponent {
 
   constructor(
     private eventService: HttpEventService,
-    private router: Router,private UserService: UserService,private userDataService: UserDataService
+    private router: Router,private UserService: UserService,private userDataService: UserDataService,
+    private assistService: AssistService
   ) {}
 
   ngOnInit(): void {
@@ -103,7 +106,26 @@ export class PublishedEventComponent {
   }
   //
   attendEvent(event: any) {
+    const userId= this.UserService.getUserUid();
 
+    const currentDate= new Date();
+    const confirmedDate= currentDate.toLocaleDateString();
+    const confirmedTime= currentDate.toLocaleTimeString();
+
+    const assist = {
+      user: {id:userId},
+      event: {id:event.id},
+      confirmedDate: confirmedDate,
+      confirmedTime: confirmedTime,
+    };
+    this.assistService.createAssist(assist).subscribe(  
+      res => {
+        console.log('Asistencia creada:', res);
+      },
+      err => {
+        console.error('Error al crear la asistencia:', err);
+      }
+    );
 }
 
   
