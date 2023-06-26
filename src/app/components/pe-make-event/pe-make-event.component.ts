@@ -156,7 +156,11 @@ export class PeMakeEventComponent implements OnInit, AfterViewInit {
         const capacity = Number(this.datae.capacity);
 
         if (!isNaN(capacity)) {
-          this.datae.amount = (capacity * (endTime.getTime() - startTime.getTime())) / (1000 * 60); // Cálculo del tiempo en minutos
+          if((capacity * (endTime.getTime() - startTime.getTime())) / (1000 * 60)<0){
+            this.datae.amount = (capacity * (endTime.getTime() - startTime.getTime())) / (1000 * 60)*-1; // Cálculo del tiempo en minutos
+          }else{
+            this.datae.amount = (capacity * (endTime.getTime() - startTime.getTime())) / (1000 * 60); // Cálculo del tiempo en minutos
+          }
         }
       }
     }
