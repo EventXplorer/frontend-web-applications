@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { HttpEventService } from 'src/app/services/http-event.service';
 import { Event } from 'src/app/models/event.model';
+import { UserDataService } from 'src/app/services/user-data.service';
+
 
 @Component({
   selector: 'app-pe-event-progress',
@@ -31,10 +33,11 @@ export class PeEventProgressComponent {
     },
   }
 
+
   constructor(
-    private eventService: HttpEventService,
+    private eventService: HttpEventService, userService: UserDataService
     ) 
-    {}
+    {    }
 
 
 

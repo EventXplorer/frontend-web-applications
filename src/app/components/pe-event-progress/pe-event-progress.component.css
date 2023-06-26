@@ -6,11 +6,13 @@
   border-radius: 33px;
 }
 
-.example-header-image {
-  background-image: url('https://media.istockphoto.com/id/1273871774/es/foto/joven-joven-%C3%A1rabe-guapo-hombre-que-lleva-camiseta-blanca-casual-cara-feliz-sonriendo-con-los.jpg?s=612x612&w=0&k=20&c=26Su4ruTsO9ppelZcIrHdog54BV43qFc-UE92wlNh_A=');
-  background-size: cover;
-  max-width: 400px;
+.example-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
+
 
 .subtitle {
   text-align: center;
