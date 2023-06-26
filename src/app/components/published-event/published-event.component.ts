@@ -83,6 +83,9 @@ export class PublishedEventComponent {
                 eventData.push(...userEventData);
             
             });
+            this.data = eventData;
+            this.dataSource = new MatTableDataSource<any>(this.data);
+            this.dataSource.paginator = this.paginator;
           },
           (error) => {
             console.error(error);
