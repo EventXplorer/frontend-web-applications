@@ -84,7 +84,8 @@ export class PublishedEventComponent {
 //
   getEvents(){
     let eventData;
-    for(let i = 1; i<=10; i++)
+    
+    for(let i = 1; i<=400; i++)
     {
       this.eventService.getEvent(i).subscribe
       (
