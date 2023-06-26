@@ -89,9 +89,9 @@ export class PeMakeEventComponent implements OnInit, AfterViewInit {
       const latitude = place.geometry.location.lat();
       const longitude = place.geometry.location.lng();
 
-      this.mapUrl = `https://www.google.com/maps?q=${latitude},${longitude}`;
+      //this.mapUrl = `https://www.google.com/maps?q=${latitude},${longitude}`;
 
-      console.log('URL del mapa:', this.mapUrl);
+      //console.log('URL del mapa:', this.mapUrl);
     });
 
     // Obtener ciudades
