@@ -8,6 +8,7 @@ import { UserService } from 'src/app/services/user.service';
 import { forkJoin } from 'rxjs';
 import { Observable } from 'rxjs';
 import { AssistService } from 'src/app/services/assist.service';
+import { Assist } from 'src/app/models/assist.model';
 
 
 
@@ -28,6 +29,7 @@ export class PublishedEventComponent {
 
   searchCategory: string = '';
   dataCategory: any[] = [];
+  
 
   constructor(
     private eventService: HttpEventService,
@@ -108,8 +110,8 @@ export class PublishedEventComponent {
 
   }
   //
-  attendEvent(event: any) {
-    const userId= this.UserService.getCurrentUser()?.id;
+  attendEvent() {
+    const userId= this.UserService.getUserUid();
 
     const currentDate = new Date();
     const year = currentDate.getFullYear();
@@ -126,7 +128,7 @@ export class PublishedEventComponent {
         id: userId,
       },
       event: {
-        id: event.id,
+        id: 6,
       },
       confirmedDate: confirmedDate,
       confirmedTime: confirmedTime,
