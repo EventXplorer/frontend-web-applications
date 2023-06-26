@@ -1,0 +1,59 @@
+<app-header></app-header>
+
+  <div class="my-profile">
+    <div id="view-profile">
+      <div class="perfil">
+        <mat-card>
+            <img mat-card-image [src]="dataUser.urlPhoto ? dataUser.urlPhoto : 'https://bysperfeccionoral.com/wp-content/uploads/2020/01/136-1366211_group-of-10-guys-login-user-icon-png.jpg'">
+            <mat-card-title>{{dataUser.name}}</mat-card-title>
+            <mat-card-content>
+                <p>Hi, I’m {{dataUser.name}} and I live in {{dataUser.city}}, {{dataUser.country}}. I would like to bring great events from {{dataUser.city}} and have people from cities of the country</p> 
+            </mat-card-content>
+        </mat-card>
+    </div>
+
+    <div class="tab-options">
+        <mat-tab-group >
+
+            <div class="Information" >
+              <mat-tab label="Informacion Personal" >
+                <div class="info-data" style="padding:50px">
+                <div><strong>Nombre:</strong></div>
+                <mat-card>
+                    <mat-card-content>
+                    <p>{{dataUser.name}}</p> 
+                 </mat-card-content>
+                </mat-card>
+                
+                <div><strong>Edad:</strong> </div>
+                <mat-card>
+                  <mat-card-content>
+                  <p>{{dataUser.age}}</p> 
+               </mat-card-content>
+              </mat-card>
+
+                <div><strong>E-mail:</strong> </div>
+                <mat-card>
+                  <mat-card-content>
+                  <p>{{dataUser.email}}</p> 
+               </mat-card-content>
+              </mat-card>
+                
+
+                <div><strong>Ciudad:</strong></div> 
+                <mat-card>
+                  <mat-card-content>
+                  <p>{{dataUser.city}}</p> 
+               </mat-card-content>
+              </mat-card>
+            </div>
+            </mat-tab>
+            </div>
+            
+        </mat-tab-group> 
+    </div>
+    </div>
+  </div>
+    
+
+<app-footer></app-footer>

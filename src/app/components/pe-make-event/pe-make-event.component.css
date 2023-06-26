@@ -1,0 +1,76 @@
+.container-all{
+  height: auto;
+}
+.container-b{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80px;
+
+
+
+}
+
+.div-form{
+  display: flex;
+  margin-top: 5%;
+  align-items: center;
+  justify-content: center;
+  height: auto; /* Ajusta la altura según tus necesidades */
+}
+
+/*
+.example-container mat-form-field + mat-form-field {
+  margin-left: 8px;
+  display: flex;
+  
+  align-items: flex-start;
+  flex:1;
+}*/
+.example-container mat-form-field + mat-form-field {
+  margin-left: 8px;
+}
+
+#row-1{
+  flex: 1;
+}
+#row-2{
+  flex:1;
+}
+
+
+#btn-make-order{
+  background: linear-gradient(90deg, #5C396E 3.89%, #AB529C 94.23%);
+  height: 50px;
+  width: 100px;
+  position: relative;
+  display: flex;
+  margin-left: 50%;
+
+}
+
+.imagen {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+
+}
+button{
+  background: linear-gradient(to right, rgb(92, 57, 110), rgb(171, 82, 156));
+  color:white;
+  
+
+}
+
+@media screen and (max-width: 768px) {
+  .div-form {
+    flex-direction: column;
+  }
+
+  .example-container,
+  #imagen {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+}

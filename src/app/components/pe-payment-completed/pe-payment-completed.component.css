@@ -1,0 +1,18 @@
+
+
+#btn-accept{
+  background: linear-gradient(90deg, #5C396E 3.89%, #AB529C 94.23%);
+  height: 50px;
+}
+
+.first-colum{
+  color: #9F7CA0;
+  font-weight: 600;
+  font-size: 20px;
+}
+
+.second-colum{
+  color: black;
+  font-size: 20px;
+  font-weight: bold;
+}

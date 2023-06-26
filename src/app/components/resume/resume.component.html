@@ -1,0 +1,31 @@
+
+<app-header></app-header>
+  
+<mat-tab-group animationDuration="1000ms" style="padding: 80px 100px">
+  <mat-tab label="My Attended">
+    <h2 style="text-align: center; padding: 10px; font-weight: 600; font-size: 40px; margin-top: 35px;">Reserved Events</h2>
+    <div id="cards-available" style="display: flex; flex-direction: row; margin: 50px; ">
+      <div *ngFor="let assist of assist" id="card-event-available">
+        <div id="card-event-available-box1" style="background-color: rgb(245, 211, 245);">
+          <img [src]="assist.user.urlPhoto" id="photo-user" style="height: 100px;">
+          <div id="info-user">
+            <h2 id="name-user">Name: {{ assist.user.name }}</h2>
+            <span>Requested: {{ assist.confirmedTime }} ago</span>
+          </div>
+        </div>
+        <div id="card-event-available-box2" style="margin-top: 45px; background-color:rgb(245, 211, 245);">
+          <img [src]="assist.event.urlPhoto" id="photo-event" style="height: 130px;">
+          <div id="event-info-card">
+            <h2 id="name-event" style="font-weight: 600; font-size: 20px; text-align: center;">{{ assist.event.title }}</h2>
+            <span id="details-event-place" style="color: black;">Address: {{ assist.event.address }}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </mat-tab>
+</mat-tab-group>
+
+
+
+
+<app-footer></app-footer>

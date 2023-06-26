@@ -1,0 +1,56 @@
+<app-header></app-header>
+
+        
+    <div  id="img_home" class="home_account" style="padding:120px;">
+        <div class="card-1 p-4 shadow-0 border-round w-100 lg:w-20 Home inline-block">
+        <img class="UserPhoto home-img" alt="UserPhoto" [src]="dataUser.urlPhoto ? dataUser.urlPhoto : 'https://bysperfeccionoral.com/wp-content/uploads/2020/01/136-1366211_group-of-10-guys-login-user-icon-png.jpg'">
+        <aside class="text5" style="margin-top: 60px;">Hi, {{dataUser.name}}!</aside>
+
+        
+            <div class="popular_events p-4 shadow-0 border-round w-auto lg:w-40 Home ">
+                <aside class="text3 font-medium line-height-3 " ></aside>
+                <div class="card1">
+                    <div class="row1">
+                        <div class="event-p1"></div>
+                        <div class="event-p2"></div>
+                    </div>
+                    <div class="row2">
+                        
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="card-2 p-4 shadow-0 border-round w-100 lg:w-20 Home inline-block">
+            <div style="text-align: center;">
+              <a (click)="onClick()">
+                <aside class="text2 font-medium line-height-3 logout" style="margin-top: 75px;">Log Out</aside>
+              </a>
+            </div>
+            <button mat-flat-button color="accent" routerLink="/publishedevent">
+              Published Event <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="home"></mat-icon>
+            </button>
+            <div class="box_blank p-4 shadow-0 border-round w-auto lg:w-20 Home"></div>
+            <div class="recent_events p-4 shadow-0 border-round w-auto lg:w-20 Home">
+              <aside class="text3 font-medium line-height-3">Recent Events</aside>
+              <div class="row">
+                <div class="col-md-6" *ngFor="let event of recentEvents; let i = index">
+                  <div class="box1 p-4 shadow-1 border-round w-full lg:w-20">
+                    <div class="card2">
+                      <div class="row1">
+                        <div class="event-p1"><img class="popular-event-photo" [src]="event.photo"></div>
+                        <!-- <div class="event-p2"><p>{{event.title}}</p></div> -->
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          
+    </div>
+
+
+<app-footer></app-footer>

@@ -1,0 +1,74 @@
+<app-header></app-header>
+
+<div id="title-publish-details">
+    <span>Payments details</span>
+    </div>
+<div id="contenido">
+        <div id="card1-publish">
+            <img  id="img-publish" src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTWnkldJ6yl_wHnJy6YRms9bOYO9UrSM42eg6zISSI_Keg7b1XW">
+            <span id="texto-publish">{{datae.title}}</span>
+        </div>
+        <div>
+            <span id="organized-publish">Organized by {{dataUser.name}}</span>
+            <img  src="{{dataUser.urlPhoto}}" id="img-organized">
+        </div>
+        <div>
+            <span id="id-publish">Event ID:</span>
+            <span id="contra-publish">{{datae.id}}</span>
+        </div>
+        <div>
+            <span id="adress-publish">Adress:</span>
+            <span id="password-publish">{{datae.address}}</span>
+            <img id="map-adress-publish" src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcSn5GW4WdIxdAl3jP2ozoyvsstVXI_UPBhYTNT-XiVRhGhrDRyh">
+        </div>
+</div>
+
+<div id="contenido2">
+    <span id="method-pay">payment method</span>
+    <img id="visa"src="https://invatatiafaceri.ro/wp-content/uploads/full-color-800x450-cee226a48bed4177b90351075b332227.jpg" >
+    <input id="visa-id" matInput type="text" placeholder="Enter credit card number" name="credit-card" [value]="formatCreditCard(user?.creditcard)" readonly style="width: 180px;">
+</div>
+
+<div id="contenido3">
+    <div>
+        <span id="event-id-publish">Event ID</span>
+        <span id="event-code">{{datae.id}}</span>
+        <span id="amount">Total:</span>
+        <span id="money">S/.{{datae.amount}}</span>
+    </div>
+    
+</div>
+
+<div id="changes">
+    <a (click)="openPaymentForm()">Open payment form</a>
+  </div>
+
+  <div class="overlay" *ngIf="showPaymentForm">
+    <div class="container">
+      <mat-card class="card-form-payment" >
+        <mat-card-title style="text-align: center; margin-top: 20px; margin-bottom: 20px; color:#9F7CA0; font-weight: bold;">Payment Form</mat-card-title>
+        <mat-card-content style="text-align: center;">
+          <mat-form-field style="width: 100%;">
+            <mat-icon matPrefix>credit_card</mat-icon>
+            <input matInput type="text" placeholder="Enter credit card number" name="credit-card" [value]="formatCreditCard(user?.creditcard)" readonly>
+          </mat-form-field>
+          <mat-form-field style="width: 100%;">
+            <mat-icon matPrefix>attach_money</mat-icon>
+            <input matInput type="text" placeholder="Enter the amount to pay" name="amount" [(ngModel)]="dataPayment.amount">
+          </mat-form-field>
+          <label id="check">
+            <input type="checkbox" [(ngModel)]="isChecked">
+            <span style="font-size: 12px; color: #848484;">I declare that I have read and accepted <span style ="text-decoration: underline">the terms and conditions</span></span> 
+          </label>
+        </mat-card-content>
+        <mat-card-actions style="text-align: center; ">
+          <a id="btn-payment" (click)="createPayment()"  style="color: white; width: 200px; margin-left: 120px; " mat-raised-button>Pay</a> 
+        </mat-card-actions>
+        <mat-card-actions style="text-align: center; ">
+          <a id="btn-payment" (click)="closePaymentForm()"  style="color: white; width: 200px; margin-left: 120px; margin-bottom: 60px;" mat-raised-button>Cancel</a> 
+        </mat-card-actions>
+      </mat-card>
+    </div>
+  </div>
+
+<app-footer></app-footer>

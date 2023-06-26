@@ -1,0 +1,26 @@
+<app-header></app-header>
+<div>
+<h1 class="subtitle">Your Event is in Progress!</h1>
+<div>
+  <mat-card class="example-card" >
+    <mat-card-header>
+      <mat-card-title class="subtitle" style="font-size: 30px;">{{datae.title}}</mat-card-title>
+      <mat-card-subtitle>ㅤ</mat-card-subtitle>
+      <mat-card-subtitle>Event ID: {{datae.id}}</mat-card-subtitle>
+      <mat-card-subtitle>ㅤ</mat-card-subtitle>
+    </mat-card-header>
+    <img mat-card-image [src]="datae.urlPhoto" alt="Foto de comicfest" style="height: 350px;">
+    <mat-card-content>
+        <br>
+      <p class="parrafo1">
+        "People will be attending you event,soon"
+      </p>
+    </mat-card-content>
+  </mat-card>
+
+  <div class="mapouter" >
+    <div id="googlemaps">
+      <iframe width="800" height="500" id="gmap_canvas" src="https://maps.google.com/maps?q=Lima%20Barranco,%20Per%C3%BA.&t=&z=10&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+    </div>
+  </div>
+  <app-footer></app-footer>

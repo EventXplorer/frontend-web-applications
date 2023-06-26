@@ -1,0 +1,213 @@
+.home_account{
+
+    margin:0 auto;
+    justify-content: center;
+    align-items: center;
+    width:1000px;
+  }
+
+button{
+    background: linear-gradient(to right, rgb(92, 57, 110), rgb(171, 82, 156));
+    color:white;
+    width: 230px;
+    margin-left: -10px;
+    height: 41px;
+    margin-top: -40px;
+}
+.popular_events{
+    margin-top:120px;
+    justify-self: center;
+    width:800px;
+  
+}
+.recent_events{
+    float:top;
+  
+  }
+.row1{
+  display: flex;
+  margin-top: 20px;
+  
+}
+.row2{
+  display: flex;
+  margin-top: 80px;
+  
+}
+.event-p1{
+  width: 20px;
+  height: 20px;
+  
+}
+.event-p2{
+  width: 20px;
+  height: 20px;
+  margin-left: 120px;
+
+}
+
+.event-p4{
+  width: 20px;
+  height: 20px;
+  margin-left: 20px;
+
+}
+
+.popular-event-photo{
+  border-radius: 10px;
+}
+.home-button{
+    background-image: linear-gradient(to right, rgba(39, 70, 133, 0.8) 0%, rgba(61, 179, 197, 0.8) 100%);
+    left: 300px;
+    top: -30px;
+  }
+
+.inline-block{
+    display: inline-block;
+  }
+.UserPhoto {
+    float:left;
+    height: 120px;
+    width:120px;
+    border-radius: 50%;
+    box-shadow: 0px 0px 3px #999
+  }
+#img_home img{
+    width: 120px;
+    box-shadow: 0px 0px 1px #999;
+    transition:all 300ms;
+}
+.home-img:hover{
+    transform: scale(1.2,1.2);
+}
+.text2 {
+    margin-top:40px;
+    margin-left: 100px;
+    font-weight: bold;
+    text-decoration: underline black;
+    font-size:15px;
+  }
+  
+  .text3 {
+    color: #9F7CA0;
+    font-weight: bold;
+    font-size:25px;
+    border-left:3px solid rgb(92, 57, 110);
+    left:50%;
+    margin-top: 20px;
+    
+  }
+.text5{
+    font-size:40px;
+    right:200px;
+    margin-left: 140px;
+    font-weight: bold;
+    margin-top: 20px;
+  }
+  .time1{
+    font-size:12px;
+    text-decoration: underline black;
+  }
+  .Boxes {
+    width: 400px;
+    height: 150px;
+  }
+  
+  .box_blank{
+    width: 500px;
+    height: 62px;
+  }
+  .Subtitle1{
+    font-weight: bold;
+    margin: 10px auto;
+  
+  }
+  #Event{
+    top:-10px;
+    width: 100px;
+    height: 100px;
+    float:left;
+  }
+  .Event1{
+    height: 30px;
+    width: 150px;
+    box-shadow: 0px 0px 0px #999;
+  }
+  .box1{
+    width: 130px;
+    height: 150px;
+    margin-top:20px;
+  
+  }
+  .box3{
+    float:left;
+    margin-top:50px;
+    width: 20px;
+    height: 140px;
+    box-shadow: 0px 0px 0px #999;
+  
+  
+  }
+  .box4{
+    float:right;
+    margin-bottom:380px;
+    margin-top:-330px;
+    margin-left:100px;
+    width: 20px;
+    height: 140px;
+    box-shadow: 0px 0px 0px #999;
+  }
+  
+  .card-1{
+    margin-top:10px;
+    width: 430px;
+    height:120px;
+  }
+  .card-2{
+    margin-top:10px;
+    float: right;
+    width: 500px;
+    height:400px;
+  }
+  .Event-popular1{
+    height: 100px;
+    float:left;
+  }
+  .Event-popular{
+    height: 100px;
+    float:left;
+  }
+  
+  .home_account{
+    margin-top:20px;
+  }
+
+  .logout:hover{
+    cursor: pointer;
+  }
+
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .col-md-6 {
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+  
+  .row1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .event-p1 img {
+    height: 100px; /* Ajusta el valor según el tamaño deseado */
+    object-fit: cover;
+  }
+
+  .event-p2{
+    margin-top: 30px;
+  }
+  

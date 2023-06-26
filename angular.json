@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "ParcialTrabajo": {
+    "eventxplorer": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,8 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/parcial-trabajo",
+            
+            "outputPath": "dist/eventxplorer",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": [
@@ -35,13 +36,13 @@
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "500kb",
-                  "maximumError": "1mb"
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
                 },
                 {
                   "type": "anyComponentStyle",
-                  "maximumWarning": "2kb",
-                  "maximumError": "4kb"
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
                 }
               ],
               "outputHashing": "all"
@@ -61,10 +62,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "ParcialTrabajo:build:production"
+              "browserTarget": "eventxplorer:build:production"
             },
             "development": {
-              "browserTarget": "ParcialTrabajo:build:development"
+              "browserTarget": "eventxplorer:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -72,7 +73,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "ParcialTrabajo:build"
+            "browserTarget": "eventxplorer:build"
           }
         },
         "test": {
@@ -93,8 +94,21 @@
             ],
             "scripts": []
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {
+            "prerender": false,
+            "ssr": false,
+            "browserTarget": "eventxplorer:build:production",
+            "firebaseProject": "eventxplorer-firebase-auth",
+            "firebaseHostingSite": "eventxplorer-firebase-auth"
+          }
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "bfa392a4-e744-4c3f-b80b-1dfe82f2b277"
   }
 }

@@ -1,0 +1,132 @@
+.my-profile{
+  padding: 100px;
+}
+
+.perfil {
+    max-width: 300px;
+    display: inline-block; /* para que el div ocupe solo el ancho que necesita */
+    float: left; /* para alinear a la izquierda */
+    margin-right: auto; /* para centrar horizontalmente */
+    margin-left: 10%; /* para dejar un espacio a la izquierda */
+    margin-top: 50px;
+}
+#view-messages{
+  padding: 60px;
+  margin-left: 8%;
+}
+.perfil mat-card img {
+    border-radius: 50%;
+    display: block;
+    margin: 0 auto;
+    width: 250px;
+    height: 250px;
+  }
+
+  .perfil mat-card-title,
+  .perfil mat-card-content {
+    text-align: center;
+  }
+
+
+.tab-options {
+    float: left;
+    width: 50%;
+    text-align: center;
+    margin-top: 50px;
+  }
+  
+  .mat-tab-labels {
+    font-size: 0.8em;
+    text-transform: uppercase;
+  }
+  .tab-options {
+    margin-left: 100px;
+    margin-top: 50px;
+  }
+
+/*************************************************/
+  .info-data {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 1rem;
+    margin-top: 20px
+  }
+  
+  .info-data div {
+    align-self: center;
+    margin-left: 50%;
+  }
+  
+  .info-data mat-card {
+    margin-left: 30%;
+    margin-right: 30%;
+  }
+
+
+/*************************************************/
+
+.coment-image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-right: 20px;
+    margin-left: 20px;
+  }
+  
+  .coment-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .coment-card {
+    display: block;
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: row;
+    margin-left: 20%;
+    margin-right: 20%;
+    margin-top: 20px;
+  }
+  
+  
+ /*************************************************/
+ .recla-image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-right: 20px;
+    margin-left: 20px;
+  }
+  
+  .recla-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .recla-card {
+    display: block;
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: row;
+    margin-left: 20%;
+    margin-right: 20%;
+    margin-top: 20px;
+  }
+
+  /****************************************/
+  .mail, .telephone {
+  clear: both; /* para que los mat form se sitúen debajo del mat card de support */
+  float: right;
+  display: block; /* para que los mat form se vean uno debajo del otro */
+}
+  

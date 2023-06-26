@@ -1,0 +1,92 @@
+<app-header></app-header>
+
+<div class="container-all">
+  <div class="div-form">
+    <form class="example-container" (submit)="createdEvent()">
+      <div mat-dialog-content class="content">
+        <div class="row">
+          <!--Foto del evento-->
+          <mat-form-field>
+            <mat-label>Enter your photo</mat-label>
+            <input matInput placeholder="Photo Event" name="url_photo" [(ngModel)]="datae.urlPhoto" requerided >
+          </mat-form-field>
+          <!--Categoria del evento-->
+          <mat-form-field>
+            <mat-label>Select Category</mat-label>
+            <mat-select placeholder="Category Event" name="category" [(ngModel)]="datae.category.id" required>
+              <mat-option *ngFor="let category of dataCategory" [value]="category.id">
+                {{ category.name }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <div class="row">
+          <!--Titulo del evento-->
+          <mat-form-field>
+            <mat-label>Enter your title</mat-label>
+            <input matInput placeholder="Title Event" name="title" [(ngModel)]="datae.title" requerided >
+          </mat-form-field>
+          <!--Fecha del evento-->
+          <mat-form-field>
+            <mat-label>Event Date</mat-label>
+            <input matInput type="date" placeholder="yyyy-MM-dd" name="Date"  [(ngModel)]="datae.date" pattern="\d{4}-\d{2}-\d{2}" required>
+          </mat-form-field>
+        </div>
+        <div class="row">
+          <!--Comienzo del evento-->
+            <mat-form-field>
+              <mat-label>Start Time</mat-label>
+              <input matInput type="time" placeholder="HH:mm" name="start_time"  [(ngModel)]="datae.startTime" pattern="\m{2}-:HH{2}" required>
+            </mat-form-field>
+        
+            <!--Termino del evento-->
+          <mat-form-field>
+            <mat-label>End Time</mat-label>
+            <input matInput type="time" placeholder="HH:mm" name="end_time"  [(ngModel)]="datae.endTime" pattern="\m{2}-:HH{2}" required>
+          </mat-form-field> 
+        </div>
+        <!--Capacidad del evento-->
+        <mat-form-field>
+          <mat-label>Enter your max number of assitends</mat-label>
+          <input matInput placeholder="Max Capacity" type="number" name="capaciy" [(ngModel)]="datae.capacity" >
+        </mat-form-field>
+        <!--Direccion del evento-->
+        <mat-form-field>
+          <mat-label>Enter the address</mat-label>
+          <input matInput placeholder="Address" name="address" [(ngModel)]="datae.address" #inputPlaces>
+        </mat-form-field>
+        </div>
+        
+        <!--Ciudad del evento-->
+        <mat-form-field>
+          <mat-label>Enter the city</mat-label>
+          <input matInput placeholder="City" name="city" [(ngModel)]="datae.city" #inputCities>
+        </mat-form-field>
+        <!--Distrito del evento-->
+        <mat-form-field>
+          <mat-label>Enter the district</mat-label>
+          <input matInput placeholder="District" name="district" [(ngModel)]="datae.district">
+        </mat-form-field>
+      
+      
+      
+      <div id="container-b">
+        <a id="btn-make-order" style="color: white; " mat-raised-button (click)="createdEvent()">CONTINUE</a>
+      </div>
+    </form>
+    <div id="imagen">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSBrjjIbQnGKoKdPZ8_tZxGAJgXz5nKQRooS-kuU06RMFHp5Avu" alt="cuadernoylapiz" id="cuaderoylapiz">
+    </div>
+    
+  </div>
+  
+</div>
+
+
+
+
+
+
+
+
+<app-footer></app-footer>

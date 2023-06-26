@@ -1,0 +1,14 @@
+[build]
+  command = "ng build --configuration=production && json-server --watch ./db.json"
+  publish = "dist/eventxplorer"
+
+[build.environment]
+DB_PATH = "./db.json"
+
+[dev]
+  command = "ng serve --open"
+
+[[redirects]]
+  from = "/api/*"
+  to = "http://localhost:3000/users/:splat"
+  status = 200

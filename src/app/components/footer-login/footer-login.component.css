@@ -1,0 +1,16 @@
+.mat-toolbar {
+    display: flex;
+    justify-content: center;
+    height: 200px;
+    background: linear-gradient(90deg, #5C396E 3.89%, #AB529C 94.23%);
+  }
+  
+  .mat-toolbar span {
+    margin: 0;
+    font-size: 14px;
+    color: #fff;
+    text-align: center;
+    display: inline-block;
+    vertical-align: middle;
+  }
+  
