@@ -34,6 +34,8 @@ export class PublishedEventComponent {
     numberIdentification: null, 
     creditcard: null
   };
+
+  
   
   @ViewChild(MatPaginator, {static:true}) paginator!: MatPaginator;
 
@@ -57,7 +59,7 @@ export class PublishedEventComponent {
       (users: User[]) => {
         // Obtener todos los usuarios
         const allUsers = users;
-  
+        console.log(allUsers);
         // Obtener los eventos de todos los usuarios
         const eventRequests = allUsers.map((user) =>
           this.eventService.getEventsByUser(user.id)

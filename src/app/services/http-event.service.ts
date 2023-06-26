@@ -23,4 +23,7 @@ export class HttpEventService {
   getAllEvents(){
     return this.httpClient.get<any[]>(`${this.baseUrl}`);
   }
+  getEventsByUser(userId: any){
+    return this.httpClient.get<any[]>(`${this.baseUrl}/user/${userId}`);
+  }
 }
