@@ -11,13 +11,13 @@
       <div id="cards-available" style="display: flex; flex-direction: row; padding: 60px;">
         <div *ngFor="let event of data" id="card-event-available">
           <div id="card-event-available-box1">
-            <img [src]="user.urlPhoto" id="photo-user" style="height: 100px;">
+            <img [src]="event.urlphoto" id="photo-user" style="height: 100px;">
             <div id="info-user">
-              <h2 id="name-user">{{ user.name }}</h2>
+              <h2 id="name-user">{{ event.username }}</h2>
             </div>
           </div>
           <div id="card-event-available-box2">
-            <img [src]="event.urlPhoto" id="photo-event" style="height: 130px;">
+            <img [src]="event.url_photo" id="photo-event" style="height: 130px;">
             <div id="event-info-card">
               <h2 id="name-event">{{ event.title }}</h2>
               <span id="details-event-place">{{ event.address }}</span>
@@ -26,7 +26,7 @@
             </div>
           </div>
           <div id="mat-raised-button" class="button_assist_event">
-            <button mat-raised-button color="primary">Asistir a evento</button>
+            <button ((click))="attendEvent(event)">Asistir a evento</button>
           </div>
         </div>
       </div>

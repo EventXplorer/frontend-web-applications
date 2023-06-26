@@ -5,8 +5,9 @@ import { Router } from '@angular/router';
 import { HttpEventService } from 'src/app/services/http-event.service';
 import { UserDataService } from 'src/app/services/user-data.service';
 import { UserService } from 'src/app/services/user.service';
-import { User } from 'src/app/models/user.model';
 import { forkJoin } from 'rxjs';
+import { Observable } from 'rxjs';
+
 
 @Component({
   selector: 'app-published-event',
@@ -17,26 +18,10 @@ export class PublishedEventComponent {
   displayedColumns: string[] = ['url_photo', 'title', 'address', 'date' , 'category'];
   data: any[] = [];
   dataSource = new MatTableDataSource<any>(this.data);
-  events=[];
+  events: any[]= [];
 //
   
-  user:User={
-    uid: null,
-    email: null,
-    id: null,
-    name: null,
-    age: null,
-    city: null,
-    country: null,
-    urlPhoto: null,
-    birthday: null,
-    typeIdentification: null,
-    numberIdentification: null, 
-    creditcard: null
-  };
 
-  
-  
   @ViewChild(MatPaginator, {static:true}) paginator!: MatPaginator;
 
   searchCategory: string = '';
@@ -54,48 +39,36 @@ export class PublishedEventComponent {
   }
   //
   getCreatedEvents() {
-    // Obtener todos los usuarios
-    this.userDataService.getAllUsers().subscribe(
-      (users: User[]) => {
-        // Obtener todos los usuarios
-        const allUsers = users;
-        console.log(allUsers);
-        // Obtener los eventos de todos los usuarios
-        const eventRequests = allUsers.map((user) =>
-          this.eventService.getEventsByUser(user.id)
+
+    this.eventService.getAllEvents().subscribe(
+      res => {
+        this.events = res; // Asigna la respuesta de eventos al arreglo this.events
+  
+        const requests: Observable<any>[] = this.events.map(event =>
+          this.userDataService.getUserById(event.user.id)
         );
   
-        // Realizar las solicitudes de eventos en paralelo
-        forkJoin(eventRequests).subscribe(
-          (responses: any[]) => {
-              const eventData:any[]=[];
+        forkJoin(requests).subscribe(
+          (users: any[]) => {
+            this.data = this.events.map((event, index) => ({
+              url_photo: users[index].urlPhoto,
+              urlphoto: event.urlPhoto,
+              title: event.title,
+              date: event.date,
+              address: event.address,
+              category: event.category.name,
+              username: users[index].name,
+            }));
   
-            // Procesar las respuestas de eventos para cada usuario
-            responses.forEach((events:any[], index) => {
-              const currentUser = allUsers[index];
-              const userEventData = events.map((event:any) => ({
-                urlPhoto: event.urlPhoto,
-                title: event.title,
-                endTime: event.endTime,
-                startTime: event.startTime,
-                address: event.address,
-              }));
-  
-              // Agregar los eventos al arreglo de datos
-                eventData.push(...userEventData);
-            
-            });
-            this.data = eventData;
-            this.dataSource = new MatTableDataSource<any>(this.data);
-            this.dataSource.paginator = this.paginator;
+           
           },
-          (error) => {
-            console.error(error);
+          err => {
+            console.log(err);
           }
         );
       },
-      (error) => {
-        console.error(error);
+      err => {
+        console.log(err);
       }
     );
   }
@@ -128,6 +101,10 @@ export class PublishedEventComponent {
     }
 
   }
+  //
+  attendEvent(event: any) {
+
+}
 
   
   applyFilter() {
