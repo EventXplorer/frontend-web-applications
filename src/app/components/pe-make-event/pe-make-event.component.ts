@@ -126,6 +126,9 @@ export class PeMakeEventComponent implements OnInit{
 
         console.log('The payment was successful.', response);
 
+
+        console.log('URL del mapa:', this.mapUrl);
+
         this.router.navigate(['/publish-event/payment-details']);
       } catch (error) {
         this.router.navigate(['/publish-event/payment-details']);
