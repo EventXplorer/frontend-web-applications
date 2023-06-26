@@ -25,7 +25,10 @@ export class UserDataService {
     return this.httpClient.post(`${this.baseUrl}`, user);
   }
 
-  
+  //
+  getAllUsers(){
+    return this.httpClient.get<any[]>(`${this.baseUrl}`);
+  }
 
   
 }

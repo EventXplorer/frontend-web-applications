@@ -20,7 +20,11 @@ export class HttpEventService {
   getEvent(index:any){
       return this.httpClient.get<any>(`${this.baseUrl}/${index}`);
   }
+  //
   getAllEvents(){
     return this.httpClient.get<any[]>(`${this.baseUrl}`);
+  }
+  getEventsByUser(userId: any){
+    return this.httpClient.get<any[]>(`${this.baseUrl}/user/${userId}`);
   }
 }
