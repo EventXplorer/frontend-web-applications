@@ -109,7 +109,7 @@ export class PublishedEventComponent {
   }
   //
   attendEvent(event: any) {
-    const userId= this.UserService.getUserUid();
+    const userId= this.UserService.getCurrentUser();
 
     const currentDate= new Date();
     const confirmedDate= currentDate.toLocaleDateString();
