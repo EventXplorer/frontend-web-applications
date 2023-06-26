@@ -29,6 +29,7 @@ declare const google: any;
 export class PeMakeEventComponent implements OnInit{
   @ViewChild('inputPlaces') inputPlaces!: ElementRef;
   @ViewChild('inputCities') inputCities!: ElementRef;
+
   addressAutocomplete: any;
   cityAutocomplete: any;
   dataCategory: any;
@@ -80,11 +81,23 @@ export class PeMakeEventComponent implements OnInit{
      this.addressAutocomplete = new google.maps.places.Autocomplete(this.inputPlaces.nativeElement, {
       componentRestrictions: { country: 'pe' } // Filtrar por Perú
     });
-    this.addressAutocomplete.setFields(['formatted_address']); //obtener direcciones completas
+    this.addressAutocomplete.setFields(['formatted_address',]); //obtener direcciones completas
     //guardar la dirección en el modelo
     this.addressAutocomplete.addListener('place_changed', () => {
       const place = this.addressAutocomplete.getPlace();
-      const address = place.formatted_address;
+      const addressComponents = place.address_components;
+      let address = '';
+
+      for (const component of addressComponents) {
+        if (component.types.includes('street_number')) {
+          address += component.long_name + ' ';
+        }
+        if (component.types.includes('route')) {
+       address += component.long_name;
+        }
+  }
+
+  this.datae.address = address;
       //Lat and long
       const latitude = place.geometry.location.lat();
       const longitude = place.geometry.location.lng();
@@ -125,9 +138,6 @@ export class PeMakeEventComponent implements OnInit{
         const response= await this.http.post('https://eventxplorer-backend.azurewebsites.net/event',this.datae).toPromise();
 
         console.log('The payment was successful.', response);
-
-
-        console.log('URL del mapa:', this.mapUrl);
 
         this.router.navigate(['/publish-event/payment-details']);
       } catch (error) {
