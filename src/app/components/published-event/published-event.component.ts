@@ -111,19 +111,25 @@ export class PublishedEventComponent {
   attendEvent(event: any) {
     const userId= this.UserService.getCurrentUser()?.id;
 
-    const currentDate= new Date();
-    const confirmedDate= currentDate.toLocaleDateString();
-    const confirmedTime= currentDate.toLocaleTimeString();
+    const currentDate = new Date();
+    const year = currentDate.getFullYear();
+    const month = String(currentDate.getMonth() + 1).padStart(2, '0');
+    const day = String(currentDate.getDate()).padStart(2, '0');
+    const hour = String(currentDate.getHours()).padStart(2, '0');
+    const minute = String(currentDate.getMinutes()).padStart(2, '0');
+  
+    const confirmedDate = `${year}-${month}-${day}`;
+    const confirmedTime = `${hour}:${minute}`;
 
     const assist = {
       user: {
-        id: 1,
+        id: userId,
       },
       event: {
-        id: 1,
+        id: event.id,
       },
-      confirmedDate: "2023-04-12",
-      confirmedTime: "11:00",
+      confirmedDate: confirmedDate,
+      confirmedTime: confirmedTime,
     };
     console.log(assist)
     this.assistService.createAssist(assist).subscribe(  

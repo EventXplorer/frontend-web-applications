@@ -23,5 +23,8 @@ export class AssistService {
   getAssistsByEvent(eventId: any){
     return this.httpClient.get<any[]>(`${this.baseUrl}/event/${eventId}`);
   }
+  getAssistsByUser(userId: any){
+    return this.httpClient.get<any[]>(`${this.baseUrl}/user/${userId}`);
+  }
 
 }
